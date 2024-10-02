@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Netlify &#43; Hugo Quickstart</title>
-    <link>http://hugo-quickstart-template.netlify.com/</link>
-    <description>Recent content on Netlify &#43; Hugo Quickstart</description>
+    <title>Homes on Netlify &#43; Hugo Quickstart</title>
+    <link>http://hugo-quickstart-template.netlify.com/home/</link>
+    <description>Recent content in Homes on Netlify &#43; Hugo Quickstart</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://hugo-quickstart-template.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://hugo-quickstart-template.netlify.com/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Odzyskaj pełniejsze, mocniejsze włosy dzięki wsparciu nauki</title>
       <link>http://hugo-quickstart-template.netlify.com/home/home/</link>
