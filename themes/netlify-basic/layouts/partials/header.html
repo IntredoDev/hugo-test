@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="container">
+    {{ if .Site.Params.logo }}
+        <img class="header__logo" src="{{ .Site.Params.logo }}" alt="site logo" width="136" height="32" loading="eager">
+    {{ end }}
+
+    <ul class="header__benefits">
+        {{ range .Site.Params.benefits }}
+            {{ if .title }}
+                <li class="header__benefits-item">
+                    <p class="">{{ .title }}</p>
+                    <img src="{{ .image }}" alt="{{ .title }}">
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+
+    <button class="header__button button button--small button--navi">
+        <span>{{ .Site.Params.cta_button_title }}</span>
+
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+            <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    </div>
+</header>
+ 

@@ -1,8 +1,9 @@
 {{ define "main" }}
-<header>
-  <h1>{{ .Params.Title }}</h1> <!-- Retrieves the Title -->
-  <p>{{ .Params.description | markdownify }}</p> <!-- Retrieves and renders the Description as Markdown -->
-  <img src="{{ .Params.hero_image }}" alt="Hero Image" /> <!-- Retrieves the Hero Image URL -->
-</header>
-
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero__title">{{ .Params.hero_title }}</h1>
+      <p class="hero__para">{{ .Params.hero_description | markdownify }}</p> 
+      <img class="hero__img" src="{{ .Params.hero_image }}" alt="Hero Image" /> 
+    </div>
+  </section>
 {{ end }}

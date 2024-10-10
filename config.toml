@@ -1,2 +1,19 @@
-baseURL = 'http://hugo-quickstart-template.netlify.com'
+baseURL = 'https://glowing-kashata-66e40c.netlify.app/'
 languageCode = 'en-us'
+theme = "netlify-basic"
+
+[params]
+  logo = "img/collagenico_logo.svg"
+  cta_button_title = "zamawiam"
+
+  [[params.benefits]]
+    title = "Potwierdzona efektywność"
+    image = "/img/header_benefit_1.svg"
+    
+  [[params.benefits]]
+    title = "Produkt Roku 2023"
+    image = "/img/benefit_prize.svg"
+
+  [[params.benefits]]
+    title = "W 100% naturalne składniki"
+    image = "/img/header_benefit_3.svg"
