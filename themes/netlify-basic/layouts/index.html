@@ -1,9 +1,4 @@
 {{ define "main" }}
-  <section class="hero">
-    <div class="container">
-      <h1 class="hero__title">{{ .Params.hero_title }}</h1>
-      <p class="hero__para">{{ .Params.hero_description | markdownify }}</p> 
-      <img class="hero__img" src="{{ .Params.hero_image }}" alt="Hero Image" /> 
-    </div>
-  </section>
+  {{ partial "index/hero.html" . }}
+  {{ partial "index/problems.html" . }}
 {{ end }}
