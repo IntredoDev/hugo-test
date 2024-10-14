@@ -1,0 +1,25 @@
+{{ with .Params.section_numbers }}
+<section class="numbers" id="numbers">
+    <div class="container">
+        {{ if .heading }}
+            <h2 class="numbers__heading">{{ .heading }}</h2>
+        {{ end }}
+
+        {{ with .list }} 
+            <ul class="numbers__list">
+                {{ if gt (len .) 0 }}
+                    {{ range . }}
+                        <li class="numbers__list-item">
+                            <div class="numbers__list-number">{{ .number }}</div>
+                            <p class="numbers__list-desc">
+                                
+                                {{ .description }}
+                            </p>
+                        </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
