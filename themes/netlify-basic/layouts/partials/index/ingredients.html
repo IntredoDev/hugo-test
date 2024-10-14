@@ -1,0 +1,34 @@
+{{ with .Params.section_ingredients }}
+<section class="ingredients">
+    <div class="container">
+        <header class="ingredients__header">
+            <h2 class="ingredients__heading">{{ .heading }}</h2>
+
+            <img class="ingredients__image ingredients__image--mobile" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
+        </header>
+        <div class="ingredients__content">
+            <img class="ingredients__image ingredients__image--desktop" width="547" height="524" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
+            <ul class="ingredients__list">
+            {{ range .list }}
+                {{ if .title }}
+                <li class="ingredients__list-item">
+                    <div class="ingredients__list-wrap">
+                        <div class="ingredients__list-thumbnail">
+                            <img src="{{ .thumbnail }}" alt="{{ .title }}">
+                        </div>
+                        <button class="ingredients__button button button--green" data-js-target-modal data-content-img="{{ .content_img }}" data-content="{{ .content }}">
+                            <span>{{ .title }}</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+                {{ end }}
+            {{ end }}
+            </ul>
+        </div>
+    </div>
+  </section>
+{{ end }}

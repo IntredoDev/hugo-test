@@ -1,8 +1,8 @@
 {{ define "main" }}
-<header>
-  <h1>{{ .Params.Title }}</h1> <!-- Retrieves the Title -->
-  <p>{{ .Params.description | markdownify }}</p> <!-- Retrieves and renders the Description as Markdown -->
-  <img src="{{ .Params.hero_image }}" alt="Hero Image" /> <!-- Retrieves the Hero Image URL -->
-</header>
-
+  {{ partial "index/hero.html" . }}
+  {{ partial "index/problems.html" . }}
+  {{ partial "index/differences.html" . }}
+  {{ partial "index/how_it_works.html" . }}
+  {{ partial "index/ingredients.html" . }}
+  {{ partial "index/numbers.html" . }}
 {{ end }}

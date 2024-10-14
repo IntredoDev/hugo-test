@@ -1,0 +1,12 @@
+{{ if .Params.hero_opinions }}
+<div class="hero__opinions">
+    <div class="hero__stars">
+        {{ range seq 5 }}
+        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.4723 3.83584L11 2.47714L10.5277 3.83584L8.76104 8.91834L3.38136 9.02797L1.94322 9.05727L3.08947 9.9263L7.37729 13.1771L5.81914 18.3273L5.4026 19.7042L6.58331 18.8825L11 15.8091L15.4167 18.8825L16.5974 19.7042L16.1809 18.3273L14.6227 13.1771L18.9105 9.9263L20.0568 9.05727L18.6186 9.02797L13.239 8.91834L11.4723 3.83584Z" fill="#64931A" stroke="#64931A"/>
+        </svg>
+        {{ end }}
+    </div>
+    <p class="hero__opinions-para">{{ .Params.hero_opinions | safeHTML }}</p>
+</div>
+{{ end }}

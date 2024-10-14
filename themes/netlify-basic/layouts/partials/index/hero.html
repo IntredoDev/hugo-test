@@ -1,0 +1,43 @@
+<section class="hero">
+    <img class="hero__bg" src="/img/hero_bg.png" role="presentation">
+
+    <div class="container">
+        <div class="hero__content">
+            <header class="hero__header">
+                {{ partial "index/hero_opinions.html" . }}
+
+                {{ if .Params.hero_title }}
+                    <h1 class="hero__title">{{ .Params.hero_title }}</h1>
+                {{ end }}
+
+                {{ if .Params.hero_description }}
+                    <p class="hero__para">{{ .Params.hero_description | markdownify }}</p>
+                {{ end }}
+
+                <img class="hero__img hero__img--mobile" src="{{ .Params.hero_image }}" alt="Hero Image" loading="eager" /> 
+            </header>
+
+            {{ partial "index/hero_list.html" . }}
+
+            {{ if .Params.hero_button_title }}
+            <div class="hero__button-wrap">
+                <button class="button button--primary">
+                    <span>
+                        {{ .Params.hero_button_title }}
+                    </span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                        <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            {{ end }}
+        </div>
+
+        {{ if .Params.hero_image }}
+            <div class="hero__img-wrap">
+                <img class="hero__img hero__img--desktop" src="{{ .Params.hero_image }}" alt="Hero Image" loading="eager" /> 
+            </div>
+        {{ end }}
+    </div>
+</section>

@@ -1,0 +1,44 @@
+{{ with .Params.section_differences }}
+<section class="differences">
+    <div class="container">
+        <div class="differences__decor differences__decor--1"></div>
+        <header class="differences__header">
+            {{ if .heading }}
+                <h2 class="differences__heading">{{ .heading }}</h2>
+            {{ end }}
+            {{ if .description }}
+                <p class="differences__para"> {{ .description }} </p>
+            {{ end }}
+         </header>
+
+        <div class="differences__content">
+            <div class="differences__col">
+                {{ with .list }} 
+                    {{ if gt (len .) 0 }}
+                        <ul class="differences__list">
+                            {{ range . }}
+                                <li class="differences__list-item">
+                                    <h3>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33268 13.9999C2.33268 20.4432 7.55602 25.6666 13.9993 25.6666C20.4427 25.6666 25.666 20.4432 25.666 13.9999C25.666 7.5566 20.4427 2.33325 13.9993 2.33325C7.55602 2.33325 2.33268 7.5566 2.33268 13.9999Z" fill="#64931A"/>
+                                            <path d="M8.75 13.9999L19.25 13.9999" stroke="white" stroke-linecap="round"/>
+                                            <path d="M15.75 17.5L19.25 14L15.75 10.5" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+
+                                        {{ .title }}
+                                    </h3>
+                                    <p> {{ .description }} </p>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                {{ end }}
+            </div>
+            <div class="differences__col differences__col--2">
+                <img class="differences__img" src="{{ .img }}" alt="Hair with Collagenico Product">
+            </div>
+        </div>
+        <div class="differences__decor differences__decor--2"></div>
+    </div>
+</section>
+{{ end }}
