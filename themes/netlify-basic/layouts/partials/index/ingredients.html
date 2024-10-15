@@ -9,7 +9,7 @@
         <div class="ingredients__content">
             <img class="ingredients__image ingredients__image--desktop" width="547" height="524" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
             <ul class="ingredients__list">
-            {{ range .list }}
+            {{- range .list -}}
                 {{ if .title }}
                 <li class="ingredients__list-item">
                     <div class="ingredients__list-wrap">
@@ -26,7 +26,7 @@
                     </div>
                 </li>
                 {{ end }}
-            {{ end }}
+            {{- end -}}
             </ul>
         </div>
     </div>

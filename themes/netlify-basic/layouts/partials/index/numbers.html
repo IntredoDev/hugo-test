@@ -1,25 +1,24 @@
 {{ with .Params.section_numbers }}
 <section class="numbers" id="numbers">
     <div class="container">
-        {{ if .heading }}
+        {{- if .heading -}}
             <h2 class="numbers__heading">{{ .heading }}</h2>
         {{ end }}
 
-        {{ with .list }} 
+        {{- with .list -}} 
             <ul class="numbers__list">
                 {{ if gt (len .) 0 }}
-                    {{ range . }}
+                    {{- range . -}}
                         <li class="numbers__list-item">
                             <div class="numbers__list-number">{{ .number }}</div>
                             <p class="numbers__list-desc">
-                                
                                 {{ .description }}
                             </p>
                         </li>
-                    {{ end }}
+                    {{- end -}}
                 {{ end }}
             </ul>
-        {{ end }}
+        {{- end -}}
     </div>
 </section>
 {{ end }}

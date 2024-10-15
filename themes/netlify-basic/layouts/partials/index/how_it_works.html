@@ -1,31 +1,31 @@
-{{ with .Params.section_how }}
+{{- with .Params.section_how -}}
 <section class="how" id="how">
     <div class="container">
-        {{ if .heading }}
-            <h2 class="how__heading">{{ .heading }}</h2>
-        {{ end }}
+    {{- if .heading -}}
+        <h2 class="how__heading">{{ .heading }}</h2>
+    {{- end -}}
 
         <div class="how__content">
             <div class="how__content-col">
-            {{ with .list }} 
+            {{- with .list -}} 
                 {{ if gt (len .) 0 }}
                 <ul class="how__list">
-                    {{ range $index, $element := . }}
+                    {{- range $index, $element := . -}}
                         <li class="how__list-item">
                             <span class="counter">{{ printf "%02d" (add $index 1) }}</span>
                             <p>{{ . }}</p>
                         </li>
-                    {{ end }}
+                    {{- end -}}
                 </ul>
                 {{ end }}
-            {{ end }}
+            {{- end -}}
             </div>
             <div class="how__content-col">
-                {{ if .img }}
-                    <img class="how__content-img" src="{{ .img }}" width="680" height="456" alt="Balding Man" loading="lazy">
-                {{ end }}
+            {{- if .img -}}
+                <img class="how__content-img" src="{{ .img }}" width="680" height="456" alt="Balding Man" loading="lazy">
+            {{- end -}}
             </div>
         </div>
     </div>
 </section>
-{{ end }}
+{{- end -}}
