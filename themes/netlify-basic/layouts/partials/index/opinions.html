@@ -1,0 +1,28 @@
+{{- with .Params.section_opinions -}}
+    <section class="opinions">
+        <div class="opinions__gradient opinions__gradient--1 "></div>
+        <div class="container">
+            <header class="opinions__header">
+                {{ if .heading }}
+                    <h2 class="opinions__heading">{{ .heading }}</h2>
+                {{ end }}
+
+                <div class="opinions__stars">
+                    <ol class="opinions__rating">
+                        {{ range seq 5 }}
+                        <li>
+                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.4723 3.83584L15 2.47714L14.5277 3.83584L11.8206 11.6239L3.57714 11.7919L2.139 11.8212L3.28525 12.6902L9.8556 17.6715L7.468 25.5634L7.05146 26.9402L8.23217 26.1186L15 21.4091L21.7678 26.1186L22.9485 26.9402L22.532 25.5634L20.1444 17.6715L26.7148 12.6902L27.861 11.8212L26.4229 11.7919L18.1794 11.6239L15.4723 3.83584Z" fill="#313131" stroke="#313131"/>
+                            </svg>
+                        </li>
+                        {{ end }}
+                    </ol>
+                    <p class="opinions__stars-text">{{ .stars_text | safeHTML }}</p>
+                </div>
+            </header>
+
+            {{ partial "index/opinions-list.html" . }}
+        </div>
+        <div class="opinions__gradient opinions__gradient--2"></div>
+    </section>
+{{- end -}}

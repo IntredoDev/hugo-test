@@ -1,0 +1,87 @@
+{{- with .Params.section_set -}}
+<section class="set">
+    <header class="set__header">
+        <div class="container">
+            {{ if .heading }}
+            <h2 class="set__heading">{{ .heading }}</h2>
+            {{ end }}
+        </div>
+    </header>
+    <div class="container container--main">
+    {{- with .list -}}
+        {{ if gt (len .) 0 }}
+        <div class="splide splide-carousel">
+            <div class="splide__track">
+                <ul class="splide__list set__list">
+                    {{- $counter := 0 -}}
+                    {{- range . -}}
+                        {{- if lt $counter 3 }}
+                            <li class="splide__slide set__list-item">
+                                <h3 class="set__list-heading">{{ .title }}</h3>
+                                <div class="set__list-wrap">
+                                    <h4 class="set__list-name">{{ .name }}</h4>
+                                    <p  class="set__list-desc">{{ .description }}</p>
+                                </div>
+                                {{ if .image }}
+                                    <img class="set__list-img" loading="lazy" src="{{ .image }}" alt="product's image">
+                                {{ end }}
+                            </li>
+                        {{- end }}
+                        {{- $counter = add $counter 1 -}}
+                    {{- end -}}
+
+                    <li class="splide__slide empty-slide"></li>
+                </ul>
+            </div>
+        </div>
+        {{ end }}
+    {{- end -}}
+    </div>
+    <div class="set__lower">
+        <div class="container">
+            <p class="set__lower-desc">{{ .description | safeHTML }}</p>
+
+            {{ if .button_title }}
+                <button class="set__button button button--primary">
+                    <span>{{ .button_title }}</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                        <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<script>
+    const splides = document.querySelectorAll('.splide-carousel');
+
+    splides.forEach(splideElement => {
+        const splide = new Splide(splideElement, {
+            type: 'carousel',
+            speed: 1500,
+            pagination: false,
+            arrows: false,
+            gap: 24,
+            perPage: 1.44,
+            mediaQuery: 'min',
+            classes: {
+                prev: 'splide__arrow--prev',
+                next: 'splide__arrow--next',
+            },
+            breakpoints: {
+                1024: {
+                    destroy: true
+                },
+                600: {
+                    perPage: 2.44,
+                }
+            }
+        });
+
+        splide.mount();
+    });
+</script>
+{{- end -}}
+

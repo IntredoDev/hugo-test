@@ -1,0 +1,23 @@
+{{- with .Params.section_source -}}
+<section class="source">
+    <div class="container">
+        {{ if .heading }}
+            <h2 class="source__heading">{{ .heading }}</h2>
+        {{ end }}
+
+        {{- with .list -}}
+            {{ if gt (len .) 0 }}
+            <ul class="source__list">
+                {{ range . }}
+                <li class="source__list-item">
+                    <img class="source__list-img" height="180" width="auto" src="{{ .image }}" role="presentation">
+                    <h3 class="source__list-heading">{{ .title }}</h3>
+                    <p class="source__list-desc">{{ .content | safeHTML  }}</p>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        {{- end -}}
+    </div>
+</section>
+{{- end -}}

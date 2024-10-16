@@ -1,0 +1,39 @@
+
+{{- with .list -}}
+    {{ if gt (len .) 0 }}
+    <ul class="gifts__list">
+        {{- range . -}}
+        <li class="gifts__list-item">
+            <div class="gifts__list-img-wrap">
+                <img class="gifts__list-img" src="{{ .image }}" alt="gift image">
+            </div>
+            {{ if or .title .description }}
+            <header class="gifts__list-header">
+                {{ if .title }}
+                <h3 class="gifts__list-heading">
+                    {{ .title }}
+                </h3>
+                {{ end }}
+
+                {{ if .description }}
+                    <p class="gifts__list-desc">{{ .description }}</p>
+                {{ end }}
+            </header>
+            {{ end }}
+
+            {{ if or .price_regular .price_discount }}
+            <div class="gifts__list-prices">
+                {{ if .price_regular }}
+                <span class="gifts__list-price">{{ .price_regular | safeHTML }}</span>
+                {{ end }}
+
+                {{ if .price_discount }}
+                <span class="gifts__list-price">{{ .price_discount | safeHTML }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </li>
+        {{- end -}}
+    </ul>
+    {{ end }}
+{{- end -}}
