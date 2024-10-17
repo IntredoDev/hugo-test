@@ -1,0 +1,63 @@
+{{- with .Params.section_rscience -}}
+<div class="rscience">
+    <div class="rscience__gradient"></div>
+    <div class="container">
+        <div class="rscience__upper">
+        {{ if .heading }}
+        <h2 class="rscience__heading"> {{ .heading }}</h2>
+        {{ end }}
+
+        <ul class="rscience__logos">
+            {{ range .logos }}
+            <li class="rscience__logos-item">
+                <img class="rscience__logos-logo" height="60" src="{{ .logo }}" role="presentation">
+            </li>
+            {{ end }}
+        </ul>
+        </div>
+        <div class="rscience__lower">
+            <div class="rscience__lower-wrapper">
+                <div class="rscience__lower-lists">
+                    <ol class="rscience__list rscience__list--1">
+                    {{- range .links_list_1 -}}
+                            <li class="rscience__list-item">
+                                <a href="{{ .item }}" rel="nofollow" target="_blank">
+                                    {{ .item }}
+                                </a>
+                            </li>
+                    {{- end -}}
+                    </ol>
+
+                    
+                    <ol class="rscience__list rscience__list--2" start="4">
+                        {{- range .links_list_2 -}}
+                        <li class="rscience__list-item">
+                            <a href="{{ .item }}" rel="nofollow" target="_blank">
+                                {{ .item }}
+                            </a>
+                        </li>
+                        {{- end -}}
+                    </ol>
+
+                    <ol class="rscience__list rscience__list--3">
+                        {{- range .links_list_2 -}}
+                        <li class="rscience__list-item">
+                            <a href="{{ .item }}" rel="nofollow" target="_blank">
+                                {{ .item }}
+                            </a>
+                        </li>
+                        {{- end -}}
+                    </ol>
+                </div>
+
+                <div class="rscience__disclaimer">
+                    <h3 class="rscience__disclaimer-heading">Disclaimer:</h3>
+                    {{ if .disclaimer_desc }}
+                        <p class="rscience__disclaimer-desc">{{ .disclaimer_desc }}</p>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{- end -}}

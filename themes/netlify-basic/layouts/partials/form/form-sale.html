@@ -1,0 +1,56 @@
+<form class="form-sale" action="#" method="post">
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="name">Imię i nazwisko
+            <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="email">Adres e-mail
+            <input type="email" id="email" name="email" placeholder="jankowalski@gmail.com" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="phone">Numer telefonu
+            <input type="tel" name="phone" id="phone">
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="street">Ulica i numer mieszkania
+            <input type="text" id="street" name="street" placeholder="ul. Legnicka 18/5" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--double">
+        <label class="form-sale__label" for="postal-code">Kod pocztowy
+            <input type="text" id="postal-code" name="postal-code" placeholder="12-345" required>
+        </label>
+
+        <label class="form-sale__label" for="city">Miasto
+            <input type="text" id="city" name="city" placeholder="Wrocław" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row" style="display: none;">
+        <label class="form-sale__label" for="country">Kraj
+            <select name="country" id="country">Polska</select>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--acceptance">
+        <input type="checkbox" name="acceptance" required> 
+        <label class="form-sale__label"> Zapoznałem się i akceptuję Regulamin oraz Politykę Prywatności </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--submit">
+        <button class="form-sale__button button button--primary">
+            <span>{{ .button_title }}</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</form>

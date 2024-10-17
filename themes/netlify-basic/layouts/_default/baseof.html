@@ -8,6 +8,67 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+        <script>
+            const input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+              loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
+            });
 
+            intlTelInput(input, {
+                initialCountry: "pl",
+                i18n: 'pl',
+                allowDropdown: true,
+                useFullscreenPopup: false,
+            })
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const selectElement = $('#country');
+        
+                fetch('https://restcountries.com/v3.1/all')
+                    .then(response => response.json())
+                    .then(countries => {
+                 
+                        const options = countries.map(country => {
+                            const isSelected = country.cca2 === 'PL' ? 'selected' : '';
+                      
+                            return `
+                                <option value="${country.cca2}" data-flag="${country.flags.png}" ${isSelected}>
+                                    ${country.translations.pol.common}
+                                </option>`;
+                        }).join('');
+        
+                        selectElement.html('<option value="">Select a country...</option>' + options);
+                        
+                        selectElement.select2({
+                            templateResult: formatCountry,
+                            templateSelection: formatCountry
+                        });
+                    })
+                    .catch(error => console.error('Error fetching country data:', error));
+        
+                function formatCountry(country) {
+                    if (!country.id) {
+                        return document.createTextNode(country.text);
+                    }
+                    
+                    var flagUrl = country.element.getAttribute('data-flag');
+                    
+                    var span = document.createElement('span');
+                
+                    var img = document.createElement('img');
+                    img.src = flagUrl;
+                    img.style.width = '20px';
+                    img.style.height = '15px';
+                    img.style.marginRight = '10px';
+                
+                    span.appendChild(img);
+                    span.appendChild(document.createTextNode(country.text));
+                    
+                    return span;
+                }
+            });
+        </script>
     </body>
 </html>

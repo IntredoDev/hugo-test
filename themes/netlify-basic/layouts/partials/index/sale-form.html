@@ -1,0 +1,60 @@
+{{- with .Params.section_sale_form -}}
+    <section class="sale">
+        <div class="container">
+            {{- if or .heading .description -}}
+            <header class="sale__header">
+                {{ if .heading }}
+                <h2 class="sale__heading">{{ .heading }}</h2>
+                {{ end }}
+                {{ if .description }}
+                <p class="sale__desc"> {{ .description }}</p>
+                {{ end }}
+            </header>
+            {{- end -}}
+
+            {{- with .form -}}
+            <div class="sale__wrapper">
+                <div class="sale__content">
+                    {{ partial "index/sale-form-content.html" . }}
+                </div>
+                <div class="sale__line"></div>
+                <div class="sale__form-wrap">
+                    {{ if .form_description }}
+                    <h3 class="sale__form-desc">
+                        {{ .form_description }}
+                    </h3>
+                    {{ end }}
+
+                    {{ partial "form/form-sale.html" . }}
+
+                    <div class="sale__logos">
+                        <img class="sale__logo" height="100" width="100" src="/img/ssl.svg" role="presentation">
+                        <img class="sale__logo" height="100" width="100" src="/img/great_customer_service.svg" role="presentation">
+                        <img class="sale__logo" height="100" width="100" src="/img/gdpr.svg" role="presentation">
+                    </div>
+
+                    {{- with .guarantee -}}
+                    <div class="sale__guarantee sale__guarantee--mobile">
+                        <div class="sale__guarantee-wrap">
+                            {{ if .logo }}
+                                <img class="sale__guarantee-logo" height="100" width="100" src="{{ .logo }}" alt="Guarantee logo" role="presentation" loading="lazy">
+                            {{ end }}
+
+                            {{ if .text }}
+                                <div class="sale__guarantee-text">
+                                    <p>{{ .text | safeHTML }}</p>
+                                </div>
+                            {{ end}}
+                        </div>
+
+                        {{ if .description }}
+                            <p class="sale__guarantee-desc">{{ .description | safeHTML }}</p>
+                        {{ end }}
+                    </div>
+                    {{- end -}}
+                </div>
+            </div>
+            {{- end -}}
+        </div>
+    </section>
+{{- end -}}

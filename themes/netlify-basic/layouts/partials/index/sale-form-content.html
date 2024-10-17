@@ -1,0 +1,53 @@
+{{- if .image -}}
+<div class="sale__image-wrap">
+    <img class="sale__image" src="{{ .image }}" height="485" width="388" loading="lazy" alt="product's bundle image">
+</div>
+{{- end -}}
+
+{{- with .set_comp -}}
+    <div class="sale__comp">
+        {{ if .heading }}
+        <h3 class="sale__comp-heading">{{ .heading }}</h3>
+        {{ end }}
+
+        {{- with .list -}}
+            {{ if gt (len .) 0 }}
+            <ul class="sale__comp-list">
+                {{ range . }}
+                <li class="sale__comp-list-item">{{ .item | safeHTML }}</li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        {{- end -}}
+
+        {{ if .text_accent }}
+            <p class="sale__comp-accent"> {{ .text_accent }}</p>
+        {{ end }}
+    </div>
+{{- end -}}
+
+{{ if .price }}
+<div class="sale__price-wrap">
+    <p class="sale__price">{{ .price | safeHTML }}</p>
+</div>
+{{ end }}
+
+{{- with .guarantee -}}
+<div class="sale__guarantee sale__guarantee--desktop">
+    <div class="sale__guarantee-wrap">
+        {{ if .logo }}
+            <img class="sale__guarantee-logo" height="100" width="100" src="{{ .logo }}" alt="Guarantee logo" role="presentation" loading="lazy">
+        {{ end }}
+
+        {{ if .text }}
+            <div class="sale__guarantee-text">
+                <p>{{ .text | safeHTML }}</p>
+            </div>
+        {{ end}}
+    </div>
+
+    {{ if .description }}
+        <p class="sale__guarantee-desc">{{ .description | safeHTML }}</p>
+    {{ end }}
+</div>
+{{- end -}}

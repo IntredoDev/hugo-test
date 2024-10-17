@@ -175,4 +175,53 @@ section_set:
       image: ""
   description: "+ 2 x Ebook <b><u>W PREZENCIE!</u></b>"
   button_title: "Zamów teraz"
+section_sale_form:
+  heading: "Zamów swój zestaw Collagenico"
+  description: "(ograniczona dostępność ze względu na duże zainteresowanie)"
+  form:
+    image: "/img/sale_form.png"
+    set_comp:
+      heading: "W skład zestawu wchodzi:"
+      list:
+        - item: "<b>1x</b> Collagenico (30 kapsułek)"
+        - item: "<b>1x</b> Konsultacja ze specjalistą ds. produktu"
+        - item: "<b>1x</b> Ebook \"Bądź naturalnie piękna\""
+      text_accent: "+2 prezenty o wartości 90 PLN!"
+    price: "Cena zestawu: <s>247 PLN</s> <b>147 PLN</b>"
+    guarantee:
+      logo: "/img/guarantee.svg"
+      text: "<u>60-dniowa</u> gwarancja zwrotu pieniędzy"
+      description: "Dokonujesz zakupu <b>BEZ RYZYKA</b> - Twoje zamówienie jest objęte 60-dniową gwarancją zwrotu pieniędzy. Jeśli preparat z jakiegokolwiek powodu nie spełni Twoich oczekiwań, odeślij puste opakowanie po produkcie, a w ciągu 7 dni otrzymasz 100% zwrotu kosztów."
+    form_description: "Wypełnij poniższy formularz, nasz specjalista skontaktuje się z Tobą w celu potwierdzenia zamówienia."
+    button_title: "REZERWUJĘ ZESTAW"
+section_rscience:
+  heading: "Referencje naukowe"
+  logos:
+    - logo: "/img/jbc_1.png"
+    - logo: "/img/scientific_reports.png"
+    - logo: "/img/pubmed.svg"
+    - logo: "/img/frontiers.png"
+    - logo: "/img/healthline.svg"
+  links_list_1:
+    - item: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/"
+    - item: "https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3"
+    - item : "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/"
+  links_list_2:
+    - item: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/"
+    - item: "https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3"
+    - item: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/"
+  disclaimer_desc: "Choć dokładamy wszelkich starań i jesteśmy pewni jakości oraz skuteczności naszych produktów, ważne byś pamiętał, że informacje przedstawione na tej stronie nie są poradą medyczną i nie zastępują profesjonalnego leczenia lub diagnozy. Efekty przedstawione na stronie nie są gwarantowane ani typowe dla każdej osoby, mogą różnić się w zależności od wielu czynników. Oświadczenia dostępne na stronie nie zostały zweryfikowane przez żadną oficjalną instytucję. Produkty rekomendowane na tej stronie nie mają na celu diagnozowania, leczenia, leczenia ani zapobiegania jakiejkolwiek chorobie. Jeśli jesteś w ciąży, karmisz piersią, przyjmujesz leki lub masz jakieś schorzenia, skonsultuj się z lekarzem przed użyciem naszych produktów."
+section_faq: 
+  heading: "Najczęściej zadawane pytania:"
+  list:
+    - question: "Dla kogo jest preparat Collagenico?"
+      answer: "Collagenico to produkt dla kobiet i mężczyzn, którzy zauważają u siebie nadmierne wypadanie i przerzedzenie włosów, suche, matowe i łamliwe włosy, utratę blasku, pożądanej gęstości i nawilżenia włosów. Polecany jest także osobom, które chcą przyspieszyć porost włosów i przeciwdziałać łysieniu."
+    - question: "Po jakim czasie zauważę efekty?"
+      answer: "Pierwsze efekty można zauważyć już po 2 tygodniach. Po pełnym cyklu wzrostu włosa (6 tygodni) zauważysz pogrubienie, wzmocnienie i wzrost nowych włosów – gęstszych i pełnych blasku."
+    - question: "Czy stosowanie Collagenico jest bezpieczne?"
+      answer: "Kuracja Collagenico jest w pełni bezpieczna i nie powoduje żadnych skutków ubocznych. Preparat zawiera w 100% naturalne składniki, został przebadany, spełnia najwyższe standardy jakości i uzyskał wszelkie niezbędne certyfikaty dopuszczające go do sprzedaży."
+    - question: "Jakie są zalecane dawki i jak często przyjmować preparat?"
+      answer: "Wskazane jest przyjmowanie 1 kapsułki Collagenico dziennie. Aby uzyskać najlepsze rezultaty, zaleca się regularne stosowanie preparatu przez 6-8 tygodni."
+    - question: "Mam bardzo zniszczone włosy. Czy Collagenico poprawi ich stan?"
+      answer: "Tak, preparat przeznaczony jest do regeneracji nawet bardzo zniszczonych włosów - matowych, kruchych, osłabionych, z tendencją do wypadania i rozdwajania końcówek. Kolagen NatiCol® wiąże się z włóknami włosa, wypełnia i odżywia go od wewnątrz. Im słabsza kondycja włosów w momencie rozpoczęcia kuracji, tym bardziej widoczny będzie efekt ich odbudowy."
 ---

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.135.0">
+	<meta name="generator" content="Hugo 0.135.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -12,9 +12,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css" integrity="" crossorigin="anonymous">
+
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" integrity="" crossorigin="anonymous">
 
   <link href="
   https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
@@ -23,6 +25,9 @@
   <script src="
   https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
   "></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 </head><body><header class="header">
     <div class="container container--row">
     
@@ -1147,10 +1152,299 @@
         splide.mount();
     });
 </script>
+  <section class="sale">
+        <div class="container"><header class="sale__header">
+                
+                <h2 class="sale__heading">Zamów swój zestaw Collagenico</h2>
+                
+                
+                <p class="sale__desc"> (ograniczona dostępność ze względu na duże zainteresowanie)</p>
+                
+            </header><div class="sale__wrapper">
+                <div class="sale__content">
+                    <div class="sale__image-wrap">
+    <img class="sale__image" src="/img/sale_form.png" height="485" width="388" loading="lazy" alt="product's bundle image">
+</div><div class="sale__comp">
+        
+        <h3 class="sale__comp-heading">W skład zestawu wchodzi:</h3>
+        
+            <ul class="sale__comp-list">
+                
+                <li class="sale__comp-list-item"><b>1x</b> Collagenico (30 kapsułek)</li>
+                
+                <li class="sale__comp-list-item"><b>1x</b> Konsultacja ze specjalistą ds. produktu</li>
+                
+                <li class="sale__comp-list-item"><b>1x</b> Ebook "Bądź naturalnie piękna"</li>
+                
+            </ul>
+            
+            <p class="sale__comp-accent"> &#43;2 prezenty o wartości 90 PLN!</p>
+        
+    </div>
+<div class="sale__price-wrap">
+    <p class="sale__price">Cena zestawu: <s>247 PLN</s> <b>147 PLN</b></p>
+</div>
+<div class="sale__guarantee sale__guarantee--desktop">
+    <div class="sale__guarantee-wrap">
+        
+            <img class="sale__guarantee-logo" height="100" width="100" src="/img/guarantee.svg" alt="Guarantee logo" role="presentation" loading="lazy">
+        
+
+        
+            <div class="sale__guarantee-text">
+                <p><u>60-dniowa</u> gwarancja zwrotu pieniędzy</p>
+            </div>
+        
+    </div>
+
+    
+        <p class="sale__guarantee-desc">Dokonujesz zakupu <b>BEZ RYZYKA</b> - Twoje zamówienie jest objęte 60-dniową gwarancją zwrotu pieniędzy. Jeśli preparat z jakiegokolwiek powodu nie spełni Twoich oczekiwań, odeślij puste opakowanie po produkcie, a w ciągu 7 dni otrzymasz 100% zwrotu kosztów.</p>
+    
+</div>
+                </div>
+                <div class="sale__line"></div>
+                <div class="sale__form-wrap">
+                    
+                    <h3 class="sale__form-desc">
+                        Wypełnij poniższy formularz, nasz specjalista skontaktuje się z Tobą w celu potwierdzenia zamówienia.
+                    </h3>
+                    
+
+                    <form class="form-sale" action="#" method="post">
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="name">Imię i nazwisko
+            <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="email">Adres e-mail
+            <input type="email" id="email" name="email" placeholder="jankowalski@gmail.com" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="phone">Numer telefonu
+            <input type="tel" name="phone" id="phone">
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="street">Ulica i numer mieszkania
+            <input type="text" id="street" name="street" placeholder="ul. Legnicka 18/5" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--double">
+        <label class="form-sale__label" for="postal-code">Kod pocztowy
+            <input type="text" id="postal-code" name="postal-code" placeholder="12-345" required>
+        </label>
+
+        <label class="form-sale__label" for="city">Miasto
+            <input type="text" id="city" name="city" placeholder="Wrocław" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row" style="display: none;">
+        <label class="form-sale__label" for="country">Kraj
+            <select name="country" id="country">Polska</select>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--acceptance">
+        <input type="checkbox" name="acceptance" required> 
+        <label class="form-sale__label"> Zapoznałem się i akceptuję Regulamin oraz Politykę Prywatności </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--submit">
+        <button class="form-sale__button button button--primary">
+            <span>REZERWUJĘ ZESTAW</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</form>
+
+
+                    <div class="sale__logos">
+                        <img class="sale__logo" height="100" width="100" src="/img/ssl.svg" role="presentation">
+                        <img class="sale__logo" height="100" width="100" src="/img/great_customer_service.svg" role="presentation">
+                        <img class="sale__logo" height="100" width="100" src="/img/gdpr.svg" role="presentation">
+                    </div><div class="sale__guarantee sale__guarantee--mobile">
+                        <div class="sale__guarantee-wrap">
+                            
+                                <img class="sale__guarantee-logo" height="100" width="100" src="/img/guarantee.svg" alt="Guarantee logo" role="presentation" loading="lazy">
+                            
+
+                            
+                                <div class="sale__guarantee-text">
+                                    <p><u>60-dniowa</u> gwarancja zwrotu pieniędzy</p>
+                                </div>
+                            
+                        </div>
+
+                        
+                            <p class="sale__guarantee-desc">Dokonujesz zakupu <b>BEZ RYZYKA</b> - Twoje zamówienie jest objęte 60-dniową gwarancją zwrotu pieniędzy. Jeśli preparat z jakiegokolwiek powodu nie spełni Twoich oczekiwań, odeślij puste opakowanie po produkcie, a w ciągu 7 dni otrzymasz 100% zwrotu kosztów.</p>
+                        
+                    </div></div>
+            </div></div>
+    </section>
+  <div class="rscience">
+    <div class="rscience__gradient"></div>
+    <div class="container">
+        <div class="rscience__upper">
+        
+        <h2 class="rscience__heading"> Referencje naukowe</h2>
+        
+
+        <ul class="rscience__logos">
+            
+            <li class="rscience__logos-item">
+                <img class="rscience__logos-logo" height="60" src="/img/jbc_1.png" role="presentation">
+            </li>
+            
+            <li class="rscience__logos-item">
+                <img class="rscience__logos-logo" height="60" src="/img/scientific_reports.png" role="presentation">
+            </li>
+            
+            <li class="rscience__logos-item">
+                <img class="rscience__logos-logo" height="60" src="/img/pubmed.svg" role="presentation">
+            </li>
+            
+            <li class="rscience__logos-item">
+                <img class="rscience__logos-logo" height="60" src="/img/frontiers.png" role="presentation">
+            </li>
+            
+            <li class="rscience__logos-item">
+                <img class="rscience__logos-logo" height="60" src="/img/healthline.svg" role="presentation">
+            </li>
+            
+        </ul>
+        </div>
+        <div class="rscience__lower">
+            <div class="rscience__lower-wrapper">
+                <div class="rscience__lower-lists">
+                    <ol class="rscience__list rscience__list--1"><li class="rscience__list-item">
+                                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/" rel="nofollow" target="_blank">
+                                    https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/
+                                </a>
+                            </li><li class="rscience__list-item">
+                                <a href="https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3" rel="nofollow" target="_blank">
+                                    https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3
+                                </a>
+                            </li><li class="rscience__list-item">
+                                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/" rel="nofollow" target="_blank">
+                                    https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/
+                                </a>
+                            </li></ol>
+
+                    
+                    <ol class="rscience__list rscience__list--2" start="4"><li class="rscience__list-item">
+                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/" rel="nofollow" target="_blank">
+                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/
+                            </a>
+                        </li><li class="rscience__list-item">
+                            <a href="https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3" rel="nofollow" target="_blank">
+                                https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3
+                            </a>
+                        </li><li class="rscience__list-item">
+                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/" rel="nofollow" target="_blank">
+                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/
+                            </a>
+                        </li></ol>
+
+                    <ol class="rscience__list rscience__list--3"><li class="rscience__list-item">
+                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/" rel="nofollow" target="_blank">
+                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/
+                            </a>
+                        </li><li class="rscience__list-item">
+                            <a href="https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3" rel="nofollow" target="_blank">
+                                https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3
+                            </a>
+                        </li><li class="rscience__list-item">
+                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/" rel="nofollow" target="_blank">
+                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/
+                            </a>
+                        </li></ol>
+                </div>
+
+                <div class="rscience__disclaimer">
+                    <h3 class="rscience__disclaimer-heading">Disclaimer:</h3>
+                    
+                        <p class="rscience__disclaimer-desc">Choć dokładamy wszelkich starań i jesteśmy pewni jakości oraz skuteczności naszych produktów, ważne byś pamiętał, że informacje przedstawione na tej stronie nie są poradą medyczną i nie zastępują profesjonalnego leczenia lub diagnozy. Efekty przedstawione na stronie nie są gwarantowane ani typowe dla każdej osoby, mogą różnić się w zależności od wielu czynników. Oświadczenia dostępne na stronie nie zostały zweryfikowane przez żadną oficjalną instytucję. Produkty rekomendowane na tej stronie nie mają na celu diagnozowania, leczenia, leczenia ani zapobiegania jakiejkolwiek chorobie. Jeśli jesteś w ciąży, karmisz piersią, przyjmujesz leki lub masz jakieś schorzenia, skonsultuj się z lekarzem przed użyciem naszych produktów.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+        <script>
+            const input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+              loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
+            });
 
+            intlTelInput(input, {
+                initialCountry: "pl",
+                i18n: 'pl',
+                allowDropdown: true,
+                useFullscreenPopup: false,
+            })
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const selectElement = $('#country');
+        
+                fetch('https://restcountries.com/v3.1/all')
+                    .then(response => response.json())
+                    .then(countries => {
+                 
+                        const options = countries.map(country => {
+                            const isSelected = country.cca2 === 'PL' ? 'selected' : '';
+                      
+                            return `
+                                <option value="${country.cca2}" data-flag="${country.flags.png}" ${isSelected}>
+                                    ${country.translations.pol.common}
+                                </option>`;
+                        }).join('');
+        
+                        selectElement.html('<option value="">Select a country...</option>' + options);
+                        
+                        selectElement.select2({
+                            templateResult: formatCountry,
+                            templateSelection: formatCountry
+                        });
+                    })
+                    .catch(error => console.error('Error fetching country data:', error));
+        
+                function formatCountry(country) {
+                    if (!country.id) {
+                        return document.createTextNode(country.text);
+                    }
+                    
+                    var flagUrl = country.element.getAttribute('data-flag');
+                    
+                    var span = document.createElement('span');
+                
+                    var img = document.createElement('img');
+                    img.src = flagUrl;
+                    img.style.width = '20px';
+                    img.style.height = '15px';
+                    img.style.marginRight = '10px';
+                
+                    span.appendChild(img);
+                    span.appendChild(document.createTextNode(country.text));
+                    
+                    return span;
+                }
+            });
+        </script>
     </body>
 </html>
