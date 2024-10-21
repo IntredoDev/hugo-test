@@ -12,7 +12,6 @@ export default class SaleForm {
             return
         }
         let globalConfig = [];
-        console.log(dictLocale)
         const validator = new window.JustValidate(this.saleForm, globalConfig, dictLocale)
 
         validator.setCurrentLocale('pl')
