@@ -16,7 +16,7 @@
                         <div class="ingredients__list-thumbnail">
                             <img src="{{ .thumbnail }}" alt="{{ .title }}">
                         </div>
-                        <button class="ingredients__button button button--green" data-js-target-modal data-content-img="{{ .content_img }}" data-content="{{ .content }}">
+                        <button class="ingredients__button button button--green" data-js-target-modal data-content-title="{{ .title }}" data-content-img="{{ .content_img }}" data-content="{{ .content }}">
                             <span>{{ .title }}</span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
@@ -31,4 +31,33 @@
         </div>
     </div>
   </section>
+
+{{ partial "components/ingredients-modal.html" . }}
+
+<script>
+    const buttons = document.querySelectorAll('.ingredients__button');
+    const modal = document.querySelector('.modal-ingredients');
+    const modalTitle = modal.querySelector('.modal-ingredients__title');
+    const modalThumbnail = modal.querySelector('.modal-ingredients__thumbnail');
+    const modalDesc = modal.querySelector('.modal-ingredients__desc');
+    const closeModalButton = document.querySelector('[data-js-modal-close]');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const contentTitle = this.getAttribute('data-content-title');
+            const contentImg = this.getAttribute('data-content-img');
+            const content = this.getAttribute('data-content');
+
+            modalTitle.textContent = contentTitle;
+            modalThumbnail.src = contentImg;
+            modalDesc.textContent = content;
+
+            modal.classList.add('modal--active');
+        });
+    });
+
+    closeModalButton.addEventListener('click', function () {
+        modal.classList.remove('modal--active');
+    });
+</script>
 {{ end }}

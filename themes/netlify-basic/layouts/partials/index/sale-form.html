@@ -1,5 +1,5 @@
 {{- with .Params.section_sale_form -}}
-    <section class="sale">
+    <section class="sale" id="sale">
         <div class="container">
             {{- if or .heading .description -}}
             <header class="sale__header">
@@ -13,7 +13,7 @@
             {{- end -}}
 
             {{- with .form -}}
-            <div class="sale__wrapper">
+            <div class="sale__wrapper" id="sale-form">
                 <div class="sale__content">
                     {{ partial "index/sale-form-content.html" . }}
                 </div>

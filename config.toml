@@ -17,3 +17,30 @@ theme = "netlify-basic"
   [[params.benefits]]
     title = "W 100% naturalne składniki"
     image = "/img/header_benefit_3.svg"
+
+  [params.footer]
+    [[params.footer.column]]
+    title = "Collagenico"
+    list = [
+      "Jak to działa?",
+      "Składniki",
+      "Opinie",
+      "Referencje naukowe"
+    ]
+    [[params.footer.column]]
+    title = "POMOC"
+    list = [
+      "FAQ",
+      "Kontakt",
+      "Regulamin",
+      "Polityka zwrotów"
+    ]
+    [[params.footer.column]]
+    title = "INFORMACJE"
+    list = [
+      "Polityka prywatności",
+      "Warunki Korzystania",
+      "Zarządzanie Zgodami",
+      "Jawność Informacji"
+    ]
+  

@@ -1,0 +1,49 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer__upper">
+            <div class="footer__col">
+                <img class="footer__logo" src="/img/collagenico_logo.svg" height="23" alt="Collagenico logo">
+                <small class="footer__copy footer__copy--desktop">&copy; Copyright {{ now.Format "2006" }}</small>
+            </div>
+
+            {{ with .Site.Params.footer }}
+                {{ range $index, $element := .column }}
+                    <div class="footer__col">
+                        <h3 class="footer__list-title">{{ $element.title }}</h3>
+                        <ul class="footer__list">
+                            {{ range $itemIndex, $item := $element.list }}
+                                <li class="footer__list-item">
+                                    <a href="#">{{ $item }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                {{ end }}
+             {{ end }}
+
+             <small class="footer__copy footer__copy--mobile">&copy; Copyright {{ now.Format "2006" }}</small>
+
+        </div>
+
+        <div class="footer__lower">
+            <div class="footer__logos footer__certs">
+                <img src="/img/fairtrade.svg" alt="Fairtrade logo" class="footer__vector">
+                <img src="/img/trusted_seller.svg" alt="Trusted Seller logo" class="footer__vector">
+                <img src="/img/100_secure.svg" alt="100% secure logo" class="footer__vector">
+            </div>
+
+            <div class="footer__logos footer__gateways">
+                <img src="/img/PayPal.svg" alt="Paypal logo" class="footer__vector">
+                <img src="/img/Mastercard.svg" alt="Mastercard logo" class="footer__vector">
+                <img src="/img/Visa.svg" alt="Visa logo" class="footer__vector">
+                <img src="/img/rpay.svg" alt="RPay logo" class="footer__vector">
+            </div>
+
+            <div class="footer__logos footer__couriers">
+                <img src="/img/gls.svg" alt="GLS logo" class="footer__vector">
+                <img src="/img/ups.svg" alt="UPS logo" class="footer__vector">
+                <img src="/img/dhl.svg" alt="DHL logo" class="footer__vector">
+            </div>
+        </div>
+    </div>
+</footer>

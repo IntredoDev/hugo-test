@@ -1,0 +1,30 @@
+
+{{- with .Params.section_faq -}}
+<section class="faq">
+    <div class="container">
+        <div class="faq__decor faq__decor--1"></div>
+
+        {{ if .heading }}
+            <h2 class="faq__heading">{{ .heading }}</h2>
+        {{ end }}
+
+        {{- with .list -}}
+            <ul class="faq__list">
+                <div class="accordion-container">
+                {{ range . }}
+                    {{ partial "components/accordion.html" . }}
+                {{ end }}
+                </div>
+            </ul>
+        {{- end -}}
+        <div class="faq__decor faq__decor--2"></div>
+    </div>
+</section>
+
+<script>
+    const accordions = Array.from(document.querySelectorAll('.accordion-container'));
+    new Accordion(accordions, {
+        duration: 450
+    });
+</script>
+{{- end -}}

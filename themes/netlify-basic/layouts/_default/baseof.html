@@ -6,7 +6,8 @@
         <div id="content">
         {{- block "main" . }}{{- end }}
         </div>
-
+        {{- partial "footer.html" . -}}
+        <script defer type="module" src="{{ "/js/app.js" | relURL }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
         <script>
             const input = document.querySelector("#phone");
@@ -19,6 +20,7 @@
                 i18n: 'pl',
                 allowDropdown: true,
                 useFullscreenPopup: false,
+                separateDialCode: true,
             })
         </script>
 
