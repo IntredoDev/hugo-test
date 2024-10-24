@@ -1,6 +1,13 @@
-baseURL = 'https://glowing-kashata-66e40c.netlify.app/'
+# baseURL = 'https://glowing-kashata-66e40c.netlify.app/' 
+baseURL = "http://localhost:1313/"
+
 languageCode = 'en-us'
 theme = "netlify-basic"
+canonifyURLs = true
+
+[[menu.main]]
+    name = "FAQ"
+    url = "/faq/"
 
 [params]
   logo = "img/collagenico_logo.svg"
@@ -18,29 +25,29 @@ theme = "netlify-basic"
     title = "W 100% naturalne składniki"
     image = "/img/header_benefit_3.svg"
 
-  [params.footer]
-    [[params.footer.column]]
-    title = "Collagenico"
-    list = [
-      "Jak to działa?",
-      "Składniki",
-      "Opinie",
-      "Referencje naukowe"
-    ]
+   [params.footer]
+     [[params.footer.column]]
+     title = "Collagenico"
+       list = [
+        { linkTitle = "Jak to działa?", url = "jak-to-dziala" },
+        { linkTitle = "Składniki", url = "skladniki" },
+        { linkTitle = "Opinie", url = "opinie" },
+        { linkTitle = "Referencje naukowe", url = "referencje-naukowe" }
+       ]
     [[params.footer.column]]
     title = "POMOC"
     list = [
-      "FAQ",
-      "Kontakt",
-      "Regulamin",
-      "Polityka zwrotów"
+      { linkTitle = "FAQ", url = "faq" },
+      { linkTitle = "Kontakt", url = "kontakt" },
+      { linkTitle = "Regulamin", url = "terms/regulamin" },
+      { linkTitle = "Polityka zwrotów", url = "polityka-zwrotow" }
     ]
-    [[params.footer.column]]
-    title = "INFORMACJE"
-    list = [
-      "Polityka prywatności",
-      "Warunki Korzystania",
-      "Zarządzanie Zgodami",
-      "Jawność Informacji"
-    ]
+     [[params.footer.column]]
+     title = "INFORMACJE"
+      list = [
+       { linkTitle = "Polityka prywatności", url = "polityka-prywatnosci"},
+       { linkTitle = "Warunki Korzystania", url = "warunki-korzystania"},
+       { linkTitle = "Zarządzanie Zgodami", url = "zarządzanie zgodami"},
+       { linkTitle = "Jawność Informacji", url = "jawnosc-informacji"}
+      ]
   

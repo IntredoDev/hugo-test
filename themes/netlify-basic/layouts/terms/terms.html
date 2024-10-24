@@ -1,0 +1,77 @@
+{{ define "main" }}
+    {{ with .Params.page_terms }}
+    <section class="terms">
+        <div class="container">
+            <h1 class="terms__title terms__title--mobile">{{ .heading }}</h1>
+
+            <div class="terms__wrapper">
+                <aside>
+                    <ol class="toc-list" >
+                        <li class="toc-list__item" >
+                            <a href="" data-js-toc-list-item="1">
+                                I. Heading 1
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 10.944H17.5" stroke="#313131" stroke-linecap="round"/>
+                                    <path d="M12.5 15.9434L17.5 10.9434L12.5 5.94336" stroke="#313131" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="toc-list__item"  >
+                            <a href="" data-js-toc-list-item="2">
+                                II. Heading 2
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 10.944H17.5" stroke="#313131" stroke-linecap="round"/>
+                                    <path d="M12.5 15.9434L17.5 10.9434L12.5 5.94336" stroke="#313131" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="toc-list__item" >
+                            <a href="" data-js-toc-list-item="3">
+                                III. Heading 3
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 10.944H17.5" stroke="#313131" stroke-linecap="round"/>
+                                    <path d="M12.5 15.9434L17.5 10.9434L12.5 5.94336" stroke="#313131" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ol>
+                </aside>
+
+                <div class="">
+                    <header class="terms__header">
+                        <h1 class="terms__title terms__title--desktop">{{ .heading }}</h1>
+                    </header>
+                    
+                    <div class="terms__content">
+                        <div class="content-item" data-js-toc-item-target="1">
+                            <h2>I. Heading 1</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exercitationem unde laudantium optio veritatis, perspiciatis a mollitia nobis saepe blanditiis eum. Qui minima repellendus tempora ratione voluptatem voluptate at excepturi?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exercitationem unde laudantium optio veritatis, perspiciatis a mollitia nobis saepe blanditiis eum. Qui minima repellendus tempora ratione voluptatem voluptate at excepturi?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exercitationem unde laudantium optio veritatis, perspiciatis a mollitia nobis saepe blanditiis eum. Qui minima repellendus tempora ratione voluptatem voluptate at excepturi?
+                            </p>
+                        </div>
+                        <div class="content-item" data-js-toc-item-target="2">
+                            <h2>II. Heading 2</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exercitationem unde laudantium optio veritatis, perspiciatis a mollitia nobis saepe blanditiis eum. Qui minima repellendus tempora ratione voluptatem voluptate at excepturi?
+                            </p>
+                        </div>
+                        <div class="content-item" data-js-toc-item-target="3">
+                            <h2>III. Heading 3</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exercitationem unde laudantium optio veritatis, perspiciatis a mollitia nobis saepe blanditiis eum. Qui minima repellendus tempora ratione voluptatem voluptate at excepturi?
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ end }}
+{{ end }}

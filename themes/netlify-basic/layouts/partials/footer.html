@@ -2,7 +2,9 @@
     <div class="container">
         <div class="footer__upper">
             <div class="footer__col">
-                <img class="footer__logo" src="/img/collagenico_logo.svg" height="23" alt="Collagenico logo">
+                <a href="{{ .Site.BaseURL }}">
+                    <img class="footer__logo" src="/img/collagenico_logo.svg" height="23" alt="Collagenico logo">
+                </a>
                 <small class="footer__copy footer__copy--desktop">&copy; Copyright {{ now.Format "2006" }}</small>
             </div>
 
@@ -10,10 +12,10 @@
                 {{ range $index, $element := .column }}
                     <div class="footer__col">
                         <h3 class="footer__list-title">{{ $element.title }}</h3>
-                        <ul class="footer__list">
+                        <ul class="footer__list"> 
                             {{ range $itemIndex, $item := $element.list }}
                                 <li class="footer__list-item">
-                                    <a href="#">{{ $item }}</a>
+                                    <a href="/{{ $item.url | urlize }}">{{ $item.linkTitle }}</a>
                                 </li>
                             {{ end }}
                         </ul>

@@ -2,8 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ $title := print .Site.Title " | " .Title }}
-  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  {{ $title = .Site.Title }}
   <title>{{ $title }}</title>
+
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       
@@ -12,12 +13,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 
 
+  {{ if .IsHome }}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
+  {{ end }}
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-
   <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css">
-  <link rel="stylesheet" href="/css/style.css" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 
+  {{ $css := resources.Get "css/style.css" }}
+  {{ $style := $css | resources.Minify | resources.Fingerprint }}
+
+  <link rel="stylesheet" href="{{ $style.Permalink }}"  crossorigin="anonymous">
+  {{ if .IsHome }}
   <link href="
   https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   " rel="stylesheet">
@@ -25,11 +32,14 @@
   <script src="
   https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
   "></script>
-
+  {{ end }}
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-  <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
+
   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+
+  <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
 
   <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>
   <meta name="description" content="Discover Collagenico, a premium collagen supplement designed to support hair growth, improve skin elasticity, and enhance overall vitality. Boost your beauty and health with our scientifically formulated collagen blend. Try Collagenico today!">

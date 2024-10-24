@@ -1,7 +1,9 @@
 <header class="header">
     <div class="container container--row">
     {{ if .Site.Params.logo }}
-        <img class="header__logo" src="{{ .Site.Params.logo }}" alt="site logo" width="136" height="32" loading="eager">
+    <a href="{{ .Site.BaseURL }}">
+        <img class="header__logo" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="site logo" width="136" height="32" loading="eager">
+    </a>
     {{ end }}
 
     <ul class="header__benefits">

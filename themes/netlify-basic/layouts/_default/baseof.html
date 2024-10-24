@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body>
+    <body class='{{ if .IsHome }}home{{ end }} {{ if .Params.bodyClass }}{{- printf "page-%s" .Params.bodyClass -}}{{ end }}'>
         {{- partial "header.html" . -}}
         <div id="content">
-        {{- block "main" . }}{{- end }}
+        {{- block "main" . }}
+        {{- end }}
         </div>
         {{- partial "footer.html" . -}}
-        <script defer type="module" src="{{ "/js/app.js" | relURL }}"></script>
+    
+        {{ if .IsHome }}
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
         <script>
             const input = document.querySelector("#phone");
@@ -23,7 +25,7 @@
                 separateDialCode: true,
             })
         </script>
-
+      
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const selectElement = $('#country');
@@ -71,6 +73,24 @@
                     return span;
                 }
             });
+        </script>
+        {{ end }}
+
+        {{ $js := resources.Get "js/app.js" | js.Build (dict "minify" true "target" "es2015") |  resources.Fingerprint }}
+        <script defer type="module" src="{{ $js.Permalink }}"></script>
+
+        <script>
+            const accordion = document.querySelector('.accordion-container')
+
+            if
+            (
+            document.body.classList.contains('home') && accordion 
+            || document.body.classList.contains('page-faq') && accordion
+            ) {
+                new Accordion(accordion, {
+                    duration: 450
+                });
+            }
         </script>
     </body>
 </html>

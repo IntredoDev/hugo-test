@@ -1,0 +1,79 @@
+<form class="contact-form">
+    <fieldset class="contact-form__fieldset">
+        <div class="contact-form__row" style="display: none !important;">
+            <label class="contact-form__label" for="contact-select">Wybierz temat
+                <select id="contact-select" class="contact-form__select">
+                    <option value="1">Status zamówienia</option>
+                    <option value="2">Reklamacja i zwroty</option>
+                    <option value="3">Problemy z płatnością</option>
+                    <option value="4">Zapytanie o dostępność produktu</option>
+                    <option value="5">Pomoc techniczna</option>
+                    <option value="6">Zmiana danych zamówienia</option>
+                    <option value="7">Problemy z dostawą</option>
+                    <option value="8">Prośba o fakturę</option>
+                    <option value="9">Inne pytania</option>
+                </select>
+            </label>
+        </div>
+        <div class="contact-form__row">
+            <label class="contact-form__label" for="name">
+                Imię i nazwisko
+                <input type="text" name="name" id="name" placeholder="Tu wpisz swoje imię...">
+            </label>
+        </div>
+        <div class="contact-form__row contact-form__row--double">
+            <div class="">
+                <label class="contact-form__label" for="number">
+                    Numer zamówienia
+                    <input type="number" name="number" id="number" placeholder="123456">
+                </label>
+            </div>
+    
+            <div class="">
+                <label class="contact-form__label" for="email">
+                    Adres e-mail
+                    <input type="email" name="email" id="email" placeholder="Tu wpisz swój e-mail...">
+                </label>
+            </div>
+        </div>
+
+        <div class="contact-form__row">
+            <label class="contact-form__label" for="message">
+                Napisz wiadomość
+                <textarea name="message" id="message" placeholder="Napisz wiadomość..."></textarea>
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="contact-form__wrap">
+        <button type="submit" class="contact-form__submit button button--primary">
+            <span>{{ .button_title }}</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+    
+        <p class="contact-form__disclaimer">
+            {{ .disclaimer }}
+        </p>
+    </div>
+</form>
+
+<script>
+   
+    {{/*  $(document).ready(function() {
+        $('#contact-select').select2({
+            placeholder: 'Wybierz temat',
+            allowClear: false,
+            searchInputPlaceholder: 'Szukaj'
+        });
+
+        $('#contact-select').one('select2:open', function(e) {
+            $('input.select2-search__field').prop('placeholder', 'Szukaj');
+        });
+
+        $('#contact-select').addClass('faq-select')
+    });  */}}
+
+</script>
