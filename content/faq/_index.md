@@ -1,7 +1,7 @@
 ---
 type: "faq"
-bodyClass: "faq"
-page_faq:
+bodyClass: "faq"  
+page_faq: 
     heading: "FAQ - najczęściej zadawane pytania"
     list:
         -   question: "Jakie są korzyści z używania suplementów diety?"

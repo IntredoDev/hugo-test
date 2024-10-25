@@ -20,7 +20,7 @@ export default class SaleForm {
 
        
         this.validate(validator)
-        // this.send(validator)
+        this.send(validator)
     }
 
     validate(validator)

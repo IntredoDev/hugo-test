@@ -3033,6 +3033,138 @@ ul, ol {
     }
 /* Page - Contact - end */
 
+/* Page - Thank You  */
+
+.typ {
+    padding: var(--24px) 0;
+    background: var(--beige);
+}
+
+.typ__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--12px);
+    text-align: center;
+    margin-bottom: var(--24px);
+}
+
+.typ__title {
+    font-weight: 500;
+}
+
+.typ__desc {
+    font-weight: 400;
+    font-size: var(--14px);
+    line-height: var(--24px);
+    letter-spacing: var(--tighter);
+}
+.typ__para-next {
+    font-weight: 500;
+    font-size: var(--14px);
+    line-height: var(--32px);
+    letter-spacing: var(--wide);
+    margin-bottom: var(--12px);
+    text-align: center;
+}
+
+.typ__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--24px);
+    margin-bottom: var(--24px);
+}
+
+.typ__list-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--12px);
+
+    border: 1px solid white;
+    border-radius: 8px;
+    background: var(--beige-light);
+    padding: var(--20px);
+
+    text-align: center;
+}
+
+.typ__list-img {
+    display: block;
+    height: 88px;
+    aspect-ratio: 1/1;
+}
+
+.typ__list-desc {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 26px;
+    letter-spacing: var(--wide);
+}
+
+.typ__para-end {
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--18px);
+    line-height: 2rem;
+    letter-spacing: var(--wide);
+}
+
+@media screen and (min-width: 768px) {
+    .typ__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .typ {
+        padding: var(--40px) 0;
+    }
+
+    .typ__header {
+        gap: var(--24px);
+        margin: 0 auto var(--40px) auto;
+        max-width: 794px;
+    }
+
+    .typ__desc {
+        font-weight: 500;
+        font-size: var(--20px);
+        line-height: var(--32px);
+        letter-spacing: var(--wide);
+    }
+
+    .typ__para-next {
+        font-size: var(--20px);
+        margin-bottom: var(--40px);
+    }
+
+    .typ__list-item {
+        gap: var(--24px);
+    }
+
+    .typ__list-img {
+        height: var(--120px);
+    }
+
+    .typ__list-desc {
+        font-size: var(--18px);
+        line-height: 2rem;
+    }
+
+    .typ__list {
+        gap: var(--60px);
+        margin-bottom: var(--40px);
+    }
+
+    .typ__para-end {
+        font-weight: 700;
+        font-size: var(--20px);
+        line-height: 2rem;
+    }
+    
+}
+
+/* Page - Thank You - end */
+
 /* Component - Form - Sale */
 .form-sale,
 .form-sale__row--double,
