@@ -5,7 +5,18 @@
         {{- range . -}}
         <li class="gifts__list-item">
             <div class="gifts__list-img-wrap">
-                <img class="gifts__list-img" src="{{ .image }}" alt="gift image">
+                {{ $image := resources.Get .image }}
+                {{ if $image }}
+                    {{ $imageSrc := ($image.Resize "580x405 webp q90").RelPermalink }}
+                    {{ partial "components/image.html" 
+                        (dict "context" .
+                        "image" $image
+                        "src" $imageSrc 
+                        "class" "gifts__list-img" 
+                        "alt" "gift image"
+                        ) 
+                    }} 
+                {{ end }}
             </div>
             {{ if or .title .description }}
             <header class="gifts__list-header">

@@ -1,7 +1,7 @@
 ---
 type: "contact" 
 bodyClass: "contact"
-url: "kontakt" 
+url: "kontakt"
 page_contact:  
     heading: "Kontakt"
     button_title: "Wyślij wiadomość"

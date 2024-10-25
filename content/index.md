@@ -1,7 +1,7 @@
 ---
 hero_title: "Odzyskaj pełniejsze, mocniejsze włosy dzięki wsparciu nauki"
 hero_description: "Zaawansowana formuła, która wspiera naturalny wzrost włosów  i poprawia ich kondycję – dla każdego, kto dba o swoje włosy"
-hero_image: "/img/group-238.png"
+hero_image: "/img/hero-img.png"
 hero_opinions: "Oceniony na <b>4,88/5</b> przez zadowolonych klientów"
 hero_list:
   - "Wzmocnij swoje włosy od nasady – aktywacja mieszków włosowych dla zdrowego wyglądu"

@@ -1,0 +1,11 @@
+
+{{ $src := .src }}
+{{ $image := .image }}
+{{ $class := .class }}
+{{ $resize := .resize }}
+{{ $alt := .alt }}
+{{ $loading := .loading | default "lazy" }}
+
+{{ if and $src $image }}
+<img class="{{ $class }}" src='{{ $src }}' width="{{ $image.Width }}" height="{{ $image.Height }}" {{ if .alt }} alt="{{ $alt }}" {{ else }} role="presentation" {{ end }} loading="{{ $loading }}">
+{{ end }}

@@ -28,7 +28,8 @@
                 </div>
                 <div class="problems__content-col">
                     {{ if .img }}
-                        <img class="problems__content-img" src="{{ .img }}" width="680" height="456" alt="Balding Man" loading="lazy">
+                    {{ $image := resources.Get .img }}
+                        <img class="problems__content-img" src='{{ ($image.Resize "680x456 webp").RelPermalink }}' width="{{ $image.Width }}" height="{{ $image.Height }}" alt="Balding Man" loading="lazy">
                     {{ end }}
                 </div>
             </div>

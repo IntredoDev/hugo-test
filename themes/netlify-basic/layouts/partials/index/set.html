@@ -23,7 +23,16 @@
                                     <p  class="set__list-desc">{{ .description }}</p>
                                 </div>
                                 {{ if .image }}
-                                    <img class="set__list-img" loading="lazy" src="{{ .image }}" alt="product's image">
+                                    {{ $image := resources.Get .image }}
+                                    {{ $imageSrc := ($image.Process "webp q90").RelPermalink }}
+                                        {{ partial "components/image.html" 
+                                            (dict "context" .
+                                            "image" $image
+                                            "src" $imageSrc 
+                                            "class" "set__list-img" 
+                                            "alt" "product's image"
+                                            ) 
+                                        }} 
                                 {{ end }}
                             </li>
                         {{- end }}

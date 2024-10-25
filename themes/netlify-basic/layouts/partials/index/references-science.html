@@ -10,7 +10,22 @@
         <ul class="rscience__logos">
             {{ range .logos }}
             <li class="rscience__logos-item">
-                <img class="rscience__logos-logo" height="60" src="{{ .logo }}" role="presentation">
+                    {{ $image := resources.Get .logo }}
+
+                    {{ if $image }}                  
+                        {{ $imageSrc := ($image.Resize "x60 webp q70").RelPermalink }}
+                        {{ partial "components/image.html" 
+                            (dict "context" .
+                            "image" $image
+                            "src" $imageSrc 
+                            "class" "rscience__logos-logo" 
+                            ) 
+                        }}
+                    {{ end }}
+
+                    {{ if and .logo (not $image) }}
+                        <img class="rscience__logos-logo" height="60" src="{{ .logo }}" role="presentation">
+                    {{ end }}
             </li>
             {{ end }}
         </ul>

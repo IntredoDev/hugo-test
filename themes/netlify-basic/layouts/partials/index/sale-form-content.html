@@ -1,6 +1,17 @@
 {{- if .image -}}
 <div class="sale__image-wrap">
-    <img class="sale__image" src="{{ .image }}" height="485" width="388" loading="lazy" alt="product's bundle image">
+    {{ $image := resources.Get .image }}
+    {{ if $image }}
+        {{ $imageSrc := ($image.Resize "x485 webp q90").RelPermalink }}
+        {{ partial "components/image.html" 
+            (dict "context" .
+            "image" $image
+            "src" $imageSrc 
+            "class" "sale__image" 
+            "alt" "product's bundle image"
+            ) 
+        }} 
+    {{ end }}
 </div>
 {{- end -}}
 

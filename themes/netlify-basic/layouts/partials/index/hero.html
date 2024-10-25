@@ -14,7 +14,18 @@
                     <p class="hero__para">{{ .Params.hero_description | markdownify }}</p>
                 {{ end }}
 
-                <img class="hero__img hero__img--mobile" src="{{ .Params.hero_image }}" alt="Hero Image" loading="eager" /> 
+                {{ if .Params.hero_image }}
+                {{ $image := resources.Get .Params.hero_image }}
+                {{ $imageSrc := ($image.Resize "734x582 webp q60").RelPermalink }}
+                    {{ partial "components/image.html" 
+                        (dict "context" .
+                        "image" $image
+                        "src" $imageSrc 
+                        "class" "hero__img hero__img--mobile" 
+                        "alt" "Hero Image" 
+                        "loading" "eager") 
+                    }} 
+                {{ end }}
             </header>
 
             {{ partial "index/hero_list.html" . }}
@@ -34,9 +45,21 @@
             {{ end }}
         </div>
 
+    
+
         {{ if .Params.hero_image }}
+            {{ $image := resources.Get .Params.hero_image }}
+            {{ $imageSrc := ($image.Resize "734x582 webp q60").RelPermalink }}
+
             <div class="hero__img-wrap">
-                <img class="hero__img hero__img--desktop" src="{{ .Params.hero_image }}" alt="Hero Image" loading="eager" /> 
+                {{ partial "components/image.html" 
+                    (dict "context" .
+                    "image" $image
+                    "src" $imageSrc 
+                    "class" "hero__img hero__img--desktop" 
+                    "alt" "Hero Image" 
+                    "loading" "eager") 
+                }}
             </div>
         {{ end }}
     </div>

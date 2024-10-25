@@ -10,7 +10,17 @@
             <ul class="source__list">
                 {{ range . }}
                 <li class="source__list-item">
-                    <img class="source__list-img" height="180" width="auto" src="{{ .image }}" role="presentation">
+                    {{ $image := resources.Get .image }}
+                    {{ if $image }}
+                        {{ $imageSrc := ($image.Resize "x180 webp q90").RelPermalink }}
+                        {{ partial "components/image.html" 
+                            (dict "context" .
+                            "image" $image
+                            "src" $imageSrc 
+                            "class" "source__list-img" 
+                            ) 
+                        }} 
+                    {{ end }}
                     <h3 class="source__list-heading">{{ .title }}</h3>
                     <p class="source__list-desc">{{ .content | safeHTML  }}</p>
                 </li>

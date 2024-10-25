@@ -1822,6 +1822,8 @@ ul, ol {
         .opinions__list-img {
             width: 8.75rem;
             min-width: 8.75rem;
+            height: 100%;
+            aspect-ratio: 1/1;
         }
 
         .opinions__list-header {

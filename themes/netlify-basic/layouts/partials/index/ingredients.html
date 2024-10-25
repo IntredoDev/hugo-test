@@ -3,11 +3,32 @@
     <div class="container">
         <header class="ingredients__header">
             <h2 class="ingredients__heading">{{ .heading }}</h2>
-
-            <img class="ingredients__image ingredients__image--mobile" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
-        </header>
+                {{ $image := resources.Get "/img/ingredients_product_clipped.png" }}
+                {{ if $image }}
+                    {{ $imageSrc := ($image.Resize "547x524 webp q70").RelPermalink }}
+                    {{ partial "components/image.html" 
+                        (dict "context" .
+                        "image" $image
+                        "src" $imageSrc 
+                        "class" "ingredients__image ingredients__image--mobile" 
+                        "alt" "Collagenico product with decorative leafs"
+                        ) 
+                    }} 
+                {{ end }}
+           </header>
         <div class="ingredients__content">
-            <img class="ingredients__image ingredients__image--desktop" width="547" height="524" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
+            {{ $image := resources.Get "/img/ingredients_product_clipped.png" }}
+            {{ if $image }}
+                {{ $imageSrc := ($image.Resize "547x524 webp q90").RelPermalink }}
+                {{ partial "components/image.html" 
+                    (dict "context" .
+                    "image" $image
+                    "src" $imageSrc 
+                    "class" "ingredients__image ingredients__image--desktop" 
+                    "alt" "Collagenico product with decorative leafs"
+                    ) 
+                }} 
+            {{ end }}
             <ul class="ingredients__list">
             {{ range .list }}
                 {{ if .title }}
@@ -33,31 +54,4 @@
   </section>
 
 {{ partial "components/ingredients-modal.html" . }}
-
-<script>
-    const buttons = document.querySelectorAll('.ingredients__button');
-    const modal = document.querySelector('.modal-ingredients');
-    const modalTitle = modal.querySelector('.modal-ingredients__title');
-    const modalThumbnail = modal.querySelector('.modal-ingredients__thumbnail');
-    const modalDesc = modal.querySelector('.modal-ingredients__desc');
-    const closeModalButton = document.querySelector('[data-js-modal-close]');
-
-    {{/*  buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const contentTitle = this.getAttribute('data-content-title');
-            const contentImg = this.getAttribute('data-content-img');
-            const content = this.getAttribute('data-content');
-
-            modalTitle.textContent = contentTitle;
-            modalThumbnail.src = contentImg;
-            modalDesc.textContent = content;
-
-            modal.classList.add('modal--active');
-        });
-    });  */}}
-
-    {{/*  closeModalButton.addEventListener('click', function () {
-        modal.classList.remove('modal--active');
-    });  */}}
-</script>
 {{ end }}
