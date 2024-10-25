@@ -1122,7 +1122,7 @@ ul, ol {
 
 @media screen and (min-width: 1024px) {
     .ingredients {
-        background: url('/img/ingredients_bg.png') center center no-repeat;
+        background: url('/img/ingredients_bg.webp') center center no-repeat;
         background-size: cover;
         padding: var(--40px) 0 147px 0;
     }

@@ -1,6 +1,17 @@
 <section class="hero">
-    <img class="hero__bg" src="/img/hero_bg.png" role="presentation">
-
+    {{ if .Params.hero_bg }}
+        {{ $image := resources.Get .Params.hero_bg }}
+        {{ if $image }}
+            {{ $imageSrc := ($image.Process "webp").RelPermalink }}
+            {{ partial "components/image.html" 
+                (dict "context" .
+                "image" $image
+                "src" $imageSrc 
+                "class" "hero__bg" 
+                "loading" "eager") 
+            }}
+        {{ end }}
+    {{ end }}
     <div class="container">
         <div class="hero__content">
             <header class="hero__header">

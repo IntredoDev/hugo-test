@@ -1,5 +1,5 @@
 ---
-type: "contact" 
+type: "contact"
 bodyClass: "contact"
 url: "kontakt"
 page_contact:  

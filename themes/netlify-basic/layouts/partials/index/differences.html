@@ -35,7 +35,18 @@
                 {{ end }}
             </div>
             <div class="differences__col differences__col--2">
-                <img class="differences__img" src="{{ .img }}" alt="Hair with Collagenico Product">
+                {{ if .img }}
+                    {{ $image := resources.Get .img }}
+                    {{ $imageSrc := ($image.Resize "680x592 webp q90").RelPermalink }}
+                        {{ partial "components/image.html" 
+                            (dict "context" .
+                            "image" $image
+                            "src" $imageSrc 
+                            "class" "differences__img" 
+                            "alt" "Hair with Collagenico Product"
+                            ) 
+                        }} 
+                {{ end }}
             </div>
         </div>
         <div class="differences__decor differences__decor--2"></div>

@@ -7,5 +7,5 @@
 {{ $loading := .loading | default "lazy" }}
 
 {{ if and $src $image }}
-<img class="{{ $class }}" src='{{ $src }}' width="{{ $image.Width }}" height="{{ $image.Height }}" {{ if .alt }} alt="{{ $alt }}" {{ else }} role="presentation" {{ end }} loading="{{ $loading }}">
+<img class="{{ $class }}" src='{{ $src }}' width="{{ $image.Width }}" height="{{ $image.Height }}" {{ if .alt }} alt="{{ $alt }}" {{ else }} role="presentation" {{ end }} loading="{{ $loading }}" type="image/webp">
 {{ end }}
