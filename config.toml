@@ -6,6 +6,12 @@ languageCode = 'en-us'
 theme = "netlify-basic"
 canonifyURLs = true
 
+  
+[module]
+  [[module.mounts]]
+    source = "themes/netlify-basic/node_modules"
+    target = "static/libs/node_modules"
+
 [[menu.main]]
     name = "FAQ"
     url = "/faq/"
@@ -51,4 +57,3 @@ canonifyURLs = true
        { linkTitle = "Zarządzanie Zgodami", url = "zarządzanie zgodami"},
        { linkTitle = "Jawność Informacji", url = "jawnosc-informacji"}
       ]
-  

@@ -16,32 +16,21 @@
 
 
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
   
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css">
-
-  
+  <link rel="stylesheet" href="https://collagenico24.net/css/style.min.e8c6294569cb3fe5341568dc80965fd9e3f73bc6aae0af4c53a0b3d50e50e512.css"  crossorigin="anonymous">
   
 
-  <link rel="stylesheet" href="https://collagenico24.net/css/style.min.aeb75c7e8c15df5838e05fcb5ac8cd997f68f0fef7645c25d391459a9ba96475.css"  crossorigin="anonymous">
-  
-  <link href="
-  https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-  " rel="stylesheet">
-
-  <script src="
-  https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+  <script defer src="
+    /js/splide-js/splide.min.js
   "></script>
   
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <script defer src="https://collagenico24.net/js/jquery/jquery.min.js"></script>
+  <script defer src="https://collagenico24.net/js/select2/select2.min.js"></script>
 
   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 
-  <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
 
   <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>
   <meta name="description" content="Discover Collagenico, a premium collagen supplement designed to support hair growth, improve skin elasticity, and enhance overall vitality. Boost your beauty and health with our scientifically formulated collagen blend. Try Collagenico today!">
@@ -1408,36 +1397,6 @@
         </div>
     </div>
 </section>
-
-<script>
-    const splides = document.querySelectorAll('.splide-carousel');
-
-    splides.forEach(splideElement => {
-        const splide = new Splide(splideElement, {
-            type: 'carousel',
-            speed: 1500,
-            pagination: false,
-            arrows: false,
-            gap: 24,
-            perPage: 1.44,
-            mediaQuery: 'min',
-            classes: {
-                prev: 'splide__arrow--prev',
-                next: 'splide__arrow--next',
-            },
-            breakpoints: {
-                1024: {
-                    destroy: true
-                },
-                600: {
-                    perPage: 2.44,
-                }
-            }
-        });
-
-        splide.mount();
-    });
-</script>
   <section class="sale" id="sale">
         <div class="container"><header class="sale__header">
                 
@@ -1942,6 +1901,9 @@
     </div>
 </footer>
 
+        <script defer type="module" src="https://collagenico24.net/js/app.b06a98a3d20a9c7484bbc10d2b9fa6847a08c3fac9daccb34315b52e88b23189.js"></script>
+
+        
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
         <script>
             const input = document.querySelector("#phone");
@@ -2007,22 +1969,5 @@
             });
         </script>
         
-
-        
-        <script defer type="module" src="https://collagenico24.net/js/app.0db5c9e212de72662703087135010c344b51835cec065e6ac6e5c668bf787520.js"></script>
-
-        <script>
-            const accordion = document.querySelector('.accordion-container')
-
-            if
-            (
-            document.body.classList.contains('home') && accordion 
-            || document.body.classList.contains('page-faq') && accordion
-            ) {
-                new Accordion(accordion, {
-                    duration: 450
-                });
-            }
-        </script>
     </body>
 </html>

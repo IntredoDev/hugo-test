@@ -1,6 +1,11 @@
 {
   "dependencies": {
-    "cypress": "^10.3.1",
-    "sass": "^1.79.4"
+    "accordion-js": "^3.3.4",
+    "cypress": "^10.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0"
   }
 }

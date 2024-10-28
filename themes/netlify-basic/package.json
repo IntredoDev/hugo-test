@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "accordion-js": "^3.3.4",
+    "intl-tel-input": "^24.6.0"
+  }
+}
