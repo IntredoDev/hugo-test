@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "accordion-js": "^3.3.4",
-    "cypress": "^10.3.1"
+    "cypress": "^10.3.1",
+    "just-validate": "^4.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

@@ -6,12 +6,10 @@
   <title>{{ $title }}</title>
 
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {{/*  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  */}}
       
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
-
 
   {{ $css := resources.Get "css/style.scss" }}
   {{ $style := $css | css.Sass | resources.Minify | resources.Fingerprint }}
@@ -27,7 +25,7 @@
   <script defer src="/js/jquery/jquery.min.js"></script>
   <script defer src="/js/select2/select2.min.js"></script>
 
-  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script defer src="/js/just-validate/just-validate.production.min.js"></script>
 
 
   <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>

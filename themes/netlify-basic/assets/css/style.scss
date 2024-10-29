@@ -1,6 +1,7 @@
 //  @import url('/node_modules/accordion-js/dist/accordion.min.css');
 
 @import './config/mixins';
+@import './fonts/fonts';
 
 @import 'splide-js/splide.min.css';
 @import 'accordion-js/accordion.min.css';
@@ -2955,6 +2956,7 @@ ul, ol {
             width: 100vw;
             top: 0;
             left: 0;
+            z-index: 99999;
         }
 
         .terms {
