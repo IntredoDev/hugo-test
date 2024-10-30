@@ -52,6 +52,7 @@ export default class SaleForm {
    
     successValidation(validator) {
         validator.onSuccess(( event ) => {
+            console.log('success')
             this.send( event )
         });
     }
@@ -120,11 +121,15 @@ export default class SaleForm {
         if (customerPhone.reportValidity() === false) {
             return;
         }
+
+    
         if (cashOnDelivery.value === "true") {
             codBoolean = true;
         } else {
             codBoolean = false;
         }
+
+        console.log('valid')
 
         data = JSON.stringify({
             'data': {
@@ -139,7 +144,7 @@ export default class SaleForm {
                 'cashOnDelivery': codBoolean,
                 'customerIp': clientIP,
                 'offerId': parseInt(offerId.value),
-                'apiKey': 'DmAvtKJgCnrACuA' // TEST API KEY
+                'apiKey': 'TqMsRV310UkNzBF' // TEST API KEY
             },
             'action': pageAction.value
         });

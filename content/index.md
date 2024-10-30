@@ -53,27 +53,27 @@ section_ingredients:
 
     - thumbnail: "/img/thumb_vit_c.webp"
       title: "Witamina C"
-      content_img: "/pl/img/content_vit_c.webp"
+      content_img: "img/content_vit_c.webp"
       content: "Witamina C może poprawić stan skóry, a także przyspieszyć proces gojenia się ran. Wpływa na uszczelnianie naczyń krwionośnych i wspomaga syntezę kolagenu, który odpowiada za jędrność skóry. Pomaga również rozjaśnić przebarwienia i wyrównać naturalny koloryt skóry."
 
     - thumbnail: "/img/thumb_hialuron.webp"
       title: "Kwas hialuronowy"
-      content_img: "/pl/img/content_hialuron.webp"
+      content_img: "img/content_hialuron.webp"
       content: "Kwas hialuronowy to naturalny składnik skóry, który wiąże kolagen i elastynę, wspierając jej strukturę oraz głębokie nawilżenie. Działa jak magazyn wilgoci, wypełniając przestrzenie międzykomórkowe. Tworzy też warstwę ochronną, zapobiegającą przenikaniu szkodliwych substancji i bakterii. Jest szczególnie polecany dla skóry suchej, regeneracji ran oraz pielęgnacji osłabionych włosów."
 
     - thumbnail: "/img/thumb_extract.webp"
       title: "Ekstrakt z liści zielonej herbaty"
-      content_img: "/pl/img/content_extract.webp"
+      content_img: "img/content_extract.webp"
       content: "Zielona herbata ma działanie regenerujące, nawilżające, antyoksydacyjne i kojące. Zawiera polifenole, które niszczą wolne rodniki odpowiedzialne za starzenie się skóry. Poprawia nawilżenie skóry, tonizuje skórę i chroni ją przed szkodliwym promieniowaniem UV. Ponadto oczyszcza i wzmacnia włosy."
 
     - thumbnail: "/img/thumb_selen.webp"
       title: "Selen"
-      content_img: "/pl/img/content_selen.webp"
+      content_img: "img/content_selen.webp"
       content: "Selen odgrywa ważną rolę w utrzymaniu elastycznej skóry, mocnych paznokci i lśniących włosów. Jego niedobór może mieć wpływ na przetłuszczanie się włosów i pojawienie się łupieżu. Ten mikroskładnik odżywczy pomaga zapewnić włosom elastyczność i sprężystość oraz zapobiega nadmiernemu wypadaniu włosów. Dzięki swoim właściwościom przeciwgrzybiczym i antybakteryjnym chroni na przykład przed zapaleniem skóry."
 
     - thumbnail: "/img/thumb_grapes.webp"
       title: "Ekstrakt z pestek winogron"
-      content_img: "/pl/img/content_grapes.webp"
+      content_img: "img/content_grapes.webp"
       content: "Ekstrakt z pestek winogron jest naturalnym przeciwutleniaczem. Jest biologicznie aktywnym źródłem flawonoidów, które wzmacniają naczynia krwionośne i poprawiają mikrokrążenie. Zawiera w swoim składzie kwasy omega-6 i witaminę E, dzięki czemu korzystnie wpływa na odżywianie, wzmacnianie i nawilżanie skóry i włosów."
 section_numbers:
   heading: "Dlaczego Collagenico?"

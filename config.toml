@@ -1,9 +1,6 @@
-# baseURL = 'https://glowing-kashata-66e40c.netlify.app/' 
-
-# baseURL = "https://collagenico24.net/"
-
 languageCode = 'en-us'
 theme = "netlify-basic"
+baseURL = "https://collagenico24.net/pl/"
 canonifyURLs = true
 
   
