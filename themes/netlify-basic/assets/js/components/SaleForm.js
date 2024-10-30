@@ -103,6 +103,8 @@ export default class SaleForm {
                         button.style.visibility = 'hidden';
                         if (redirect.value) {
                             window.location.href = redirect.value + '?' + prepareURI(getQueryString());
+
+                            console.log(window.location.href)
                         }
                     }
                 }
