@@ -16,17 +16,31 @@
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
         <script>
             const input = document.querySelector("#phone");
-            window.intlTelInput(input, {
-              loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
-            });
+            const customerPrefix = document.getElementsByName('customerPrefix')[0];
 
-            intlTelInput(input, {
+            const iti = window.intlTelInput(input, {
+                loadUtilsOnInit: true,
                 initialCountry: "pl",
                 i18n: 'pl',
                 allowDropdown: true,
                 useFullscreenPopup: false,
                 separateDialCode: true,
-            })
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
+            });
+
+            function getDialCode() {
+                const dialCode = `+${iti.getSelectedCountryData().dialCode}`;
+                return dialCode;
+            }
+
+            customerPrefix.value = getDialCode()
+
+            function handler() {
+                const dialCode = getDialCode();
+                customerPrefix.value = dialCode
+             }
+          
+            input.addEventListener('countrychange', handler);
         </script>
       
         <script>
@@ -59,15 +73,20 @@
                     if (!country.id) {
                         return document.createTextNode(country.text);
                     }
-                    
-                    var flagUrl = country.element.getAttribute('data-flag');
-                    
-                    var span = document.createElement('span');
+                    let flagUrl;
+
+                    if(country.id === 'PL') {
+                        flagUrl = '/img/flag.png';
+                    } else {
+                        flagUrl = country.element.getAttribute('data-flag');
+                    }
                 
-                    var img = document.createElement('img');
+                    let span = document.createElement('span');
+                    let img = document.createElement('img');
+
                     img.src = flagUrl;
-                    img.style.width = '20px';
-                    img.style.height = '15px';
+                    img.style.width = '16px';
+                    img.style.height = '12px';
                     img.style.marginRight = '10px';
                 
                     span.appendChild(img);

@@ -1,4 +1,11 @@
-<form class="form-sale" action="#" id="form-sale" method="post">
+<form class="form-sale" method="POST" id="form-sale" method="post">
+    <input type="hidden" name="action" value="affcreate">
+    <input type="hidden" name="redirect" value="pl/thankyou.html">
+    <input type="hidden" name="offerId" value="1">
+    <input type="hidden" name="shortLead" value="false">
+    <input type="hidden" name="customerPrefix" value="">
+    <input type="hidden" name="cashOnDelivery" value="true" class="js-cash-on-delivery">
+
     <div class="form-sale__row">
         <label class="form-sale__label" for="name">Imię i nazwisko
             <input type="text" id="name" name="name" placeholder="Tu wpisz swoje imię i nazwisko" required>
@@ -13,7 +20,7 @@
     
     <div class="form-sale__row">
         <label class="form-sale__label" for="phone">Numer telefonu
-            <input type="tel" name="phone" id="phone">
+            <input type="tel" name="phone" id="phone" placeholder="123 456 789">
         </label>
     </div>
     
@@ -33,7 +40,7 @@
         </label>
     </div>
     
-    <div class="form-sale__row" style="display: none;">
+    <div class="form-sale__row">
         <label class="form-sale__label" for="country">Kraj
             <select name="country" id="country">Polska</select>
         </label>
@@ -41,11 +48,11 @@
     
     <div class="form-sale__row form-sale__row--acceptance">
         <input type="checkbox" name="acceptance" required> 
-        <label class="form-sale__label">Zapoznałem się i akceptuję <a href="#" target="_blank">Regulamin</a> oraz <a href="#" target="_blank">Politykę Prywatności</a></label>
+        <label class="form-sale__label">Zapoznałem się i akceptuję <a href="{{ .Site.Params.BaseURL }}/terms/terms-of-service" target="_blank">Regulamin</a> oraz <a href="{{ .Site.Params.BaseURL }}/terms/privacy-policy" target="_blank">Politykę Prywatności</a></label>
     </div>
     
     <div class="form-sale__row form-sale__row--submit">
-        <button class="form-sale__button button button--primary" type="submit">
+        <button class="form-sale__button button button--primary" type="submit" id="submit">
             <span>{{ .button_title }}</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>

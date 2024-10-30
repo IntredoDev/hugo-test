@@ -1,6 +1,6 @@
 ---
 type: "faq"
-bodyClass: "faq"  
+bodyClass: "faq"
 page_faq: 
     heading: "FAQ - najczęściej zadawane pytania"
     list:
@@ -15,4 +15,29 @@ page_faq:
 
         -   question: "Czy suplementy diety mogą powodować skutki uboczne?"
             answer: "Większość suplementów diety jest bezpieczna, jeśli stosowana zgodnie z zaleceniami. Jednak, jak w przypadku każdego produktu, możliwe są indywidualne reakcje. Jeśli masz jakiekolwiek wątpliwości lub zauważysz niepokojące objawy, skonsultuj się z lekarzem."
+
+        -   question: "Czy wasze suplementy są odpowiednie dla każdego?"
+            answer: "Większość naszych suplementów jest przeznaczona dla osób dorosłych i zdrowych. Jeśli masz choroby przewlekłe, jesteś w ciąży lub karmisz piersią, skonsultuj się z lekarzem przed rozpoczęciem suplementacji."
+
+        -   question: "Gdzie produkowane są wasze suplementy?"
+            answer: "Nasze suplementy są produkowane w Uni Europejskiej zgodnie z najwyższymi standardami jakości, aby zapewnić bezpieczeństwo i skuteczność."
+
+        -   question: "Jakie są metody płatności?"
+            answer: "Akceptujemy różne metody płatności, w tym: karty kredytowe Visa i MasterCard, płatności za pośrednictwem PayPal i RevolutPay."
+
+        -   question: "Jakie są opcje dostawy?"
+            answer: "Oferujemy różne opcje dostawy, w tym: GLS, UPS i DHL"
+
+        -   question: "Jak mogę zwrócić lub wymienić produkt?"
+            answer: "Jeśli chcesz zwrócić lub wymienić produkt, skontaktuj się z naszym działem obsługi klienta lub sprawdź naszą politykę zwrotów na stronie internetowej. Zazwyczaj możesz zwrócić produkty w ciągu określonego czasu od zakupu."
+
+        -   question: "Jak mogę skontaktować się z obsługą klienta?"
+            answer: "Możesz skontaktować się z naszym działem obsługi klienta za pomocą formularza kontaktowego na stronie, przez e-mail lub telefonicznie. Szczegóły kontaktu znajdziesz na naszej stronie kontaktowej."
+
+        -   question: "Czy suplementy są testowane na zwierzętach?"
+            answer: "Nasze suplementy nie są testowane na zwierzętach. Wspieramy etyczne praktyki i dążymy do zapewnienia najwyższej jakości produktów bez użycia testów na zwierzętach."
+
+        -   question: "Czy oferujecie próbki produktów?"
+            answer: "Obecnie nie oferujemy próbek naszych produktów. Jednak możesz zapoznać się z opiniami innych klientów oraz szczegółowymi informacjami na naszej stronie, aby lepiej ocenić, który produkt może być dla Ciebie odpowiedni."
+
 ---

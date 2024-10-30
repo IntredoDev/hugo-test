@@ -753,7 +753,7 @@ ul, ol {
 }
 
 .differences__decor::after {
-    width: calc(100% - 1rem(78));
+    width: calc(100% - 178px);
     margin: 0 auto;
 }
 
@@ -1401,13 +1401,13 @@ ul, ol {
     }
     
     .refs__decor::before {
-        width: calc(100% - rem(131));
+        width: calc(100% - 131px);
         margin: 0 auto;
         margin-bottom: .5rem;
     }
     
     .refs__decor::after {
-        width: calc(100% - rem(178));
+        width: calc(100% - 178px);
         margin: 0 auto;
     }
     
@@ -1605,7 +1605,7 @@ ul, ol {
 /* Index - Opinions  */
     .opinions {
         position: relative;
-        padding: calc(rem(24) + rem(32)) 0;
+        padding: calc(1.5rem + 2rem) 0;
         background: $beige-dark;
     }
 
@@ -1757,7 +1757,7 @@ ul, ol {
 
     @media screen and (min-width: $lg) {
         .opinions {
-            padding: calc(rem(40) + rem(60)) 0;
+            padding: calc(2.5rem + 3.75rem) 0;
         }
 
         .opinions__gradient {
@@ -1902,7 +1902,7 @@ ul, ol {
     }
 
     .source__list {
-        width: calc(100% - rem(120));
+        width: calc(100% - 7.5rem);
         margin: 0 auto;
         flex-direction: row;
         gap: rem(40);
@@ -2625,7 +2625,7 @@ ul, ol {
      }
 
      .rscience__logos {
-        width: calc(100% - rem(110));
+        width: calc(100% - 110px);
         margin: 0 auto;
         row-gap: rem(4);
         column-gap: rem(80);
@@ -2717,13 +2717,13 @@ ul, ol {
 }
 
 .home .faq__decor::before {
-    width: calc(100% - rem(131));
+    width: calc(100% - 131px);
     margin: 0 auto;
     margin-bottom: .5rem;
 }
 
 .home .faq__decor::after {
-    width: calc(100% - rem(178));
+    width: calc(100% - 178px);
     margin: 0 auto;
 }
 
@@ -2987,7 +2987,7 @@ ul, ol {
 
         .toc-list {
             position: sticky;
-            top: calc(rem(95) + rem(24));
+            top: calc(95px + 1.5rem);
             padding-bottom: unset;
             border-bottom: unset;
         }
@@ -3166,6 +3166,12 @@ ul, ol {
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: $wide;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: inherit;
+    }
 }
 
 input[type=text],
@@ -3226,7 +3232,7 @@ textarea {
 
 /* Style for placeholder and selected value */
 .select2-container .select2-selection--single .select2-selection__rendered {
-    padding-left: rem(12);
+    padding-left: 0;
     padding-right: rem(12);
 }
 
@@ -3240,6 +3246,22 @@ textarea {
 
 .select2-dropdown {
     transform: translateY(rem(-15));
+}
+
+.home .select2-container--default .select2-selection--single .select2-selection__arrow {
+    left: rem(18) !important;
+    right: 0 !important;
+}
+.home .select2-selection__arrow b {
+    margin: 0 0 0 rem(4) !important;
+    border: none !important;
+    width: rem(24) !important;
+    height: rem(24) !important;
+    background: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10L12 16L18 10" stroke="%23868686" stroke-linecap="round"/></svg>');
+}
+
+.home .select2-selection__rendered span img {
+    margin-right: rem(34) !important;
 }
 
 :is(input[type=text], input[type=email], input[type=tel], input[type=number], textarea)::placeholder {
@@ -3262,7 +3284,7 @@ textarea {
 }
 
 .iti__pl {
-    background-image: url('https://flagcdn.com/w320/pl.png') !important;
+    background-image: url('/img/flag.png') !important;
 }
 
 .form-sale__row--acceptance {
@@ -3378,7 +3400,7 @@ textarea {
 
 .contact-form {
     padding: rem(12) 0;
-    max-width: 6rem(40);
+    max-width: rem(640);
     margin: 0 auto;
 }
 
@@ -3521,7 +3543,7 @@ textarea {
 
 .ac .ac-trigger span {
     display: block;
-    max-width: calc(100% - rem(24) - rem(12) - rem(10));
+    max-width: calc(100% - 1.5rem - 0.75rem - 0.625rem);
 }
 
 
@@ -3686,6 +3708,7 @@ textarea {
     :is( .footer__gateways, .footer__couriers) .footer__vector {
         max-height: rem(28);
         min-width: rem(40);
+        width: 100%;
     }
     
     .footer__vector  {
@@ -3802,6 +3825,7 @@ textarea {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: rem(12);
     }
 
     .modal-ingredients__title {
@@ -3839,8 +3863,8 @@ textarea {
        }
 
        .modal-ingredients__desc {
-        font-size: rem(18);
-        line-height: rem(26);
+            font-size: rem(16);
+            line-height: rem(24);
        }
     }
 /* Component - Modal - end */

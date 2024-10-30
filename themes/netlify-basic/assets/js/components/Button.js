@@ -4,17 +4,17 @@ export default class Button {
     constructor()
     {
         this.buttons = Array.from(document.querySelectorAll('[data-js-form-target]'));
-        this.saleForm = document.getElementById('sale-form');
+        this.saleFormSection = document.getElementById('sale');
     }
 
     init()
     {
-        if(this.buttons.length < 1 || !this.saleForm ) {
+        if(this.buttons.length < 1 || !this.saleFormSection ) {
             return
         }
 
         this.buttons.forEach(button => {           
-            button.addEventListener('click', () => scrollTo(this.saleForm, 'auto'));
+            button.addEventListener('click', () => scrollTo(this.saleFormSection, 'auto'));
         });
     }
 }

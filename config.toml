@@ -1,6 +1,6 @@
 # baseURL = 'https://glowing-kashata-66e40c.netlify.app/' 
-# baseURL = "http://localhost:1313/"
- baseURL = "https://collagenico24.net/"
+
+# baseURL = "https://collagenico24.net/"
 
 languageCode = 'en-us'
 theme = "netlify-basic"
@@ -17,6 +17,8 @@ canonifyURLs = true
     url = "/faq/"
 
 [params]
+  baseURL = "http://localhost:1313/"
+
   logo = "img/collagenico_logo.svg"
   cta_button_title = "zamawiam"
 
@@ -36,24 +38,24 @@ canonifyURLs = true
      [[params.footer.column]]
      title = "Collagenico"
        list = [
-        { linkTitle = "Jak to działa?", url = "jak-to-dziala" },
-        { linkTitle = "Składniki", url = "skladniki" },
-        { linkTitle = "Opinie", url = "opinie" },
-        { linkTitle = "Referencje naukowe", url = "referencje-naukowe" }
+        { linkTitle = "Jak to działa?", url = "#how" },
+        { linkTitle = "Składniki", url = "#ingredients" },
+        { linkTitle = "Opinie", url = "#opinions" },
+        { linkTitle = "Referencje naukowe", url = "#refs" }
        ]
     [[params.footer.column]]
     title = "POMOC"
     list = [
       { linkTitle = "FAQ", url = "faq" },
-      { linkTitle = "Kontakt", url = "kontakt" },
-      { linkTitle = "Regulamin", url = "terms/regulamin" },
-      { linkTitle = "Polityka zwrotów", url = "polityka-zwrotow" }
+      { linkTitle = "Kontakt", url = "contact" },
+      { linkTitle = "Regulamin", url = "terms/terms-of-service" },
+      { linkTitle = "Polityka zwrotów", url = "terms/returns-policy" }
     ]
      [[params.footer.column]]
      title = "INFORMACJE"
       list = [
-       { linkTitle = "Polityka prywatności", url = "polityka-prywatnosci"},
-       { linkTitle = "Warunki Korzystania", url = "warunki-korzystania"},
-       { linkTitle = "Zarządzanie Zgodami", url = "zarządzanie zgodami"},
-       { linkTitle = "Jawność Informacji", url = "jawnosc-informacji"}
+       { linkTitle = "Polityka prywatności", url = "terms/privacy-policy"},
+       { linkTitle = "Warunki Korzystania", url = "terms/terms-of-use"},
+       { linkTitle = "Zarządzanie Zgodami", url = "terms/consent-management"},
+       { linkTitle = "Jawność Informacji", url = "terms/disclosure"}
       ]
