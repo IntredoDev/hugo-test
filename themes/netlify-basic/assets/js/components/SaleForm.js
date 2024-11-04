@@ -1,5 +1,4 @@
 import { dictLocale } from "../helpers/dictLocale.js";
-
 export default class SaleForm {
     constructor()
     {
@@ -60,7 +59,7 @@ export default class SaleForm {
     send(event)
     {
         event.preventDefault();
-
+        
         let data = null;
         let clientIPstatus = '';
         let codBoolean = true;
@@ -91,6 +90,8 @@ export default class SaleForm {
         xhr.withCredentials = true;
 
         xhr.addEventListener('readystatechange', function () {
+            console.log('XHR Status:', this.status);
+
             if (this.readyState === 4) {
                 if (this.responseText) {
                     let json = JSON.parse(this.responseText);
@@ -111,6 +112,8 @@ export default class SaleForm {
                 }
             }
         });
+
+
 
         button.disabled = true;
         button.style.filter="grayscale(1)";
@@ -149,10 +152,15 @@ export default class SaleForm {
             'action': pageAction.value
         });
 
+        xhr.open('POST', './affcreate.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(data);
+
         document.forms[0].addEventListener("input", function () {
             button.disabled = false;
             button.style.filter="grayscale(0)";
         });
+
 
         function prepareURI(object) {
             let out = [];

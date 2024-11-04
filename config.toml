@@ -1,13 +1,23 @@
 languageCode = 'en-us'
 theme = "netlify-basic"
-baseURL = "https://collagenico24.net/pl/"
+baseURL = "https://collagenico24.net/"
+defaultContentLanguage = 'pl'
+defaultContentLanguageInSubdir = true
 canonifyURLs = true
-
   
 [module]
   [[module.mounts]]
     source = "themes/netlify-basic/node_modules"
     target = "static/libs/node_modules"
+
+[languages]
+  [languages.pl]
+  contentDir = 'content/pl'
+  languageCode = 'pl'
+  languageDirection = 'ltr'
+  languageName = 'Polski'
+  title = 'Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation'
+  weight = 1
 
 [[menu.main]]
     name = "FAQ"
@@ -35,24 +45,24 @@ canonifyURLs = true
      [[params.footer.column]]
      title = "Collagenico"
        list = [
-        { linkTitle = "Jak to działa?", url = "#how" },
-        { linkTitle = "Składniki", url = "#ingredients" },
-        { linkTitle = "Opinie", url = "#opinions" },
-        { linkTitle = "Referencje naukowe", url = "#refs" }
+        { linkTitle = "Jak to działa?", url = "pl/#how" },
+        { linkTitle = "Składniki", url = "pl/#ingredients" },
+        { linkTitle = "Opinie", url = "pl/#opinions" },
+        { linkTitle = "Referencje naukowe", url = "pl/#refs" }
        ]
     [[params.footer.column]]
     title = "POMOC"
     list = [
-      { linkTitle = "FAQ", url = "faq" },
-      { linkTitle = "Kontakt", url = "contact" },
-      { linkTitle = "Regulamin", url = "terms/terms-of-service" },
-      { linkTitle = "Polityka zwrotów", url = "terms/returns-policy" }
+      { linkTitle = "FAQ", url = "pl/faq" },
+      { linkTitle = "Kontakt", url = "pl/contact" },
+      { linkTitle = "Regulamin", url = "pl/terms/terms-of-service" },
+      { linkTitle = "Polityka zwrotów", url = "pl/terms/returns-policy" }
     ]
      [[params.footer.column]]
      title = "INFORMACJE"
       list = [
-       { linkTitle = "Polityka prywatności", url = "terms/privacy-policy"},
-       { linkTitle = "Warunki Korzystania", url = "terms/terms-of-use"},
-       { linkTitle = "Zarządzanie Zgodami", url = "terms/consent-management"},
-       { linkTitle = "Jawność Informacji", url = "terms/disclosure"}
+       { linkTitle = "Polityka prywatności", url = "pl/terms/privacy-policy"},
+       { linkTitle = "Warunki Korzystania", url = "pl/terms/terms-of-use"},
+       { linkTitle = "Zarządzanie Zgodami", url = "pl/terms/consent-management"},
+       { linkTitle = "Jawność Informacji", url = "pl/terms/disclosure"}
       ]
