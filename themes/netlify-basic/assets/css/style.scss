@@ -3208,6 +3208,10 @@ textarea {
 }
 
 /* Style for the .select2-container */
+
+.select2 {
+    width: 100% !important;
+}
 .select2-container {
     padding: rem(12);
     border-radius: 4px;
@@ -3285,6 +3289,14 @@ textarea {
 
 .iti__pl {
     background-image: url('/img/flag.png') !important;
+}
+
+.iti .just-validate-error-label {
+    margin-top: rem(4);
+}
+
+.iti__selected-country {
+    max-height: 42.6px;
 }
 
 .form-sale__row--acceptance {
@@ -3379,6 +3391,10 @@ textarea {
         letter-spacing: normal;
     }
 
+    .iti__selected-country {
+        max-height: 45.6px;
+    }
+
     .flag-option {
         display: flex;
         align-items: center;
@@ -3390,7 +3406,7 @@ textarea {
     }
 
     .form-sale__row--acceptance {
-        margin-bottom: rem(40);
+        margin-bottom: rem(16);
     }
 
 }
@@ -3888,6 +3904,7 @@ textarea {
     display: inline-block;
     position: relative;
     width: rem(24);
+    min-width: rem(24);
     height: rem(24);
 }
 

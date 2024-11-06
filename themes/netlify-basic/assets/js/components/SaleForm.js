@@ -16,12 +16,22 @@ export default class SaleForm {
 
         validator.setCurrentLocale('pl')
 
+        this.preventInputChars()
         this.validate(validator)
         this.successValidation(validator)
     }
 
+    preventInputChars(){
+       const postalCode = document.querySelector('#postal-code')
+
+       postalCode.addEventListener('input', function (event) {
+            this.value = this.value.replace(/[^0-9-]+/g, '');
+       });
+    }
+
     validate(validator)
     {
+
         if(!validator) {
             return
         }
@@ -29,12 +39,35 @@ export default class SaleForm {
         validator
             .addField('#name', [
                 {
-                    rule: 'required'
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'customRegexp',
+                    value: /^[^\d\s]+(?:\s+[^\d\s]+)+(?:\s)?$/,
+                    errorMessage: 'The field should contain name and surname'
+                }
+            ])
+            .addField('#phone', [
+                {
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'minLength',
+                    value: 9,
+                    errorMessage: 'Phone number should contain at least 9 digits'
                 }
             ])
             .addField('#street', [
                 {
-                    rule: 'required'
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'customRegexp',
+                    value: /^(?=.*\d)(?=.*\b\w+\b.*\b\w+\b).*$/,
+                    errorMessage: 'The street must contain at least two words and at least one digit'
                 }
             ])
             .addField('#email', [
@@ -47,11 +80,42 @@ export default class SaleForm {
                     errorMessage: 'Invalid e-mail',
                 },
             ])
+            .addField('#postal-code', [
+                {
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'minLength',
+                    value: 5,
+                    errorMessage: 'Postal Code should contain at least 5 characters'
+                },
+                {
+                    rule: 'maxLength',
+                    value: 6,
+                    errorMessage: 'Postal Code should contain max 6 characters'
+                },
+            ])
+            .addField('#city', [
+                {
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'minLength',
+                    value: 3,
+                    errorMessage: 'The field should contain at least 3 characters'
+                },
+                {
+                    rule: 'customRegexp',
+                    value: /^[^\d]*$/,
+                    errorMessage: 'Numbers are not allowed in this field',
+                },
+            ])
     }
    
     successValidation(validator) {
         validator.onSuccess(( event ) => {
-            console.log('success')
             this.send( event )
         });
     }
@@ -90,8 +154,6 @@ export default class SaleForm {
         xhr.withCredentials = true;
 
         xhr.addEventListener('readystatechange', function () {
-            console.log('XHR Status:', this.status);
-
             if (this.readyState === 4) {
                 if (this.responseText) {
                     let json = JSON.parse(this.responseText);
@@ -105,8 +167,6 @@ export default class SaleForm {
                         button.style.visibility = 'hidden';
                         if (redirect.value) {
                             window.location.href = redirect.value + '?' + prepareURI(getQueryString());
-
-                            console.log(window.location.href)
                         }
                     }
                 }
@@ -131,8 +191,6 @@ export default class SaleForm {
         } else {
             codBoolean = false;
         }
-
-        console.log('valid')
 
         data = JSON.stringify({
             'data': {

@@ -18,7 +18,7 @@
   
   
 
-  <link rel="stylesheet" href="http://localhost:1313/css/style.min.96e2db75e4c74db9d6e4b946a70adac7be42478df27b9d5f49107d9bdfd6aec3.css"  crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:1313/css/style.min.7c1df4ec92bf5fec62288abe72d7e31cc2300680ed972e0802f32f30f8a9efdf.css"  crossorigin="anonymous">
   
 
   <script defer src="
@@ -1562,14 +1562,14 @@
                 <div class="sale__form-wrap">
                     
                     <h3 class="sale__form-desc">
-                        Wypełnij poniższy formularz, nasz specjalista skontaktuje się z Tobą w celu potwierdzenia zamówienia.
+                        Podaj dane kontaktowe i adres dostawy. Skontaktujemy się z Tobą, aby odbyć konsultacje i potwierdzić termin dostawy.
                     </h3>
                     
 
                     <form class="form-sale" method="POST" id="form-sale" method="post">
     <input type="hidden" name="action" value="affcreate">
-    <input type="hidden" name="redirect" value="pl/thankyou.html">
-    <input type="hidden" name="offerId" value="1">
+    <input type="hidden" name="redirect" value="thank-you/index.html">
+    <input type="hidden" name="offerId" value="2528">
     <input type="hidden" name="shortLead" value="false">
     <input type="hidden" name="customerPrefix" value="">
     <input type="hidden" name="cashOnDelivery" value="true" class="js-cash-on-delivery">
@@ -1588,7 +1588,7 @@
     
     <div class="form-sale__row">
         <label class="form-sale__label" for="phone">Numer telefonu
-            <input type="tel" name="phone" id="phone" placeholder="123 456 789">
+            <input type="tel" name="phone" id="phone" placeholder="Wpisz swój numer telefonu (np. 123 456 789)">
         </label>
     </div>
     
@@ -1768,30 +1768,30 @@
 
                     
                     <ol class="rscience__list rscience__list--2" start="4"><li class="rscience__list-item">
-                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/" rel="nofollow" target="_blank">
-                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/
+                            <a href="https://www.mdpi.com/1422-0067/23/19/11904" rel="nofollow" target="_blank">
+                                https://www.mdpi.com/1422-0067/23/19/11904
                             </a>
                         </li><li class="rscience__list-item">
-                            <a href="https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3" rel="nofollow" target="_blank">
-                                https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/16205932/" rel="nofollow" target="_blank">
+                                https://pubmed.ncbi.nlm.nih.gov/16205932/
                             </a>
                         </li><li class="rscience__list-item">
-                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/" rel="nofollow" target="_blank">
-                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/
+                            <a href="https://link.springer.com/article/10.1007/s00403-008-0888-4" rel="nofollow" target="_blank">
+                                https://link.springer.com/article/10.1007/s00403-008-0888-4
                             </a>
                         </li></ol>
 
                     <ol class="rscience__list rscience__list--3"><li class="rscience__list-item">
-                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/" rel="nofollow" target="_blank">
-                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/
+                            <a href="https://www.mdpi.com/1422-0067/23/19/11904" rel="nofollow" target="_blank">
+                                https://www.mdpi.com/1422-0067/23/19/11904
                             </a>
                         </li><li class="rscience__list-item">
-                            <a href="https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3" rel="nofollow" target="_blank">
-                                https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/16205932/" rel="nofollow" target="_blank">
+                                https://pubmed.ncbi.nlm.nih.gov/16205932/
                             </a>
                         </li><li class="rscience__list-item">
-                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/" rel="nofollow" target="_blank">
-                                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/
+                            <a href="https://link.springer.com/article/10.1007/s00403-008-0888-4" rel="nofollow" target="_blank">
+                                https://link.springer.com/article/10.1007/s00403-008-0888-4
                             </a>
                         </li></ol>
                 </div>
@@ -1916,7 +1916,7 @@
     </div>
 </footer>
 
-        <script defer type="module" src="http://localhost:1313/js/app.a06a1626683158b0c176b9993967b98853af6cd984f3ba04dde16786e337d3d8.js"></script>
+        <script defer type="module" src="http://localhost:1313/js/app.9e13590e030f1dba68d2b65f4c026c8b600df9a5bf2448ed2446a2702b7178ea.js"></script>
         
         
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
@@ -1945,6 +1945,10 @@
                 const dialCode = getDialCode();
                 customerPrefix.value = dialCode
              }
+
+             input.addEventListener("input", function(event) {
+                this.value = this.value.replace(/\D/g, '');
+            });
           
             input.addEventListener('countrychange', handler);
         </script>

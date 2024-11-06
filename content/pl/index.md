@@ -193,7 +193,7 @@ section_sale_form:
       logo: "/img/guarantee.svg"
       text: "<u>60-dniowa</u> gwarancja zwrotu pieniędzy"
       description: "Dokonujesz zakupu <b>BEZ RYZYKA</b> - Twoje zamówienie jest objęte 60-dniową gwarancją zwrotu pieniędzy. Jeśli preparat z jakiegokolwiek powodu nie spełni Twoich oczekiwań, odeślij puste opakowanie po produkcie, a w ciągu 7 dni otrzymasz 100% zwrotu kosztów."
-    form_description: "Wypełnij poniższy formularz, nasz specjalista skontaktuje się z Tobą w celu potwierdzenia zamówienia."
+    form_description: "Podaj dane kontaktowe i adres dostawy. Skontaktujemy się z Tobą, aby odbyć konsultacje i potwierdzić termin dostawy."
     button_title: "REZERWUJĘ ZESTAW"
 section_rscience:
   heading: "Referencje naukowe"
@@ -208,9 +208,9 @@ section_rscience:
     - item: "https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3"
     - item : "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/"
   links_list_2:
-    - item: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9569759/"
-    - item: "https://www.healthline.com/nutrition/collagen-for-hair#TOC_TITLE_HDR_3"
-    - item: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9963650/"
+    - item: "https://www.mdpi.com/1422-0067/23/19/11904"
+    - item: "https://pubmed.ncbi.nlm.nih.gov/16205932/"
+    - item: "https://link.springer.com/article/10.1007/s00403-008-0888-4"
   disclaimer_desc: "Choć dokładamy wszelkich starań i jesteśmy pewni jakości oraz skuteczności naszych produktów, ważne byś pamiętał, że informacje przedstawione na tej stronie nie są poradą medyczną i nie zastępują profesjonalnego leczenia lub diagnozy. Efekty przedstawione na stronie nie są gwarantowane ani typowe dla każdej osoby, mogą różnić się w zależności od wielu czynników. Oświadczenia dostępne na stronie nie zostały zweryfikowane przez żadną oficjalną instytucję. Produkty rekomendowane na tej stronie nie mają na celu diagnozowania, leczenia, leczenia ani zapobiegania jakiejkolwiek chorobie. Jeśli jesteś w ciąży, karmisz piersią, przyjmujesz leki lub masz jakieś schorzenia, skonsultuj się z lekarzem przed użyciem naszych produktów."
 section_faq: 
   heading: "Najczęściej zadawane pytania:"

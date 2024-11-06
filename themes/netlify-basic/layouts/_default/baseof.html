@@ -39,6 +39,10 @@
                 const dialCode = getDialCode();
                 customerPrefix.value = dialCode
              }
+
+             input.addEventListener("input", function(event) {
+                this.value = this.value.replace(/\D/g, '');
+            });
           
             input.addEventListener('countrychange', handler);
         </script>
