@@ -10,8 +10,20 @@
   {{ partial "index/opinions.html" . }}
   {{ partial "index/source.html" . }}
   {{ partial "index/gifts.html" . }}
+  {{ partial "index/sale-form.html" 
+    (dict "context" .
+    "saleFormGroup" .Params.section_sale_form
+    "countryId" "country-1")
+  }}
+
   {{ partial "index/set.html" . }}
   {{ partial "index/faq.html" . }} 
-  {{ partial "index/sale-form.html" . }}
+
+  {{ partial "index/sale-form.html" 
+    (dict "context" .
+    "saleFormGroup" .Params.section_sale_form
+    "countryId" "country-2")
+  }}
+
   {{ partial "index/references-science.html" . }}
 {{ end }}

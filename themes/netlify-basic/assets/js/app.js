@@ -4,6 +4,7 @@ import SaleForm from "./components/SaleForm.js";
 import Modal from "./components/Modal.js";
 import Toc from "./components/Toc.js";
 import Accordions from "./components/Accordions.js";
+import ContactForm from "./components/ContactForm.js";
 // import PhoneInput from "./components/PhoneInput.js";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,5 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.contains('page-faq')){
         const _accordions = new Accordions()
         _accordions.init();
+     }
+
+     if(document.body.classList.contains('page-contact')) {
+        const _contactForm = new ContactForm()
+
+        _contactForm.init()
      }
 })

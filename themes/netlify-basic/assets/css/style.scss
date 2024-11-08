@@ -3194,6 +3194,10 @@ textarea {
     padding: .5rem rem(12);
 }
 
+.page-contact textarea {
+    min-height: rem(142);
+}
+
 .iti {
     width: 100%;
 }
@@ -3252,17 +3256,29 @@ textarea {
     transform: translateY(rem(-15));
 }
 
-.home .select2-container--default .select2-selection--single .select2-selection__arrow {
-    left: rem(18) !important;
-    right: 0 !important;
+span.select2-container--default span.select2-selection--single .select2-selection__arrow {
+    left: rem(18) ;
+    right: 0 ;
 }
-.home .select2-selection__arrow b {
-    margin: 0 0 0 rem(4) !important;
-    border: none !important;
-    width: rem(24) !important;
-    height: rem(24) !important;
+span.select2-container--default span.select2-selection--single span.select2-selection__arrow b {
+    margin: 0 0 0 rem(4);
+    border: none;
+    width: rem(24);
+    height: rem(24);
     background: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10L12 16L18 10" stroke="%23868686" stroke-linecap="round"/></svg>');
 }
+
+.page-contact span.select2-container--default span.select2-selection--single .select2-selection__arrow {
+    left: unset;
+    right: rem(12);
+}
+
+.page-contact span.select2-container--default span.select2-selection--single span.select2-selection__arrow b {
+    left: unset;
+    right: 0;
+}
+
+
 
 .home .select2-selection__rendered span img {
     margin-right: rem(34) !important;
@@ -4014,5 +4030,13 @@ textarea {
 
     .flex {
         display: flex;
+    }
+
+    .text-green {
+        color: $green;
+    }
+
+    .text-alert {
+        color: $alert;
     }
 /* Classes - end */

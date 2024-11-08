@@ -48,7 +48,7 @@ canonifyURLs = true
         { linkTitle = "Jak to działa?", url = "pl/#how" },
         { linkTitle = "Składniki", url = "pl/#ingredients" },
         { linkTitle = "Opinie", url = "pl/#opinions" },
-        { linkTitle = "Referencje naukowe", url = "pl/#refs" }
+        { linkTitle = "Referencje naukowe", url = "pl/#references" }
        ]
     [[params.footer.column]]
     title = "POMOC"
@@ -62,7 +62,6 @@ canonifyURLs = true
      title = "INFORMACJE"
       list = [
        { linkTitle = "Polityka prywatności", url = "pl/terms/privacy-policy"},
-       { linkTitle = "Warunki Korzystania", url = "pl/terms/terms-of-use"},
        { linkTitle = "Zarządzanie Zgodami", url = "pl/terms/consent-management"},
        { linkTitle = "Jawność Informacji", url = "pl/terms/disclosure"}
       ]

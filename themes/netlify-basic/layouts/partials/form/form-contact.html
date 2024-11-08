@@ -1,8 +1,9 @@
-<form class="contact-form">
+<form class="contact-form" method="POST" action="contact.php">
     <fieldset class="contact-form__fieldset">
-        <div class="contact-form__row" style="display: none !important;">
+        <div class="contact-form__row">
             <label class="contact-form__label" for="contact-select">Wybierz temat
-                <select id="contact-select" class="contact-form__select">
+                <select id="contact-select" name="country-select" class="contact-form__select" placeholder="Wybierz temat">
+                    <option></option>
                     <option value="1">Status zamówienia</option>
                     <option value="2">Reklamacja i zwroty</option>
                     <option value="3">Problemy z płatnością</option>
@@ -23,9 +24,9 @@
         </div>
         <div class="contact-form__row contact-form__row--double">
             <div class="">
-                <label class="contact-form__label" for="number">
+                <label class="contact-form__label" for="order-id">
                     Numer zamówienia
-                    <input type="number" name="number" id="number" placeholder="123456">
+                    <input type="number" name="order-id" id="order-id" placeholder="123456">
                 </label>
             </div>
     
@@ -42,6 +43,10 @@
                 Napisz wiadomość
                 <textarea name="message" id="message" placeholder="Napisz wiadomość..."></textarea>
             </label>
+        </div>
+
+        <div class="message-wrap">
+        
         </div>
     </fieldset>
 
@@ -60,20 +65,3 @@
     </div>
 </form>
 
-<script>
-   
-    {{/*  $(document).ready(function() {
-        $('#contact-select').select2({
-            placeholder: 'Wybierz temat',
-            allowClear: false,
-            searchInputPlaceholder: 'Szukaj'
-        });
-
-        $('#contact-select').one('select2:open', function(e) {
-            $('input.select2-search__field').prop('placeholder', 'Szukaj');
-        });
-
-        $('#contact-select').addClass('faq-select')
-    });  */}}
-
-</script>

@@ -2,27 +2,35 @@ import { dictLocale } from "../helpers/dictLocale.js";
 export default class SaleForm {
     constructor()
     {
-        this.saleForm = document.getElementById('form-sale')
+        this.saleForms = document.querySelectorAll('[data-js-sale-form]')
     }
 
     init()
     {
-        if(!this.saleForm) {
+        if(this.saleForms.length < 1) {
             return
         }
 
+
         let globalConfig = [];
-        let validator = new window.JustValidate(this.saleForm, globalConfig, dictLocale)
 
-        validator.setCurrentLocale('pl')
+        this.saleForms.forEach(form => {
+            let validator = new window.JustValidate(form, globalConfig, dictLocale)
 
-        this.preventInputChars()
-        this.validate(validator)
-        this.successValidation(validator)
+            validator.setCurrentLocale('pl')
+    
+            this.preventInputChars(form)
+            this.validate(validator)
+            this.successValidation(validator, form)
+        })
     }
 
-    preventInputChars(){
-       const postalCode = document.querySelector('#postal-code')
+    preventInputChars(form){
+       const postalCode = form.querySelector('#postal-code')
+
+       if(!postalCode) {
+        return 
+       }
 
        postalCode.addEventListener('input', function (event) {
             this.value = this.value.replace(/[^0-9-]+/g, '');
@@ -114,41 +122,44 @@ export default class SaleForm {
             ])
     }
    
-    successValidation(validator) {
+    successValidation(validator, form) {
         validator.onSuccess(( event ) => {
-            this.send( event )
+            this.send( event, form )
         });
     }
 
-    send(event)
+    send(event, form)
     {
         event.preventDefault();
         
+        if(!form) {
+            return
+        }
+
         let data = null;
         let clientIPstatus = '';
         let codBoolean = true;
         let clientIP = getClientIP();
-        let formType = document.forms[0].id
+        let formType = form;
 
-        let customerPrefix = document.getElementsByName('customerPrefix')[0];
 
-        let shortLead = document.getElementsByName('shortLead')[0];
-
-        let customerPhone = document.getElementsByName('phone')[0];
+        let customerPrefix = formType.querySelector('#customerPrefix');
+        let shortLead = formType.querySelector('#shortLead');
+        let customerPhone = formType.querySelector('#phone');
         let customerFullName = document.getElementsByName('name')[0];
         let customerEmail = document.getElementsByName('email')[0];
 
-        let customerAddress = document.getElementsByName('street')[0];
-        let customerCity = document.getElementsByName('city')[0];
-        let customerPostcode = document.getElementsByName('postal-code')[0];
-        let customerCountryCode = document.getElementsByName('country')[0];
-        let cashOnDelivery = document.getElementsByName('cashOnDelivery')[0];
+        let customerAddress = formType.querySelector('#street');
+        let customerCity = formType.querySelector('#city');
+        let customerPostcode = formType.querySelector('#postal-code');
+        let customerCountryCode = formType.querySelector('[data-js-country]');
+        let cashOnDelivery = formType.querySelector('#cashOnDelivery');
+        
+        let redirect = formType.querySelector('#redirect');
+        let pageAction = formType.querySelector('#action');
+        let offerId = formType.querySelector('#offerId');
 
-        let redirect = document.getElementsByName('redirect')[0];
-        let pageAction = document.getElementsByName('action')[0];
-        let offerId = document.getElementsByName('offerId')[0];
-        let button = document.getElementById('submit');
-
+        let button = formType.querySelector('#submit');
 
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -209,12 +220,12 @@ export default class SaleForm {
             },
             'action': pageAction.value
         });
-
+     
         xhr.open('POST', './affcreate.php', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(data);
 
-        document.forms[0].addEventListener("input", function () {
+        form.addEventListener("input", function () {
             button.disabled = false;
             button.style.filter="grayscale(0)";
         });
@@ -231,7 +242,7 @@ export default class SaleForm {
             if (index > -1) {
                 out.splice(index, 1);
             }
-            out.push('confirm=/confirm');
+            // out.push('confirm=/confirm');
             out = out.filter(function (value, index, array) {
                 return array.indexOf(value) === index;
             });
