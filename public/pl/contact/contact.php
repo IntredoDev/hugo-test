@@ -13,9 +13,7 @@ header('Content-Type: application/json; charset=utf-8');
 $rawPostData = file_get_contents("php://input");
 $data = json_decode($rawPostData, true);
 
-
 $formData = $data['formData'];
-
 
 try {
     $mail->isSMTP();
