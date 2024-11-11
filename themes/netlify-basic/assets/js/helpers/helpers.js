@@ -13,3 +13,16 @@ export function redirectTo(url)
     
     window.location = `${origin}/${url}`
 }
+
+export function preventInputChars(form, selector)
+{
+    const input = form.querySelector(selector)
+
+    if(!input) {
+     return 
+    }
+
+    input.addEventListener('input', function (event) {
+         this.value = this.value.replace(/[^0-9-]+/g, '');
+    });
+}

@@ -26,7 +26,7 @@ try {
     $mail->Port       = 2525;
 
     $mail->setFrom($formData['email'], 'Mailer');
-    $mail->addAddress('j.decowski@intredo.com');
+    $mail->addAddress('pl@24customercare.com');
 
     $mail->isHTML(true); 
     $mail->Subject = $formData['orderId'] . ' - ' . $formData['topic'];

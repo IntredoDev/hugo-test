@@ -56,12 +56,12 @@ canonifyURLs = true
       { linkTitle = "FAQ", url = "pl/faq" },
       { linkTitle = "Kontakt", url = "pl/contact" },
       { linkTitle = "Regulamin", url = "pl/terms/terms-of-service" },
-      { linkTitle = "Polityka zwrotów", url = "pl/terms/returns-policy" }
+      { linkTitle = "Polityka dostaw & Zwrotów", url = "pl/terms/delivery-returns-policy" }
     ]
      [[params.footer.column]]
      title = "INFORMACJE"
       list = [
        { linkTitle = "Polityka prywatności", url = "pl/terms/privacy-policy"},
        { linkTitle = "Zarządzanie Zgodami", url = "pl/terms/consent-management"},
-       { linkTitle = "Jawność Informacji", url = "pl/terms/disclosure"}
+       { linkTitle = "Zrzeczenie odpowiedzialności", url = "pl/terms/disclaimer"}
       ]

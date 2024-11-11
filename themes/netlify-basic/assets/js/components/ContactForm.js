@@ -1,3 +1,6 @@
+import { dictLocale } from "../helpers/dictLocale";
+import { preventInputChars } from "../helpers/helpers";
+
 export default class ContactForm {
     constructor()
     {
@@ -16,7 +19,63 @@ export default class ContactForm {
             return
         }
 
-        this.send()
+        let globalConfig = [];
+        let validator = new window.JustValidate(this.contactForm, globalConfig, dictLocale)
+
+        validator.setCurrentLocale('pl')
+
+        preventInputChars(this.contactForm, '#order-id')
+
+        this.validate(validator)
+        this.successValidation(validator, this.contactForm)
+    }
+
+    validate(validator)
+    {
+
+        if(!validator) {
+            return
+        }
+
+        validator
+            .addField('#name', [
+                {
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'customRegexp',
+                    value: /^[^\d\s]+(?:\s+[^\d\s]+)+(?:\s)?$/,
+                    errorMessage: 'The field should contain name and surname'
+                }
+            ])
+            .addField('#email', [
+                {
+                    rule: 'required',
+                    errorMessage: 'E-mail is required'
+                },
+                {
+                    rule: 'email',
+                    errorMessage: 'Invalid e-mail',
+                },
+            ])
+            .addField('#message', [
+                {
+                    rule: 'required',
+                    errorMessage: 'The field is required'
+                },
+                {
+                    rule: 'minLength',
+                    value: 20,
+                    errorMessage: 'The field should contain at least 20 characters'
+                },
+            ])
+    }
+
+    successValidation(validator, form) {
+        validator.onSuccess(( event ) => {
+            this.send( event, form )
+        });
     }
 
     send()

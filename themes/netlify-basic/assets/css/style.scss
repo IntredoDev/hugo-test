@@ -2878,7 +2878,8 @@ ul, ol {
         gap: rem(24);
     }
 
-    .content-item h2 {
+    .content-item h2,
+    .content-item h3 {
         font-family: $font-primary;
         font-weight: bold;
         font-size: rem(14);
@@ -2889,7 +2890,13 @@ ul, ol {
         text-transform: uppercase;
     }
 
-    .content-item p {
+    .content-item h3 {
+        font-size: rem(12);
+        line-height: rem(15);
+    }
+
+    .content-item p,
+    .content-item ul li {
         font-weight: 300;
         font-size: rem(12);
         line-height: rem(15);
@@ -2897,14 +2904,28 @@ ul, ol {
         margin-bottom: .5rem;
     }
 
-    .content-item p:last-child {
+    .content-item p:last-child,
+    .content-item ul li:last-child {
         margin-bottom: 0;
     }
 
-    .content-item p b {
+    .content-item p b,
+    .content-item ul li b {
         font-weight: bold;
     }
 
+    .content-item ul {
+        list-style-type: disc;
+        padding-left: 2rem;
+    }
+
+    .content-item a {
+        color: $black;
+    }
+ 
+    .content-item ul li {
+        margin-bottom: rem(8);
+    }
     .terms__title--desktop {
         display: none;
     }
@@ -3009,7 +3030,15 @@ ul, ol {
             margin-bottom: rem(24);
         }
 
-        .content-item p {
+        .content-item h3 {
+            font-weight: 500;
+            font-size: rem(18);
+            line-height: rem(25);
+            margin-bottom: rem(24);
+        }
+ 
+        .content-item p,
+        .content-item ul li {
             font-weight: 400;
             font-size: rem(18);
             line-height: 140%;

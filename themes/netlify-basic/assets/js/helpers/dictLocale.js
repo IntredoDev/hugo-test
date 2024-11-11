@@ -59,4 +59,10 @@ export const dictLocale = [
         pl: 'Pole powinno zawierać conajmniej 3 znaki',
       },
     },
+    {
+      key: 'The field should contain at least 20 characters',
+      dict: {
+        pl: 'Pole powinno zawierać conajmniej 20 znaków'
+      }
+    }
   ];

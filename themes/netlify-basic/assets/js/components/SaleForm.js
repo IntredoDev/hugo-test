@@ -1,4 +1,6 @@
 import { dictLocale } from "../helpers/dictLocale.js";
+import { preventInputChars } from "../helpers/helpers.js";
+
 export default class SaleForm {
     constructor()
     {
@@ -11,30 +13,18 @@ export default class SaleForm {
             return
         }
 
-
         let globalConfig = [];
 
         this.saleForms.forEach(form => {
             let validator = new window.JustValidate(form, globalConfig, dictLocale)
 
             validator.setCurrentLocale('pl')
-    
-            this.preventInputChars(form)
+
+            preventInputChars(form, '#postal-code')
+
             this.validate(validator)
             this.successValidation(validator, form)
         })
-    }
-
-    preventInputChars(form){
-       const postalCode = form.querySelector('#postal-code')
-
-       if(!postalCode) {
-        return 
-       }
-
-       postalCode.addEventListener('input', function (event) {
-            this.value = this.value.replace(/[^0-9-]+/g, '');
-       });
     }
 
     validate(validator)
@@ -177,7 +167,7 @@ export default class SaleForm {
                     if (json['shopConfirmed'] === true && pageAction.value === 'affcreate') {
                         button.style.visibility = 'hidden';
                         if (redirect.value) {
-                            window.location.href = redirect.value + '?' + prepareURI(getQueryString());
+                            window.location.href = redirect.value;
                         }
                     }
                 }
