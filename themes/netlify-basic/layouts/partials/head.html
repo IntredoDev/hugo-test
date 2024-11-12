@@ -9,9 +9,6 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ $title := print .Site.Title " | " .Title }}
-  {{ $title = .Site.Title }}
-  <title>{{ $title }}</title>
   
   {{ if hugo.IsDevelopment }}
     {{/*  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  */}}
@@ -41,7 +38,7 @@
   <script defer src="/js/just-validate/just-validate.production.min.js"></script>
 
 
-  <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>
-  <meta name="description" content="Discover Collagenico, a premium collagen supplement designed to support hair growth, improve skin elasticity, and enhance overall vitality. Boost your beauty and health with our scientifically formulated collagen blend. Try Collagenico today!">
+  <title>{{ .Params.meta_title }}</title>
+  <meta name="description" content="{{ .Params.meta_description }}">
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="db0ddc87-b4ec-475d-bc0d-551dc9ce5e82" data-blockingmode="auto" type="text/javascript"></script>
 </head>

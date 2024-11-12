@@ -20,16 +20,21 @@ try {
     $mail->SMTPAuth   = true; 
     $mail->Username   = 'no-reply@24customercare.com';
     $mail->Password   = '9A4prZDCeSz0K';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
-    $mail->SMTPDebug = 2;
+
+    $mail->SMTPSecure = false;
+    $mail->SMTPAutoTLS = false;
+
+    $mail->Port       = 587;
     
-    $mail->setFrom($formData['email'], 'Mailer');
-    $mail->addAddress('j.decowski@intredo.com');
+    $mail->SMTPDebug = 1;
+    
+    $mail->setFrom('no-reply@24customercare.com', 'Mailer');
+    $mail->addAddress('pl@24customercare.com');
 
     $mail->isHTML(true); 
     $mail->Subject = $formData['orderId'] . ' - ' . $formData['topic'];
     $mail->Body    = '<b>Imię i nazwisko:</b> ' . $formData['name'] . '</br>' .
+                     '<b>Imię klienta:</b> ' . $formData['email'] . '</br>' .
                      '<b>Wiadomość:</b> </br>' . $formData['message'];
                      
 

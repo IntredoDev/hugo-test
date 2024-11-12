@@ -16,7 +16,6 @@ canonifyURLs = true
   languageCode = 'pl'
   languageDirection = 'ltr'
   languageName = 'Polski'
-  title = 'Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation'
   weight = 1
 
 [[menu.main]]
