@@ -27,7 +27,7 @@ export default class ContactForm {
         preventInputChars(this.contactForm, '#order-id')
 
         this.validate(validator)
-        this.successValidation(validator, this.contactForm)
+        this.successValidation(validator)
     }
 
     validate(validator)
@@ -72,18 +72,18 @@ export default class ContactForm {
             ])
     }
 
-    successValidation(validator, form) {
+    successValidation(validator) {
         validator.onSuccess(( event ) => {
-            this.send( event, form )
+            this.send( event )
         });
     }
 
-    send()
+    send(event)
     {
         const submit = this.contactForm.querySelector('.contact-form__submit')
 
         submit.addEventListener('click', (e) => {
-            e.preventDefault()
+            event.preventDefault()
 
             const messageElement = this.contactForm.querySelector('.message-wrap')
 
@@ -114,6 +114,8 @@ export default class ContactForm {
                     try {
                         const response = JSON.parse(xhr.responseText);
                         let message;
+
+                        console.log('response: ' + response)
 
                         if (response && response.status === 'success') {
                             message = this.createMessage('Wiadomość została wysłana. Dziękujemy!', false);

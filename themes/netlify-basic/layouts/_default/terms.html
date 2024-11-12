@@ -34,7 +34,7 @@
                     <div class="terms__content">
                     <div class="content-item">
                         {{ if .entry_heading }}
-                            <p>{{ .entry_heading }} </p>
+                            <p>{{ .entry_heading | safeHTML }} </p>
                         {{ end }}
                         {{ if .entry_desc }}
                             <p>{{ .entry_desc }} </p>
@@ -42,7 +42,7 @@
                     </div>
              
                     {{ with .content_items }}
-                            {{ range $index, $element := . }}
+                        {{ range $index, $element := . }}
                             <div class="content-item" data-js-toc-item-target="{{ add $index 1 }}">
                                 <h2>{{ $element.heading }}</h2>
                                 {{ with $element.paragraphs }}
@@ -51,7 +51,7 @@
                                     {{ end }}
                                 {{ end }}
                             </div>
-                            {{ end }}
+                        {{ end }}
                     </div>
                     {{ end }}
                 </div>

@@ -2,12 +2,10 @@
 <html>
     {{- partial "head.html" . -}}
     <body class='{{ if .IsHome }}home{{ end }} {{ if .Params.bodyClass }}{{- printf "page-%s" .Params.bodyClass -}}{{ end }}'>
-        {{ if hugo.IsProduction }}
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP7QK2W7"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-      {{ end }}
 
         {{- partial "header.html" . -}}
         <div id="content">

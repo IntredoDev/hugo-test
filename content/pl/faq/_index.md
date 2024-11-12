@@ -1,7 +1,7 @@
 ---
 type: "faq"
 bodyClass: "faq"
-url: "faq"
+url: "faq" 
 page_faq: 
     heading: "FAQ - najczęściej zadawane pytania"
     list:

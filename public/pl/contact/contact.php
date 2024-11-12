@@ -16,12 +16,14 @@ $formData = $data['formData'];
 
 try {
     $mail->isSMTP();
-    $mail->Host       = 'sandbox.smtp.mailtrap.io';
+    $mail->Host       = 'mail.24customercare.com';
     $mail->SMTPAuth   = true; 
-    $mail->Username   = 'b1c9abd50f9d35';
-    $mail->Password   = '62756a2ef6e44b';
-    $mail->Port       = 2525;
-
+    $mail->Username   = 'no-reply@24customercare.com';
+    $mail->Password   = '9A4prZDCeSz0K';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port       = 465;
+    $mail->SMTPDebug = 2;
+    
     $mail->setFrom($formData['email'], 'Mailer');
     $mail->addAddress('j.decowski@intredo.com');
 
@@ -29,6 +31,7 @@ try {
     $mail->Subject = $formData['orderId'] . ' - ' . $formData['topic'];
     $mail->Body    = '<b>Imię i nazwisko:</b> ' . $formData['name'] . '</br>' .
                      '<b>Wiadomość:</b> </br>' . $formData['message'];
+                     
 
     $mail->send();
 

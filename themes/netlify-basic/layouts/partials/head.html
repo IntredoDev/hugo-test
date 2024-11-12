@@ -1,5 +1,4 @@
 <head>
-  {{ if hugo.IsProduction }}
     <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -7,7 +6,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WP7QK2W7');</script>
     <!-- End Google Tag Manager -->
-  {{ end }}
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ $title := print .Site.Title " | " .Title }}
@@ -15,7 +14,7 @@
   <title>{{ $title }}</title>
   
   {{ if hugo.IsDevelopment }}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {{/*  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  */}}
   {{ end }}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +43,5 @@
 
   <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>
   <meta name="description" content="Discover Collagenico, a premium collagen supplement designed to support hair growth, improve skin elasticity, and enhance overall vitality. Boost your beauty and health with our scientifically formulated collagen blend. Try Collagenico today!">
-  {{ if hugo.IsProduction }}
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="db0ddc87-b4ec-475d-bc0d-551dc9ce5e82" data-blockingmode="auto" type="text/javascript"></script>
-  {{ end }}
 </head>
