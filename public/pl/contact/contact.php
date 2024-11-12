@@ -16,18 +16,24 @@ $formData = $data['formData'];
 
 try {
     $mail->isSMTP();
-    $mail->Host       = 's.abrelltd.com';
+    $mail->Host       = 'mail.24customercare.com';
     $mail->SMTPAuth   = true; 
     $mail->Username   = 'no-reply@24customercare.com';
     $mail->Password   = '9A4prZDCeSz0K';
 
-    $mail->SMTPSecure = false;
-    $mail->SMTPAutoTLS = false;
-
+    $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
-    
-    $mail->SMTPDebug = 1;
-    
+
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+
+    $mail->SMTPDebug = 0;
+
     $mail->setFrom('no-reply@24customercare.com', 'Mailer');
     $mail->addAddress('pl@24customercare.com');
 
@@ -35,7 +41,7 @@ try {
     $mail->Subject = $formData['orderId'] . ' - ' . $formData['topic'];
     $mail->Body    = '<b>Imię i nazwisko:</b> ' . $formData['name'] . '</br>' .
                      '<b>Imię klienta:</b> ' . $formData['email'] . '</br>' .
-                     '<b>Wiadomość:</b> </br>' . $formData['message'];
+                     '<b>Wiadomość:</b></br>' . $formData['message'];
                      
 
     $mail->send();

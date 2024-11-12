@@ -89,7 +89,7 @@ export default class ContactForm {
 
             let xhr = new XMLHttpRequest();
             let message;
-
+ 
             const data = JSON.stringify(
                 {
                     'formData': {
@@ -108,15 +108,13 @@ export default class ContactForm {
             xhr.open('POST', './contact.php', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(data);
-
+ 
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     try {
                         const response = JSON.parse(xhr.responseText);
                         let message;
-
-                        console.log('response: ' + response)
-
+ 
                         if (response && response.status === 'success') {
                             message = this.createMessage('Wiadomość została wysłana. Dziękujemy!', false);
                             messageElement.append(message);
