@@ -16,7 +16,7 @@ $formData = $data['formData'];
 
 try {
     $mail->isSMTP();
-    $mail->Host       = 'mail.24customercare.com';
+    $mail->Host       = 's.abrelltd.com';
     $mail->SMTPAuth   = true; 
     $mail->Username   = 'no-reply@24customercare.com';
     $mail->Password   = '9A4prZDCeSz0K';
