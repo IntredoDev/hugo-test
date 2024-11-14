@@ -3,6 +3,8 @@ type: terms
 bodyClass: terms
 url: terms/delivery-returns-policy
 layout: terms
+meta_title: "Polityka Dostawy i Zwrotów | Collagenico24 – Wysyłka i Zwroty Produktów"
+meta_description: "Poznaj zasady dostawy i zwrotów w Collagenico24. Dowiedz się, jak szybko realizujemy wysyłki, oraz jakie są procedury zwrotu i wymiany zakupionych produktów."
 page_terms:
   heading: Polityka dostaw & Zwrotów
   toc_list:

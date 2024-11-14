@@ -53,8 +53,12 @@
         <input type="checkbox" name="acceptance" required> 
         <label class="form-sale__label">Zapoznałem się i akceptuję <a href="{{ .Site.Params.BaseURL }}/terms/terms-of-service" target="_blank">Regulamin</a> oraz <a href="{{ .Site.Params.BaseURL }}/terms/privacy-policy" target="_blank">Politykę Prywatności</a></label>
     </div>
+
     
+
     <div class="form-sale__row form-sale__row--submit">
+        <span class="loader"></span>
+        
         <button class="form-sale__button button button--primary" type="submit" id="submit">
             <span>{{ $buttonTitle }}</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,4 +67,5 @@
             </svg>
         </button>
     </div>
+
 </form>

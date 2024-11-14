@@ -5,7 +5,7 @@ import Modal from "./components/Modal.js";
 import Toc from "./components/Toc.js";
 import Accordions from "./components/Accordions.js";
 import ContactForm from "./components/ContactForm.js";
-// import PhoneInput from "./components/PhoneInput.js";
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const _button = new Button();
@@ -26,11 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const _carousel = new Carousel()
         _carousel.init()
     }
-
-    // if( document.body.classList.contains('home')){
-    //     const _tel = new PhoneInput()
-    //     _tel.init()
-    // }
 
     if( document.body.classList.contains('home') || 
         document.body.classList.contains('page-faq')){

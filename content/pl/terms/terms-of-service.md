@@ -3,6 +3,8 @@ type: "terms"
 bodyClass: "terms" 
 url: "terms/terms-of-service"
 layout: "terms"
+meta_title: "Warunki Świadczenia Usług | Collagenico24 – Zasady i Regulaminy"
+meta_description: "Przeczytaj pełne warunki świadczenia usług w Collagenico24, aby poznać nasze zasady zakupów, płatności oraz zobowiązania dotyczące obsługi klienta."
 page_terms: 
     heading: "Warunki Korzystania"
     toc_list:

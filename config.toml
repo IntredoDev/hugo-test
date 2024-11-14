@@ -4,12 +4,16 @@ baseURL = "https://collagenico24.net/"
 defaultContentLanguage = 'pl'
 defaultContentLanguageInSubdir = true
 canonifyURLs = true
-  
-[module]
-  [[module.mounts]]
-    source = "themes/netlify-basic/node_modules"
-    target = "static/libs/node_modules"
 
+[mediaTypes]
+  [mediaTypes."application/x-php"]
+    suffixes = ["php"]
+
+[outputFormats]
+  [outputFormats.PHP]
+    mediaType = "application/x-php"
+    isPlainText = true
+  
 [languages]
   [languages.pl]
   contentDir = 'content/pl'

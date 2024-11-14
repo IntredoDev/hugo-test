@@ -1,14 +1,50 @@
+<?php
+// Sprawdzenie, czy użytkownik wszedł na stronę z parametrem 'confirm' lub poprzez stronę w tej samej domenie
+$allowed_referer = 'https://collagenico24.net';
+$has_confirm_param = isset($_GET['confirm']) && $_GET['confirm'] === '/confirm';
+$referer_valid = isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], $allowed_referer) === 0;
+
+// Jeśli nie ma odpowiedniego referera i brakuje parametru 'confirm', blokujemy dostęp
+if (!$has_confirm_param && !$referer_valid) {
+    // Ustaw kod odpowiedzi 403 (Forbidden) i wyświetl odpowiedni komunikat
+   http_response_code(403);
+   die('403 Forbidden - Direct access is not allowed.');
+}
+
+// Jeśli warunki są spełnione, kontynuujemy wyświetlanie strony
+?>
+
 <!DOCTYPE html>
-<html><head>
+<html><head> 
+
+    
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WP7QK2W7');</script>
+    
+
+  <script>
+      (function (i, n, t, r, e, d, o) {
+          i['IntredoAnalyticsObject'] = e;
+          i[e] = i[e] || function () {
+              (i[e].q = i[e].q || []).push(arguments)
+          };
+          d = n.createElement(t), o = n.getElementsByTagName(t)[0];
+          d.async = 1;
+          d.src = r;
+          o.parentNode.insertBefore(d, o);
+      })(window, document, 'script', '//xtro24.com/analytics.js', 'xtro');
   
+      xtro('create', '3c94ee77490199b99b3ab27ac9a303b0', 'xtro-details');
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>
-  
-  
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
   
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +54,7 @@
   
   
 
-  <link rel="stylesheet" href="https://collagenico24.net/css/style.min.e2409b40ed7018413ba063fbf5e336cc0688c5c7481521973b5c808eecba21aa.css"  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://collagenico24.net/css/style.min.046b79fc4b2f3160fcbdf6e8fc81eec355c978611e6e6f85ba538444dcf9fb91.css"  crossorigin="anonymous">
   
   
   <script src="https://collagenico24.net/js/jquery/jquery.min.js"></script>
@@ -26,11 +62,17 @@
 
   <script defer src="https://collagenico24.net/js/just-validate/just-validate.production.min.js"></script>
 
-
-  <title>Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation</title>
-  <meta name="description" content="Discover Collagenico, a premium collagen supplement designed to support hair growth, improve skin elasticity, and enhance overall vitality. Boost your beauty and health with our scientifically formulated collagen blend. Try Collagenico today!">
   
-</head><body class=' '>
+  <title>Dziękujemy za Twoje Zamówienie | Collagenico24</title>
+  
+  
+  <meta name="description" content="Dziękujemy za złożenie zamówienia w Collagenico24! Potwierdzenie zamówienia zostało wysłane na Twój e-mail. W razie pytań, skontaktuj się z naszym zespołem.">
+  
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="db0ddc87-b4ec-475d-bc0d-551dc9ce5e82" data-blockingmode="auto" type="text/javascript"></script>
+</head><body class=' page-thank-you'>
+        
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP7QK2W7"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <header class="header">
     <div class="container container--row">
     
@@ -43,7 +85,45 @@
     
     </div>
 </header>
- <div id="content">
+ <div id="content"><section class="typ">
+        <div class="container"><div class="typ__header"><h2 class="typ__title">Rezerwacja zakończona sukcesem!</h2><p class="typ__desc"> Rezerwacja została przyjęta i jest w trakcie przetwarzania. Nasz specjalista z obsługi wkrótce się z Tobą skontaktuje, aby potwierdzić szczegóły zamówienia i odpowiedzieć na wszelkie pytania.</p></div>
+                <p class="typ__para-next"> Co dalej?</p>
+            
+             <ul class="typ__list"><li class="typ__list-item">
+                        
+                            <img class="typ__list-img" src="https://collagenico24.net/img/customer-agent.svg" role="presentation">
+                        
+                        
+                        <p class="typ__list-desc">
+                            Oczekuj telefonu od naszego specjalisty - wkrótce do Ciebie zadzwonimy, aby potwierdzić rezerwację.
+                        </p>
+                        
+                    </li><li class="typ__list-item">
+                        
+                            <img class="typ__list-img" src="https://collagenico24.net/img/phone-ringing.svg" role="presentation">
+                        
+                        
+                        <p class="typ__list-desc">
+                            Upewnij się, że telefon, który podałeś, jest włączony i dostępny, aby zapewnić sprawną realizację zamówienia.
+                        </p>
+                        
+                    </li><li class="typ__list-item">
+                        
+                            <img class="typ__list-img" src="https://collagenico24.net/img/faq-icon.svg" role="presentation">
+                        
+                        
+                        <p class="typ__list-desc">
+                            Masz pytania? Sprawdź naszą stronę FAQ lub skontaktuj się z nami poprzez formularz w zakładce Kontakt
+                        </p>
+                        
+                    </li></ul>
+             
+                <p class="typ__para-end">
+                    Dziękujemy za zaufanie!
+                </p>
+            
+        </div>
+    </section>
         </div><footer class="footer">
     <div class="container">
         <div class="footer__upper">
@@ -96,7 +176,7 @@
                                 </li>
                             
                                 <li class="footer__list-item">
-                                    <a href="https://collagenico24.net/pl/terms/returns-policy">Polityka zwrotów</a>
+                                    <a href="https://collagenico24.net/pl/terms/delivery-returns-policy">Polityka dostaw &amp; Zwrotów</a>
                                 </li>
                             
                         </ul>
@@ -149,7 +229,7 @@
     </div>
 </footer>
 
-        <script defer type="module" src="https://collagenico24.net/js/app.7f8caac2ff77f94590365093781c1c121640bd062e514d4e674877a1e227e9f5.js"></script>
+        <script defer type="module" src="https://collagenico24.net/js/app.a2b72f01d5dec8b4e90a2c6b74b2251dc620870845679b933d34f2f8aefda03b.js"></script>
         
         
 

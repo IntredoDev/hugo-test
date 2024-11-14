@@ -121,7 +121,8 @@ export default class SaleForm {
     send(event, form)
     {
         event.preventDefault();
-        
+        const loader = form.querySelector('.loader');
+
         if(!form) {
             return
         }
@@ -154,6 +155,9 @@ export default class SaleForm {
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
+        loader.style.display = 'inline-block';
+
+
         xhr.addEventListener('readystatechange', function () {
             if (this.readyState === 4) {
                 if (this.responseText) {
@@ -167,13 +171,19 @@ export default class SaleForm {
                     if (json['shopConfirmed'] === true && pageAction.value === 'affcreate') {
                         button.style.visibility = 'hidden';
                         if (redirect.value) {
-                            window.location.href = redirect.value;
+                            window.location.href = redirect.value + '?' + prepareURI(getQueryString());
                         }
                     }
                 }
+            } else {
+                loader.style.display = 'none';
             }
         });
 
+        xhr.onerror = function() {
+            console.error('Network error occurred.');
+            loader.style.display = 'none';
+        };
 
 
         button.disabled = true;
@@ -232,7 +242,7 @@ export default class SaleForm {
             if (index > -1) {
                 out.splice(index, 1);
             }
-            // out.push('confirm=/confirm');
+            out.push('confirm=/confirm');
             out = out.filter(function (value, index, array) {
                 return array.indexOf(value) === index;
             });

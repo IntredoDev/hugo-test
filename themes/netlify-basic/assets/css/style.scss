@@ -2948,7 +2948,7 @@ ul, ol {
         text-decoration: none;
         text-transform: uppercase;
         color: $black;
-
+        align-items: center;
         font-weight: 500;
         font-size: rem(12);
         letter-spacing: normal;
@@ -3185,8 +3185,11 @@ ul, ol {
     display: flex;
     flex-direction: column;
     gap: rem(12);
+   
 }
-
+.form-sale__row {
+    position: relative;
+}
 .form-sale__label,
 .contact-form__label {
     display: flex;
@@ -3477,6 +3480,7 @@ span.select2-container--default span.select2-selection--single span.select2-sele
     display: flex;
     flex-direction: column;
     gap: rem(24);
+    position: relative;
 }
 
 .contact-form .button--primary {
@@ -4068,4 +4072,28 @@ span.select2-container--default span.select2-selection--single span.select2-sele
     .text-alert {
         color: $alert;
     }
+
+    .loader {
+        width: rem(24);
+        height: rem(24);
+        border: 3px solid $gray-light;
+        border-bottom-color: $navy;
+        border-radius: 50%;
+        display: none;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+        position: absolute;
+        top: -59%; 
+        left: 50%;
+        transform: translateX(-50%);
+        }
+    
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        } 
 /* Classes - end */

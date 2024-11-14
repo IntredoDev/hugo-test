@@ -3,6 +3,8 @@ type: "terms"
 bodyClass: "terms" 
 url: "terms/privacy-policy"
 layout: "terms"
+meta_title: "Polityka Prywatności | Collagenico24 – Ochrona Twoich Danych Osobowych"
+meta_description: "Sprawdź, w jaki sposób Collagenico24 chroni Twoje dane osobowe, oraz jakie masz prawa dotyczące prywatności i ochrony danych. Twoje bezpieczeństwo jest naszym priorytetem."
 page_terms: 
     heading: "Polityka Prywatności"
     toc_list:

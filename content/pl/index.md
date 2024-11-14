@@ -1,4 +1,7 @@
 ---
+outputs: 
+  - php
+  - html 
 meta_title: "Collagenico - Advanced Collagen Supplement for Hair Growth and Skin Rejuvenation"
 meta_description: "Discover Collagenico, a premium collagen supplement designed to support hair growth, improve skin elasticity, and enhance overall vitality. Boost your beauty and health with our scientifically formulated collagen blend. Try Collagenico today!"
 hero_title: "Odzyskaj pełniejsze, mocniejsze włosy dzięki wsparciu nauki"

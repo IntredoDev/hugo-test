@@ -1,7 +1,9 @@
 ---
 type: "faq"
 bodyClass: "faq"
-url: "faq" 
+url: "faq"
+meta_title: "Najczęściej Zadawane Pytania | Collagenico24 – Wszystko, co Musisz Wiedzieć"
+meta_description: "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące produktów Collagenico24, procesu zamówienia, dostawy oraz zwrotów. Rozwiej swoje wątpliwości z pomocą naszego FAQ!"
 page_faq: 
     heading: "FAQ - najczęściej zadawane pytania"
     list:

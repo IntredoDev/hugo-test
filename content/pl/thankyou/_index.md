@@ -1,7 +1,12 @@
 ---
+outputs: 
+  - php
+  - html 
 type: "thankyou"
 bodyClass: "thank-you"
 url: "thank-you"
+meta_title: "Dziękujemy za Twoje Zamówienie | Collagenico24"
+meta_description: "Dziękujemy za złożenie zamówienia w Collagenico24! Potwierdzenie zamówienia zostało wysłane na Twój e-mail. W razie pytań, skontaktuj się z naszym zespołem."
 page_thankyou:
     heading: "Rezerwacja zakończona sukcesem!"
     description: "Rezerwacja została przyjęta i jest w trakcie przetwarzania. Nasz specjalista z obsługi wkrótce się z Tobą skontaktuje, aby potwierdzić szczegóły zamówienia i odpowiedzieć na wszelkie pytania."
