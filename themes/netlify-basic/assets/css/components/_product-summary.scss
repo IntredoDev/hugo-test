@@ -1,0 +1,90 @@
+.product-summary {
+   display: flex;
+   flex-direction: column;
+   gap: rem(24);
+
+   @include below(lg) {
+    padding: 0 rem(12) rem(12);
+   }
+
+   @include above(lg) {
+    background: #f3f3f3;
+    padding: rem(24) rem(20) 0 rem(20);
+   }
+}
+
+.product-summary__table {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+
+    @include above(lg) {
+     gap: rem(12);
+    }
+}
+
+.product-summary__name {
+    font-family: $font-primary;
+    text-align: center;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: rem(17);
+    letter-spacing: $tight;
+    text-transform: uppercase;
+
+    @include above(lg) {
+        font-size: rem(18);
+        line-height: 180%;
+    }
+}
+
+.product-summary__table-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-summary__table-key,
+.product-summary__table-value {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(19);
+    letter-spacing: $wide;
+
+    @include above(lg) {
+        font-size: rem(18);
+        line-height: 180%;
+    }
+}
+
+
+.product-summary__table-value {
+    text-align: end;
+}
+
+.product-summary__table-row--total {
+    padding: rem(12) 0;
+    border: 1px solid $gray-light;
+    border-left: none;
+    border-right: none;
+    margin-top: rem(16);
+
+    @include above(lg) {
+        margin-top: rem(12);
+        padding: rem(24) 0;
+    }
+}
+
+.product-summary__table-row--total .product-summary__table-key,
+.product-summary__table-row--total .product-summary__table-value {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(22);
+    letter-spacing: $tight;
+
+    @include above(lg) {
+        font-weight: 700;
+        font-size: rem(24);
+        line-height: rem(36);
+        letter-spacing: normal;
+    }
+}

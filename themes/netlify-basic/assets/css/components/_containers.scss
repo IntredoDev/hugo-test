@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: rem(1240);
+
+    @include above(lg){
+        padding: 0 rem(20);
+    }
+}
+
+.container--row {
+    flex-direction: row;
+}

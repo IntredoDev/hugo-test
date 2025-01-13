@@ -1,0 +1,100 @@
+@import '../config/index.scss';
+
+.header {
+    background-color: $black;
+    padding: rem(25) 0;
+
+    @include above(lg) {
+        padding: rem(21) 0;
+    }
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header__button {
+    order: 2;
+}
+
+.header__benefits {
+    display: grid;
+    grid-template-columns: 30% 25% 40%;
+    justify-content: space-between;
+    order: 3;
+    margin: 0 auto;
+}
+
+.header__benefits-item {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: rem(10);
+}
+
+.header__benefits-item p {
+    color: white;
+    font-size: rem(10);
+    line-height: rem(12);
+}
+
+.header__secure {
+    @include below(lg) {
+        max-width: rem(61.5);
+        min-width: rem(61.5);
+        height: rem(17);
+    }
+}
+
+.header__logo {
+    @include below(lg) {
+        max-width: rem(136);
+        min-width: rem(136);
+        height: rem(36);
+    }
+}
+
+@include below(md) {
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+}
+
+@include below(lg) {
+    .header__benefits-item img {
+        min-width: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+@include above(md) {
+    .header__benefits {
+        order: 2;
+    }
+}
+
+@include above(lg) {
+    .header__benefits {
+        margin-left: auto;
+        margin-right: 1rem;
+        max-width: rem(526);
+        grid-template-columns: rem(157) rem(133) rem(188);
+        gap: 1.5rem;
+     }
+ 
+     .header__benefits-item {
+         justify-content: flex-start;
+     }
+ 
+     .header__benefits-item p {
+         font-size: 0.75rem;
+         font-weight: 300;
+         line-height: rem(15);
+     }
+}

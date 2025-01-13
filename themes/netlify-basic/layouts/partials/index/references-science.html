@@ -29,6 +29,8 @@
             </li>
             {{ end }}
         </ul>
+
+        <p class="rscience__logos-info">{{ .logos_info }}</p>
         </div>
         <div class="rscience__lower">
             <div class="rscience__lower-wrapper">
@@ -66,7 +68,6 @@
                 </div>
 
                 <div class="rscience__disclaimer">
-                    <h3 class="rscience__disclaimer-heading">Disclaimer:</h3>
                     {{ if .disclaimer_desc }}
                         <p class="rscience__disclaimer-desc">{{ .disclaimer_desc }}</p>
                     {{ end }}

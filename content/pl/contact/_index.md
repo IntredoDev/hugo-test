@@ -1,9 +1,9 @@
 ---
 type: "contact"
-bodyClass: "contact"
+bodyClass: "contact" 
 url: "contact"
 meta_title: "Skontaktuj się z Nami | Collagenico24 – Wsparcie Klienta i Pomoc"
-meta_description: "Masz pytania? Skontaktuj się z zespołem Collagenico24, aby uzyskać pomoc dotyczącą zamówienia, produktów lub obsługi klienta. Jesteśmy do Twojej dyspozycji!"
+meta_description: "Masz pytania? Skontaktuj się z zespołem Collagenico24, aby uzyskać pomoc dotyczącą zamówienia, produktów lub obsługi klienta. Jesteśmy do Twojej dyspozycji!" 
 page_contact:
     heading: "Kontakt"
     button_title: "Wyślij wiadomość"

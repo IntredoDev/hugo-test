@@ -1,0 +1,216 @@
+.rscience {
+   background: $beige-dark;
+}
+
+.rscience__gradient {
+   height: 2rem;
+   width: 100%;
+   background: rgb(236,224,215);
+   background: -moz-linear-gradient(180deg, rgba(236,224,215,1) 0%, rgba(220,205,193,1) 100%);
+   background: -webkit-linear-gradient(180deg, rgba(236,224,215,1) 0%, rgba(220,205,193,1) 100%);
+   background: linear-gradient(180deg, rgba(236,224,215,1) 0%, rgba(220,205,193,1) 100%);
+}
+ 
+ 
+ .rscience__upper {
+    padding: rem(8) 0 rem(0) 0;
+ }
+
+ .rscience__heading {
+    text-align: center;
+    margin-bottom: rem(24);
+ }
+
+ .rscience__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: rem(24);
+    max-width: rem(360);
+    margin: 0 auto;
+ }
+
+ .rscience__logos-logo {
+    object-fit: cover;
+    max-height: rem(28);
+    width: auto;
+    filter: grayscale(100%);
+ }
+
+ .rscience__lower {
+    padding: rem(12) 0;
+ }
+
+ .rscience__list {
+    list-style: decimal;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+ }
+
+ .rscience__list--2 {
+    margin-bottom: rem(12);
+ }
+
+ .rscience__list-item {
+    font-weight: 200;
+    font-size: rem(10);
+    line-height: rem(12);
+ }
+
+ .rscience__list-item p {
+   font-weight: 300;
+ }
+ .rscience__list-item a {
+    font-weight: 200;
+    font-size: rem(10);
+    line-height: rem(12);
+    color: $black;
+    text-decoration: none !important;
+    letter-spacing: normal;
+ }
+
+ .rscience__disclaimer-heading {
+    font-family: $font-primary;
+    font-weight: 300;
+    line-height: rem(24);
+    font-size: rem(10);
+    letter-spacing: normal;
+ }
+
+ .rscience__disclaimer-desc {
+    font-weight: 200;
+    font-size: rem(10);
+    line-height: rem(13);
+    letter-spacing: $tight;
+    padding: rem(8);
+    border: 1px solid $gray-line;
+    border-radius: 2px;
+ }
+
+ .rscience__list--3 {
+    display: none;
+ }
+
+ .rscience__lower-lists {
+   margin-bottom: rem(12);
+
+   @include below(lg) {
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+   }
+ }
+
+ .rscience__logos-info {
+   text-align: center;
+   margin-top: rem(8);
+   font-weight: 200;
+   font-size: rem(10);
+   line-height: rem(18);
+   letter-spacing: $tight;
+ }
+
+@include above(lg) {
+    .rscience__gradient {
+        height:  rem(60);
+    }
+
+    .rscience__upper {
+        padding: rem(20) 0 rem(24) 0;
+    }
+
+    .rscience__heading {
+        margin-bottom: rem(40);
+     }
+
+
+     .rscience__logos-logo {
+      max-height: rem(48);
+   }
+
+     .rscience__logos-item:nth-child(2) .rscience__logos-logo  {
+        max-height: rem(48);
+     }
+
+     .rscience__lower {
+        padding: 0 0 rem(40) 0;
+     }
+
+
+     .rscience__lower-lists {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(24);
+        margin-bottom: rem(24);
+     }
+
+     .rscience__list--2 {
+        display: none;
+     }
+
+     .rscience__list--3 {
+        display: flex;
+     }
+
+     .rscience__list-item,
+     .rscience__list-item a {
+        font-weight: 200;
+        font-size: rem(14);
+        line-height: rem(22);
+     }
+
+     .rscience__list-item a {
+        text-decoration: underline;
+     }
+
+     .rscience__disclaimer-heading {
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: rem(24);
+     }
+
+     .rscience__disclaimer-desc {
+        font-weight: 200;
+        font-size: rem(14);
+        line-height: rem(18);
+        padding: rem(12);
+        border-radius: 4px;
+     }
+
+     .rscience__logos-info {
+       margin-top: rem(12);
+       font-size: rem(12);
+       line-height: rem(18);
+     }
+ }
+
+ @include above(md) {
+   .rscience__logos {
+      max-width: rem(700);
+   }
+ }
+
+ @include above(xl) {
+   .rscience__logos {
+      width: 100%;
+      max-width: unset;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 0 auto;
+   }
+ }
+
+ @include above(xxl) {
+   .rscience__logos {
+      gap: rem(24);
+   }
+
+   .rscience__logos {
+      gap: rem(60);
+   }
+
+   .rscience__logos-logo {
+      max-height: rem(48);
+     }
+ }

@@ -4,7 +4,7 @@ export default class Button {
     constructor()
     {
         this.buttons = Array.from(document.querySelectorAll('[data-js-form-target]'));
-        this.saleFormSection = document.getElementById('sale');
+        this.saleFormSection = document.getElementById('order');
     }
 
     init()

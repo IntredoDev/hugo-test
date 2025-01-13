@@ -1,0 +1,46 @@
+{{ with .newsletter_group }}
+<div class="form-sale__row form-sale__newsletter">
+    {{ if .newsletter_heading }}
+        <div class="form-sale__header">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2.33301" y="5.83325" width="23.3333" height="16.3333" rx="2" stroke="#313131" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.33301 16.3334H25.6663" stroke="#313131" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+                
+            <h3 class="form-sale__header-heading form-sale__payment-heading">{{ .newsletter_heading }}</h3>
+        </div>
+    {{ end }}
+
+    {{ if .newsletter_desc }}
+        <p class="form-sale__newsletter-desc">{{ .newsletter_desc }}</p>
+    {{ end }}
+    {{ with .options }}
+    <ul class="radios-list" id="newsletter-radios-list">
+        {{ range $index, $element := .  }}
+            <li class="radio-item radio-item--simple" data-js-radio-item data-js-newsletter-radio-item>
+                <label for="{{ .id }}" class="radio-item__label">
+                    <div class="radio-item__label-wrap">
+                        <input type="radio" class="radio-input newsletter-radio-input" name="newsletter-method" id="{{ .id }}" value="{{ .id }}">
+                        <img class="radio-item__icon radio-item__icon--mobile" width="42" height="36" src="{{ .Site.Params.BaseURL }}/img/newsletter-{{ .id }}.png" role="presentation">
+                        <div class="radio-item__dummy"></div>
+                    </div>
+                    <div class="radio-item__label-inner">
+                        {{ .name }}
+                    </div>
+                </label>
+
+                <div class="radio-item__wrap">
+                    <div class="radio-item__icon-wrap">
+                        <img class="radio-item__icon radio-item__icon--desktop" width="42" height="36" src="{{ .Site.Params.BaseURL }}/img/newsletter-{{ .id }}.svg" role="presentation">
+                    </div>
+                </div>
+            </li>
+        {{ end }}
+    </ul>
+
+    <div class="radios-list-message-container">
+
+    </div>
+    {{ end }}
+</div>
+{{ end }}

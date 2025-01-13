@@ -1,10 +1,7 @@
 ---
-outputs: 
-  - php
-  - html 
-type: "thankyou"
+type: "thankyou" 
 bodyClass: "thank-you"
-url: "thank-you"
+url: "thank-you" 
 meta_title: "Dziękujemy za Twoje Zamówienie | Collagenico24"
 meta_description: "Dziękujemy za złożenie zamówienia w Collagenico24! Potwierdzenie zamówienia zostało wysłane na Twój e-mail. W razie pytań, skontaktuj się z naszym zespołem."
 page_thankyou:

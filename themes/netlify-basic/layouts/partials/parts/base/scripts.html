@@ -1,0 +1,148 @@
+{{ if eq .Params.bodyClass "checkout" }}
+    {{ $js := resources.Get "js/checkout.js" | js.Build (dict "minify" true "target" "es2015") |  resources.Fingerprint }}
+    <script defer type="module" src="{{ $js.Permalink }}"></script>
+{{ end }}
+
+
+{{ if eq .Params.bodyClass "checkout" }}
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+<script>
+    const saleForms = document.querySelectorAll('[data-js-sale-form]');
+
+    saleForms?.forEach(form => {
+        const input = form.querySelector("#phone");
+        const customerPrefix = form.querySelector('#customerPrefix');
+
+        const iti = window.intlTelInput(input, {
+            loadUtilsOnInit: true,
+            initialCountry: "pl",
+            allowDropdown: true,
+            useFullscreenPopup: false,
+            separateDialCode: true,
+            autoPlaceholder: 'polite',
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
+        });
+
+        function getDialCode() {
+            const dialCode = `+${iti.getSelectedCountryData().dialCode}`;
+            return dialCode;
+        }
+
+        customerPrefix.value = getDialCode()
+
+        function formatPhone(value) {
+            //captures groups of digits: three sets of up to 3 digits each.
+            //formats these groups with spaces between them.
+
+            return value.replace(/\D/g, '')
+                        .replace(/(\d{3})(\d{3})(\d{0,3})/, '$1 $2 $3') 
+                        .trim();
+        }
+
+        function handler() {
+            const dialCode = getDialCode();
+            customerPrefix.value = dialCode
+         }
+
+         input.addEventListener("input", function(event) {
+            this.value = formatPhone(this.value); 
+        });
+      
+        input.addEventListener('countrychange', handler);
+
+    })
+
+</script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        saleForms?.forEach(form => {
+            const selectElement = form.querySelector('[data-js-country]');
+        
+            initSaleFormCountry($(selectElement))
+
+        })
+
+       function initSaleFormCountry($selectElement) {
+        fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(countries => {
+     
+            const options = countries.map(country => {
+                const isSelected = country.cca2 === 'PL' ? 'selected' : '';
+            
+                return `
+                    <option value="${country.cca2}" data-flag="${country.flags.png}" ${isSelected}>
+                        ${country.name.common}
+                    </option>`;
+            }).join('');
+
+            $selectElement.html('<option value="">Select a country...</option>' + options);
+            
+            $selectElement.select2({
+                templateResult: formatCountry,
+                templateSelection: formatCountry,
+            });
+        })
+        .catch(error => console.error('Error fetching country data:', error));
+
+        function formatCountry(country) {
+            if (!country.id) {
+                return document.createTextNode(country.text);
+            }
+            let flagUrl;
+
+            if(country.id === 'PL') {
+                flagUrl = '/img/flag-pl.svg';
+            } else {
+                flagUrl = country.element.getAttribute('data-flag');
+            }
+        
+            let span = document.createElement('span');
+            let img = document.createElement('img');
+
+            img.src = flagUrl;
+            img.style.width = '24px';
+            img.style.height = '16px';
+            img.style.marginRight = '10px';
+
+            img.classList = 'select-country-flag'
+        
+            span.appendChild(img);
+            span.appendChild(document.createTextNode(country.text));
+            
+            return span;
+        }
+
+       }
+       
+    });
+</script>
+{{ end }}
+
+{{ $js := resources.Get "js/app.js" | js.Build (dict "minify" true "target" "es2015") |  resources.Fingerprint }}
+<script type="module" src="{{ $js.Permalink }}"></script>
+
+{{ if eq .Params.bodyClass "terms" }}
+    {{ $js := resources.Get "js/terms.js" | js.Build (dict "minify" true "target" "es2015") |  resources.Fingerprint }}
+    <script type="module" src="{{ $js.Permalink }}"></script>
+{{ end }}
+
+{{ if eq .Params.bodyClass "contact" }}
+<script>
+
+    $('#contact-select').select2({
+        placeholder: 'Choose a topic',
+        allowClear: false,
+        searchInputPlaceholder: 'Search'
+    });
+
+    $('#contact-select').one('select2:open', function(e) {
+        $('input.select2-search__field').prop('placeholder', 'Search');
+    });
+
+    $('#contact-select').addClass('faq-select')
+</script>
+{{ end }}

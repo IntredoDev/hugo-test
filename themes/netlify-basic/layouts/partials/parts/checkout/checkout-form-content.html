@@ -1,0 +1,55 @@
+{{ partial "parts/form/form-timer-group.html" . }}
+
+{{/*  {{- if .image -}}  */}}
+<div class="checkout__image-wrap">
+    {{/*  {{ $image := resources.Get .image }}
+    {{ if $image }}
+        {{ $imageSrc := ($image.Resize "x278 webp q90").RelPermalink }}
+        {{ partial "components/image.html" 
+            (dict "context" .
+            "image" $image
+            "src" $imageSrc 
+            "class" "checkout__image js-checkout-image" 
+            "alt" "product's bundle image"
+            ) 
+        }}
+
+    {{ end }}  */}}
+    <img class="checkout__image js-checkout-image" src="" alt="product's bundle image">
+
+</div>
+{{/*  {{- end -}}  */}}
+
+
+{{ if .quote }}
+    <blockquote class="checkout__quote">
+        <p>{{ .quote }}</p>
+
+        <span class="checkout__quote-name">
+            {{ .quote_name }}
+        </span>
+    </blockquote>
+{{ end }}
+
+{{ partial "parts/form/form-product-summary.html" . }}
+
+<div class="checkout__logos checkout__logos--desktop">
+     <div class="checkout__logos-wrap">
+        <img class="checkout__logo" height="120" width="120" src="/img/100_q.svg" role="presentation">
+        <img class="checkout__logo" height="120" width="120" src="/img/secure_checkout_3.svg" role="presentation">
+        <img class="checkout__logo" height="120" width="120" src="/img/great_customer_service_2.svg" role="presentation">
+     </div>
+   
+    {{ with .logos }}
+        {{ if or .para_1 .para_2 }}
+            <div class="checkout__logos-text">
+                {{ if .para_1 }}
+                 <p class="checkout__logos-para checkout__logos-para--1">{{ .para_1 | safeHTML }}</p>
+                {{ end }}
+                {{ if .para_2 }}
+                 <p class="checkout__logos-para checkout__logos-para--2">{{ .para_2 }}</p>
+                {{ end }}
+            </div>
+        {{ end }}
+    {{ end }}
+</div>

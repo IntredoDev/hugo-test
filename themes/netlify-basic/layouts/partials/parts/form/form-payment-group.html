@@ -1,0 +1,42 @@
+{{ with .payment_group }}
+<div class="form-sale__row form-sale__payment">
+    {{ if .payment_heading }}
+        <div class="form-sale__header">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2.33301" y="5.83325" width="23.3333" height="16.3333" rx="2" stroke="#313131" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.33301 16.3334H25.6663" stroke="#313131" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+                
+            <h3 class="form-sale__header-heading form-sale__payment-heading">{{ .payment_heading }}</h3>
+        </div>
+    {{ end }}
+
+    {{ with .payment_methods }}
+    <ul class="form-sale__payment-list radios-list">
+        {{ range $index, $element := .  }}
+            <li class="form-sale__payment-item radio-item" data-js-radio-item>
+                <label for="{{ .id }}" class="radio-item__label">
+                    <div class="radio-item__label-wrap">
+                        <input type="radio" class="radio-input js-payment-input" name="cashOnDelivery-choice" id="{{ .id }}" value="{{- if eq .id "cod" -}} true {{- else -}} false {{- end -}}">
+                        <img class="radio-item__icon radio-item__icon--mobile" width="44" height="40" src="{{ .Site.Params.BaseURL }}/img/payment-{{ .id }}.svg" role="presentation">
+                        <div class="radio-item__dummy"></div>
+                    </div>
+                    <div class="radio-item__label-inner">
+                        {{ .name }}
+                    </div>
+                </label>
+
+                <div class="radio-item__wrap">
+                    <p>{{ .description }}</p>
+          
+                    <div class="radio-item__icon-wrap">
+                        <img class="radio-item__icon radio-item__icon--desktop" width="44" height="40" src="{{ .Site.Params.BaseURL }}/img/payment-{{ .id }}.svg" role="presentation">
+                        <span>{{ .additional_cost }}</span>
+                    </div>
+                </div>
+            </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
+{{ end }}

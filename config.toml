@@ -4,15 +4,6 @@ baseURL = "https://collagenico24.net/"
 defaultContentLanguage = 'pl'
 defaultContentLanguageInSubdir = true
 canonifyURLs = true
-
-[mediaTypes]
-  [mediaTypes."application/x-php"]
-    suffixes = ["php"]
-
-[outputFormats]
-  [outputFormats.PHP]
-    mediaType = "application/x-php"
-    isPlainText = true
   
 [languages]
   [languages.pl]
@@ -21,14 +12,12 @@ canonifyURLs = true
   languageDirection = 'ltr'
   languageName = 'Polski'
   weight = 1
-
+  
 [[menu.main]]
     name = "FAQ"
     url = "/faq/"
 
 [params]
-  baseURL = "http://localhost:1313/"
-
   logo = "img/collagenico_logo.svg"
   cta_button_title = "zamawiam"
 
@@ -45,6 +34,9 @@ canonifyURLs = true
     image = "/img/header_benefit_3.svg"
 
    [params.footer]
+     copyright = "© 2024 Collagenico. Wszelkie prawa zastrzeżone. Zarządzane przez Commerto Ltd, zarejestrowane w Nikozji, nr rej. HE 414808 Znajduje się pod adresem: Bracken Road, D18 CV48, Dublin, Irlandia"
+     payment_methods_text = "Akceptowane metody płatności:"
+     shipping_options_text = "Szybka i bezpieczna dostawa:"
      [[params.footer.column]]
      title = "Collagenico"
        list = [
@@ -58,13 +50,13 @@ canonifyURLs = true
     list = [
       { linkTitle = "FAQ", url = "pl/faq" },
       { linkTitle = "Kontakt", url = "pl/contact" },
-      { linkTitle = "Regulamin", url = "pl/terms/terms-of-service" },
-      { linkTitle = "Polityka dostaw & Zwrotów", url = "pl/terms/delivery-returns-policy" }
+      { linkTitle = "Polityka dostaw & Zwrotów", url = "pl/policies/delivery-returns-policy" }
     ]
      [[params.footer.column]]
      title = "INFORMACJE"
       list = [
-       { linkTitle = "Polityka prywatności", url = "pl/terms/privacy-policy"},
-       { linkTitle = "Zarządzanie Zgodami", url = "pl/terms/consent-management"},
-       { linkTitle = "Zrzeczenie odpowiedzialności", url = "pl/terms/disclaimer"}
+       { linkTitle = "Polityka prywatności", url = "pl/policies/privacy-policy"},
+       { linkTitle = "Regulamin", url = "pl/policies/terms-and-conditions" },
+       { linkTitle = "Zarządzanie Zgodami", url = "pl/policies/consent-management", dataOpenPrivacy = "true"},
+       { linkTitle = "Zrzeczenie odpowiedzialności", url = "pl/policies/disclaimer"},
       ]

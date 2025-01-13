@@ -1,0 +1,143 @@
+.ac {
+    margin-top: rem(24);
+}
+
+.ac:first-child {
+    margin-top: 0;
+}
+
+.ac,
+.ac-header {
+    border: none;
+    background: white;
+    border-radius: 8px;
+}
+.ac-header {
+    background: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.ac .ac-trigger {
+    padding: 10.5px rem(12);
+    box-shadow: 0px 0px rem(10) 0px rgba(0, 0, 0, 0.03);
+
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: $tight;
+    transition: background 0.15s ease-in-out;
+    border-radius: 8px;
+}
+
+.ac .ac-trigger::after {
+    right: rem(12);
+}
+
+.ac .ac-trigger:focus {
+    color: $black;
+}
+
+.ac .ac-trigger::after,
+.ac.is-active>.ac-header .ac-trigger::after {
+    content: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10L12 16L6 10" stroke="%23313131" stroke-linecap="round"/></svg>');
+    width: rem(24);
+    height: rem(24);
+}
+.ac .ac-trigger:hover,
+.ac .ac-trigger[aria-expanded=true] {
+    background: $yellow-light;
+    transition: background 0.25s ease-in-out;
+}
+
+.ac .ac-trigger[aria-expanded=true]  {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.ac .ac-panel {
+    background: $gray-light;
+    will-change: height,visibility;
+}
+
+.ac .ac-panel .ac-text {
+    padding: rem(12);
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: rem(24);
+    letter-spacing: $tight;
+}
+
+.ac .ac-trigger span {
+    display: block;
+    max-width: calc(100% - 1.5rem - 0.75rem - 0.625rem);
+}
+
+
+@include above(lg) {
+    .ac .ac-trigger {
+        padding: 1rem rem(20);
+        font-size: rem(24);
+        letter-spacing: $tighter;
+    }
+
+    .ac .ac-trigger::after {
+        right: rem(20);
+    }
+
+    .ac .ac-panel .ac-text {
+        padding: rem(20);
+        font-size: rem(18);
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: $wide;
+    }
+}
+
+
+.ac.style--gray {
+    border-radius: 4px 4px 4px 4px;
+}
+
+.ac.style--gray .ac-header {
+    background-color: white;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid $gray-light;
+
+}
+
+.ac.style--gray .ac-trigger {
+    padding: .5rem rem(12);
+    border-radius: 4px 4px 4px 4px;
+}
+
+.ac.style--gray .ac-panel {
+    background-color: white;
+}
+
+.ac.style--gray  .ac-trigger:hover,
+.ac.style--gray  .ac-trigger[aria-expanded=true] {
+    background: $yellow-light;
+}
+.ac.style--gray .ac-header .ac-trigger::after {
+    transition: transform 0.15s ease-in-out;
+}
+
+.ac.style--gray.is-active>.ac-header .ac-trigger::after {
+    transform: translate(0, -50%) rotateX(180deg);
+    transition: transform 0.25s ease-in-out;
+}
+
+@include above(lg) {
+    .ac.style--gray .ac-trigger {
+        font-size: rem(24);
+        font-weight: 300;
+        letter-spacing: $tighter;
+        line-height: rem(29);
+        padding: 1rem rem(12);
+    }
+
+    .ac.style--gray .ac-panel .ac-text {
+        padding: rem(12) rem(40);
+    }
+}

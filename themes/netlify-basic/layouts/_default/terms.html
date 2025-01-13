@@ -12,11 +12,11 @@
                         {{ range $index, $element := . }}
                                 <li class="toc-list__item" >
                                     <a href="" data-js-toc-list-item="{{ add $index 1 }}">
-                                        {{ $element.item }}
                                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2.5 10.944H17.5" stroke="#313131" stroke-linecap="round"/>
                                             <path d="M12.5 15.9434L17.5 10.9434L12.5 5.94336" stroke="#313131" stroke-linecap="round"/>
                                         </svg>
+                                        {{ $element.item | safeHTML }}
                                     </a>
                                 </li>
                             {{ end }}
@@ -32,6 +32,7 @@
                     
                 
                     <div class="terms__content">
+                    {{ if or .entry_heading .entry_desc }}
                     <div class="content-item">
                         {{ if .entry_heading }}
                             <p>{{ .entry_heading | safeHTML }} </p>
@@ -40,7 +41,8 @@
                             <p>{{ .entry_desc }} </p>
                         {{ end }}
                     </div>
-             
+                    {{ end }}
+
                     {{ with .content_items }}
                         {{ range $index, $element := . }}
                             <div class="content-item" data-js-toc-item-target="{{ add $index 1 }}">

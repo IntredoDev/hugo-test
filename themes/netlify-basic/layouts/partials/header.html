@@ -2,7 +2,7 @@
     <div class="container container--row">
     {{ if .Site.Params.logo }}
     <a href="{{ .Site.BaseURL }}">
-        <img class="header__logo" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="site logo" width="136" height="32" loading="eager">
+        <img class="header__logo" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="site logo" width="184" height="43" loading="eager">
     </a>
     {{ end }} 
 
@@ -18,6 +18,7 @@
             {{ end }}
         </ul>
 
+
         <button class="header__button button button--small button--navi" data-js-form-target>
             <span>{{ .Site.Params.cta_button_title }}</span>
 
@@ -28,6 +29,9 @@
         </button>
     {{ end }}
     
+    {{ if eq .Params.bodyClass "checkout"}}
+        <img class="header__ssl" width="124" height="32" src="/img/secure_encryption.svg" loading="eager">
+    {{ end }}
     </div>
 </header>
  

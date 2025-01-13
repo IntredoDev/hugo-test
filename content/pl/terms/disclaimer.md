@@ -1,11 +1,11 @@
 ---
-type: "terms"
+type: "policies"
 bodyClass: "terms" 
-url: "terms/disclaimer"
+url: "policies/disclaimer"
 layout: "terms"
 meta_title: "Zrzeczenie się Odpowiedzialności | Collagenico24 – Informacje Prawne"
-meta_description: "Zapoznaj się z zasadami odpowiedzialności Collagenico24. Zobacz, jakie informacje dotyczące naszych produktów i usług podlegają ograniczeniom odpowiedzialności."
-page_terms:
+meta_description: "Zapoznaj się z zasadami odpowiedzialności Collagenico24. Zobacz, jakie informacje dotyczące naszych produktów i usług podlegają ograniczeniom odpowiedzialności." 
+page_terms:  
     heading: "Zrzeczenie odpowiedzialności"
     toc_list:
         - item: "Brak gwarancji efektów zdrowotnych"

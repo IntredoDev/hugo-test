@@ -5,6 +5,8 @@ export default class SaleForm {
     constructor()
     {
         this.saleForms = document.querySelectorAll('[data-js-sale-form]')
+        this.radioGroupContainers = document.querySelectorAll('.radios-list');
+
     }
 
     init()
@@ -16,15 +18,89 @@ export default class SaleForm {
         let globalConfig = [];
 
         this.saleForms.forEach(form => {
-            let validator = new window.JustValidate(form, globalConfig, dictLocale)
+            let validator = new window.JustValidate(form, {
+                successFieldCssClass: 'is-valid',
 
-            validator.setCurrentLocale('pl')
+            })
+
+            //this.selectPaymentGroup()
+            this.radiosEvents()
 
             preventInputChars(form, '#postal-code')
 
+
             this.validate(validator)
+     
             this.successValidation(validator, form)
+            
+            const labelElement = document.querySelector('label[for="country"]');
+
+            if (labelElement) {
+                labelElement.classList.add('validation-success');
+            }
+
         })
+    }
+
+    addClassToRadioItem(radios)
+    {
+
+        if(radios.length < 1) {
+            return 
+        }
+
+        radios.forEach(radio => {
+            const formItem = radio.closest('.radio-item');
+            
+            if (formItem) {
+                if (radio.checked) {
+                    formItem.classList.add('active');
+                } else {
+                    formItem.classList.remove('active');
+                }
+            }
+        })
+    }
+
+    selectPaymentGroup(){
+        const radios = document.querySelectorAll('[data-js-radio-item] input');
+
+        if (radios.length < 1) {
+            return
+        }
+
+        radios[0].checked = true;
+
+        this.addClassToRadioItem(radios)
+    }
+
+    radiosEvents()
+    {
+     
+        const radios = document.querySelectorAll('[data-js-radio-item] input');
+    
+
+        if (radios.length < 1) {
+            return
+        }
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+
+                if (radio.name === 'cashOnDelivery-choice') {
+                    this.changeCashOnDeliveryValue(radio)
+                }
+
+                this.addClassToRadioItem(radios)
+            });
+        });
+    }
+
+    changeCashOnDeliveryValue(radio)
+    {
+        let jsCOD = document.querySelector('.js-cash-on-delivery');
+
+        jsCOD.value = radio.value
     }
 
     validate(validator)
@@ -34,88 +110,267 @@ export default class SaleForm {
             return
         }
 
+        validator.onFail((fields) => {
+       
+            Object.keys(fields).forEach(fieldName => {
+                let field = fields[fieldName];
+                const parentElement = field.elem.closest('.form-sale__label');
+                
+
+                if(!field.isValid) {
+                    if (parentElement) {
+                        parentElement.classList.add('has-error');
+                    }
+                } else {
+                    if (parentElement.classList.contains('has-error')) {
+                        parentElement.classList.remove('has-error');
+                    }
+                }
+            });
+
+
+            const manageClasses = (containers) => {
+                containers.forEach(container => {
+                    let radios = container.querySelectorAll('.radio-input');
+                    let isSelected = Array.from(radios).some(radio => radio.checked);
+                    if (!isSelected) {
+                        container.classList.add('has-error');
+                    } else {
+                        if (container.classList.contains('has-error')) {
+                            container.classList.remove('has-error');
+                        }
+                    }
+                })
+            };
+
+            if(this.radioGroupContainers.length > 0) {
+                manageClasses(this.radioGroupContainers)
+            }
+        })
         validator
             .addField('#name', [
                 {
                     rule: 'required',
-                    errorMessage: 'The field is required'
+                    errorMessage: 'Proszę wpisać imię i nazwisko'
                 },
                 {
                     rule: 'customRegexp',
                     value: /^[^\d\s]+(?:\s+[^\d\s]+)+(?:\s)?$/,
-                    errorMessage: 'The field should contain name and surname'
+                    errorMessage: 'Imię i nazwisko musi zawierać co najmniej 2 wyrazy'
                 }
             ])
             .addField('#phone', [
                 {
                     rule: 'required',
-                    errorMessage: 'The field is required'
+                    errorMessage: 'Proszę wpisać swój numer telefonu'
                 },
                 {
                     rule: 'minLength',
                     value: 9,
-                    errorMessage: 'Phone number should contain at least 9 digits'
-                }
+                    errorMessage: 'Numer telefonu musi składać się z conajmniej 9 cyfr'
+                },
+
             ])
             .addField('#street', [
                 {
                     rule: 'required',
-                    errorMessage: 'The field is required'
+                    errorMessage: 'Ulica musi zawierać nazwę oraz numer'
                 },
                 {
                     rule: 'customRegexp',
                     value: /^(?=.*\d)(?=.*\b\w+\b.*\b\w+\b).*$/,
-                    errorMessage: 'The street must contain at least two words and at least one digit'
+                    errorMessage: 'Ulica musi zawierać nazwę oraz numer'
                 }
             ])
             .addField('#email', [
                 {
                     rule: 'required',
-                    errorMessage: 'E-mail is required'
+                    errorMessage: 'Proszę wpisać adres e-mail, przykładowo: nazwa@domena.com'
                 },
                 {
                     rule: 'email',
-                    errorMessage: 'Invalid e-mail',
-                },
+                    errorMessage: 'Proszę wpisać poprawny adres e-mail, przykładowo: nazwa@domena.com',
+                }
             ])
             .addField('#postal-code', [
                 {
                     rule: 'required',
-                    errorMessage: 'The field is required'
+                    errorMessage: 'Proszę wpisać kod pocztowy, przykładowo: 00-000'
                 },
                 {
                     rule: 'minLength',
                     value: 5,
-                    errorMessage: 'Postal Code should contain at least 5 characters'
+                    errorMessage: 'Kod pocztowy powinien zawierać przynajmniej 6 znaków, przykładowo: 00-000'
                 },
                 {
                     rule: 'maxLength',
                     value: 6,
-                    errorMessage: 'Postal Code should contain max 6 characters'
+                    errorMessage: 'Kod pocztowy powinien zawierać maksymalnie 6 znaków, przykładowo: 00-000'
                 },
+                {
+                    rule: 'customRegexp',
+                    value: /^[a-z0-9][-a-z0-9 ]{0,10}[a-z0-9]$/,
+                    errorMessage: 'Proszę wpisać poprawny kod pocztowy, przykładowo: 00-000'
+                }
             ])
             .addField('#city', [
                 {
                     rule: 'required',
-                    errorMessage: 'The field is required'
+                    errorMessage: 'Proszę wpisać miejscowość'
                 },
                 {
                     rule: 'minLength',
                     value: 3,
-                    errorMessage: 'The field should contain at least 3 characters'
+                    errorMessage: 'Nazwa miejscowości powinna zawierać minimum 3 litery'
                 },
                 {
                     rule: 'customRegexp',
                     value: /^[^\d]*$/,
-                    errorMessage: 'Numbers are not allowed in this field',
+                    errorMessage: 'Proszę wpisać poprawną miejscowość',
                 },
             ])
+            .addField('#country', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Proszę wybrać kraj'
+                }
+            ])
+            .addRequiredGroup(
+                '#newsletter-radios-list', 
+                'Proszę wybrać opcje, aby kontynuować'
+            )
+            .addRequiredGroup(
+                '.form-sale__payment-list', 
+                'Proszę wybrać opcje, aby kontynuować' 
+            );
+
+        this.fieldRevalidation(validator, '#name')
+        this.fieldRevalidation(validator, '#email')
+        this.fieldRevalidation(validator, '#phone')
+        this.fieldRevalidation(validator, '#street')
+        this.fieldRevalidation(validator, '#postal-code')
+        this.fieldRevalidation(validator, '#city')
+        this.jQueryfieldRevalidation(validator, '#country', 'change')
+        this.radioGroupValidation(this.radioGroupContainers)
     }
    
     successValidation(validator, form) {
         validator.onSuccess(( event ) => {
             this.send( event, form )
+        });    
+    }
+
+    
+    radioGroupValidation(radioContainers)
+    {
+
+        if (radioContainers.length < 1) {
+            return;
+        }
+    
+        radioContainers.forEach((container) => {
+            let radioInputs = container.querySelectorAll('.radio-input');
+
+            const manageClasses = (container) => {
+                let isSelected = Array.from(radioInputs).some(radio => radio.checked);
+                if (!isSelected) {
+                    container.classList.add('has-error');
+                } else {
+                    if (container.classList.contains('has-error')) {
+                        container.classList.remove('has-error');
+                    }
+                }
+            };
+    
+            radioInputs.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    manageClasses(container);
+                });
+            });
         });
+    }
+
+    jQueryfieldRevalidation(validator, selector, handlerEvent)
+    {
+        let input = $(selector);
+
+        if(!validator || !input) {
+            return 
+        }
+
+        if (!handlerEvent) {
+            handlerEvent = 'blur'
+        }
+
+       input.on(handlerEvent, () => {
+            validator.revalidateField(selector).then(isValid => {
+                let rootElem = input.closest('.form-sale__label')
+            
+                if(isValid) {
+                    if(rootElem.hasClass('has-error')) {
+                        rootElem.removeClass('has-error')
+                    }
+
+                    rootElem.addClass('validation-success')
+
+                    $('.select2-container').addClass('is-valid')
+
+                    if($('.select2-container').hasClass('just-validate-error-field')) {
+                        $('.select2-container').removeClass('just-validate-error-field')
+                    }
+
+                } else {
+                    if(rootElem.hasClass('validation-success')) {
+                        rootElem.removeClass('validation-success')
+                    }
+
+                    rootElem.addClass('has-error')
+
+                    if($('.select2-container').hasClass('is-valid')) {
+                        $('.select2-container').removeClass('is-valid')
+                    }
+
+                    $('.select2-container').addClass('just-validate-error-field')
+
+                }
+            });
+        });
+    }
+
+    fieldRevalidation(validator, selector, handlerEvent)
+    {
+        let input = document.querySelector(selector);
+
+        if(!validator || !input) {
+            return 
+        }
+
+        if (!handlerEvent) {
+            handlerEvent = 'blur'
+        }
+
+        input.addEventListener(handlerEvent, () => {
+            validator.revalidateField(selector).then(isValid => {
+                let rootElem = input.closest('.form-sale__label')
+
+                if(isValid) {
+                    rootElem.classList.add('validation-success')
+    
+                    if(rootElem.classList.contains('has-error')) {
+                        rootElem.classList.remove('has-error')
+                    }
+    
+                } else {
+
+                if(rootElem.classList.contains('validation-success')) {
+                    rootElem.classList.remove('validation-success')
+                }
+    
+                rootElem.classList.add('has-error')
+                }
+            });
+        });
+        
     }
 
     send(event, form)
@@ -132,7 +387,6 @@ export default class SaleForm {
         let codBoolean = true;
         let clientIP = getClientIP();
         let formType = form;
-
 
         let customerPrefix = formType.querySelector('#customerPrefix');
         let shortLead = formType.querySelector('#shortLead');
@@ -157,7 +411,7 @@ export default class SaleForm {
 
         loader.style.display = 'inline-block';
 
-
+    
         xhr.addEventListener('readystatechange', function () {
             if (this.readyState === 4) {
                 if (this.responseText) {
@@ -168,6 +422,9 @@ export default class SaleForm {
                             window.location.href = redirect.value + '?' + prepareURI(getQueryString());
                         }
                     }
+
+                    console.log(json['shopConfirmed'])
+                    
                     if (json['shopConfirmed'] === true && pageAction.value === 'affcreate') {
                         button.style.visibility = 'hidden';
                         if (redirect.value) {
@@ -223,6 +480,7 @@ export default class SaleForm {
      
         xhr.open('POST', './affcreate.php', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
+
         xhr.send(data);
 
         form.addEventListener("input", function () {

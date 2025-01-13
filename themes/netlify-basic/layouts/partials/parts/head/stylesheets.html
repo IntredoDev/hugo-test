@@ -1,0 +1,19 @@
+{{ $css := resources.Get "css/style.scss" }}
+{{ $style := $css | css.Sass | resources.Minify | resources.Fingerprint }}
+
+<link rel="stylesheet" href="{{ $style.Permalink }}"  crossorigin="anonymous">
+
+{{ if eq .Params.bodyClass "checkout" }}
+  {{ $css := resources.Get "css/checkout.scss" }}
+  {{ $style := $css | css.Sass | resources.Minify | resources.Fingerprint }}
+
+  <link rel="stylesheet" href="{{ $style.Permalink }}"  crossorigin="anonymous">
+{{ end }}
+
+
+{{ if eq .Params.bodyClass "terms" }}
+  {{ $css := resources.Get "css/terms.scss" }}
+  {{ $style := $css | css.Sass | resources.Minify | resources.Fingerprint }}
+
+  <link rel="stylesheet" href="{{ $style.Permalink }}"  crossorigin="anonymous">
+{{ end }}

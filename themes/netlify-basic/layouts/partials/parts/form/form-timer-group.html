@@ -1,0 +1,41 @@
+{{ with .timer_group }}
+<div class="timer">
+    {{ if or .heading .description }}
+    <div class="timer__header">
+        {{ if .heading }}
+            <h3 class="timer__heading">{{ .heading }}</h3>
+        {{ end }}
+        {{ if .description }}
+            <p class="timer__desc">{{ .description }}</p>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="timer__time" data-js-timer>
+        <div class="timer__time-item">
+            <div class="timer__time-field hours">00</div>
+            <span>{{ .hours }}</span>
+        </div>
+      
+        <span class="timer__time-colon">:</span>
+        <div class="timer__time-item">
+            <div class="timer__time-field mins" data-js-timer-mins="{{ if .minutes_left }} {{ .minutes_left }} {{ else }} 0 {{ end }}">
+                {{ if .minutes_left }}
+                    {{ .minutes_left }}
+                {{ else }}
+                    15
+                {{ end }}
+            </div>
+
+            <span class="">{{ .minutes }}</span>
+        </div>
+        <span class="timer__time-colon">:</span>
+        <div class="timer__time-item seconds">
+           <div class="timer__time-field" data-js-timer-sec="10">
+            00
+           </div> 
+            <span>{{ .seconds }}</span>
+        </div>
+    </div>
+</div>
+{{ end }}

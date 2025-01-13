@@ -1,0 +1,230 @@
+.terms {
+    padding: 1rem 0 rem(40) 0;
+}
+
+.terms__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(18);
+}
+
+.terms__title {
+    font-size: rem(32);
+    font-weight: 400;
+    line-height: rem(43);
+    letter-spacing: $tight;
+    margin-bottom: rem(18);
+}
+
+.terms__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+}
+
+.content-item h2,
+.content-item h3 {
+    font-family: $font-primary;
+ 
+    font-size: rem(14);
+    line-height: rem(17);
+    letter-spacing: $wide;
+    margin-bottom: rem(12);
+    text-align: start;
+ 
+}
+
+.content-item h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.content-item h3 {
+    display: inline-block;
+    font-weight: 500;
+    font-size: rem(12);
+    line-height: rem(15);
+
+    &.inline-heading {
+        margin-bottom: 0;
+    }
+}
+
+.content-item p,
+.content-item ul li,
+.content-item ol li {
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: rem(15);
+    letter-spacing: $wide;
+    margin-bottom: .5rem;
+}
+
+.content-item p:last-child,
+.content-item ul li:last-child,
+.content-item ol li:last-child {
+    margin-bottom: 0;
+}
+
+.content-item p b,
+.content-item ul li b,
+.content-item ol li b {
+    font-weight: bold;
+}
+
+.content-item ul,
+.content-item ol {
+    padding-left: 1rem;
+    margin-top: rem(8);
+}
+
+.content-item ul {
+    list-style-type: disc;
+}
+
+.content-item ol {
+    list-style-type: decimal;
+}
+
+.content-item a {
+    color: $black;
+}
+
+.content-item ul li,
+.content-item ol li {
+    margin-bottom: rem(8);
+}
+.terms__title--desktop {
+    display: none;
+}
+.toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-bottom: rem(18);
+    border-bottom: 1px solid $gray-light;
+}
+
+.toc-list__item {
+    text-align: start;
+    padding: rem(4) 0 rem(2) 0;
+}
+
+.toc-list__item a {
+    display: flex;
+    gap: .5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $black;
+    align-items: center;
+    font-weight: 500;
+    font-size: rem(12);
+    letter-spacing: normal;
+    line-height: rem(15);
+}
+
+.toc-list__item span {
+    @include above(lg) {
+        min-width: rem(28.5);
+    }
+}
+
+.toc-list__item a svg {
+    position: relative;
+    min-width: rem(20);
+    transition: transform 0.15s ease-in-out;
+}
+
+
+@include above(lg) {
+    .page-terms { 
+        overflow-x: unset;
+    }
+
+    .page-terms .header {
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+    }
+
+    .terms {
+        padding: rem(24) 0 rem(40) 0;
+        margin-top: rem(113);
+    }
+
+    .terms__title {
+        font-size: rem(40);
+        line-height: rem(48);
+        margin-bottom: rem(40);
+    }
+
+    .terms__title--mobile {
+        display: none;
+    }
+
+    .terms__title--desktop {
+        display: block;
+    }
+
+    .terms__wrapper {
+        display: grid;
+        grid-template-columns: rem(320) 1fr;
+        column-gap: rem(51);
+        padding: 0 rem(20);
+    }
+
+    .terms__wrapper aside {
+        padding-top: rem(90);
+    }
+
+    .toc-list {
+        position: sticky;
+        top: calc(95px + 1.5rem);
+        padding-bottom: unset;
+        border-bottom: unset;
+    }
+
+    .toc-list__item {
+        border-bottom: 1px solid $gray-light;
+    }
+
+    .toc-list__item a {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: rem(19);
+        position: relative;
+    }
+
+
+    .content-item h2 {
+        font-weight: 500;
+        font-size: rem(24);
+        line-height: rem(29);
+        margin-bottom: rem(24);
+    }
+
+    .content-item h3 {
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: rem(25);
+        margin-bottom: rem(24);
+
+        &.inline-heading {
+            margin-bottom: 0;
+        }
+    }
+
+    .content-item p,
+    .content-item ul li,
+    .content-item ol li {
+        font-size: rem(18);
+        line-height: 140%;
+    }
+
+   .content-item ul,
+   .content-item ol {
+    padding-left: 2rem;
+   }
+}

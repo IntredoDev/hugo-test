@@ -1,0 +1,99 @@
+
+
+<form class="form-sale" method="POST" method="post" data-js-sale-form novalidate>
+    <input type="hidden" id="action" name="action" value="affcreate">
+    <input type="hidden" id="redirect" name="redirect" value="thank-you">
+    <input type="hidden" id="offerId" name="offerId" value="1">
+    <input type="hidden" id="shortLead" name="shortLead" value="false">
+    <input type="hidden" id="customerPrefix" name="customerPrefix" value="">
+    <input type="hidden" id="cashOnDelivery" name="cashOnDelivery" value="true" class="js-cash-on-delivery">
+
+    {{ if .contact_details_heading }}
+    <div class="form-sale__row form-sale__header">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.41699 22.75C6.41699 22.75 10.5003 21 11.667 19.8333C12.8337 18.6667 9.33366 18.6667 9.33366 12.8333C9.33366 7 14.0003 7 14.0003 7C14.0003 7 18.667 7 18.667 12.8333C18.667 18.6667 15.167 18.6667 16.3337 19.8333C17.5003 21 21.5837 22.75 21.5837 22.75" stroke="#313131" stroke-width="1.4" stroke-linecap="round"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9997 25.6666C20.443 25.6666 25.6663 20.4432 25.6663 13.9999C25.6663 7.5566 20.443 2.33325 13.9997 2.33325C7.55635 2.33325 2.33301 7.5566 2.33301 13.9999C2.33301 20.4432 7.55635 25.6666 13.9997 25.6666Z" stroke="#313131" stroke-width="1.4"/>
+        </svg>
+        <h3 class="form-sale__header-heading">{{ .contact_details_heading }}</h3>
+    </div>
+    {{ end }}
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="name">
+            <span class="sale-form__label-text"><span>Imię i nazwisko</span></span> 
+            <input type="text" id="name" name="name" placeholder="Wpisz swoje imię i nazwisko" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="email">
+            <span class="sale-form__label-text"><span>Adres e-mail</span></span>
+            <input type="email" id="email" name="email" placeholder="Wpisz swój adres e-mail" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="phone">
+            <span class="sale-form__label-text"><span>Numer telefonu</span></span>
+            <input type="tel" name="phone" id="phone" placeholder="000 000 000">
+        </label>
+
+        <p class="form-sale__info">Numer telefonu jest niezbędny do realizacji zamówienia, jego potwierdzenia i skontaktowania się z kurierem w celu sprawnej realizacji dostawy.</p>
+    </div>
+    
+    {{ if .contact_details_address }}
+    <div class="form-sale__row form-sale__header">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.33301 14L5.83301 10.85M25.6663 14L22.1663 10.85M22.1663 10.85L13.9997 3.5L5.83301 10.85M22.1663 10.85V24.5H5.83301V10.85" stroke="#313131" stroke-width="1.4"/>
+        </svg>
+            
+        <h3 class="form-sale__header-heading">{{ .contact_details_address }}</h3>
+    </div>
+    {{ end }}
+
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="country">
+            <span class="sale-form__label-text"><span>Kraj</span></span>
+            <select name="country" id="country" data-js-country>Polska</select>
+        </label>
+    </div>
+
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="street">
+            <span class="sale-form__label-text"><span>Ulica i nr mieszkania</span></span>
+            <input type="text" id="street" name="street" placeholder="Wpisz ulicę, numer domu/lokalu" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--double">
+        <label class="form-sale__label" for="postal-code">
+            <span class="sale-form__label-text"><span>Kod pocztowy</span></span>
+            <input type="text" id="postal-code" name="postal-code" placeholder="Wpisz kod pocztowy" required>
+        </label>
+
+        <label class="form-sale__label" for="city">
+            <span class="sale-form__label-text"><span>Miasto</span></span>
+            <input type="text" id="city" name="city" placeholder="Wpisz miasto" required>
+        </label>
+    </div>
+
+    
+    {{ partial "parts/form/form-payment-group.html" . }}
+    {{ partial "parts/form/form-newsletter-group.html" . }}
+
+
+    <div class="form-sale__row form-sale__row--submit">
+        <span class="loader"></span>
+        
+        <button class="form-sale__button button button--primary" type="submit" id="submit">
+            <span>{{ .button_title }}</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</form>
+
+<div class="form-sale__row form-sale__row--acceptance">
+    <p>Klikając przycisk potwierdzasz akceptację <a href="{{ .Site.Params.BaseURL }}/pl/policies/terms-and-conditions" target="_blank">Regulaminu</a> i <a href="{{ .Site.Params.BaseURL }}/pl/policies/privacy-policy" target="_blank"> Polityki Prywatności.</a></p>
+</div>

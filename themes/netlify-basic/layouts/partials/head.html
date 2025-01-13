@@ -1,5 +1,5 @@
 <head>
-
+  {{ if hugo.IsProduction }}
     <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -22,13 +22,9 @@
   
       xtro('create', '3c94ee77490199b99b3ab27ac9a303b0', 'xtro-details');
   </script>
-
+ {{ end }}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  {{ if hugo.IsDevelopment }}
-    {{/*  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  */}}
-  {{ end }}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,10 +33,8 @@
   <link rel ="preload" href ="{{ $critical.Permalink }}" type = "text/css" as = "style" onload = "this.onload = null; this.rel = 'stylesheet' ; "/>
   {{ end }}
 
-  {{ $css := resources.Get "css/style.scss" }}
-  {{ $style := $css | css.Sass | resources.Minify | resources.Fingerprint }}
-
-  <link rel="stylesheet" href="{{ $style.Permalink }}"  crossorigin="anonymous">
+  {{ partial "parts/head/stylesheets.html" . }}
+  
   {{ if .IsHome }}
 
   <script defer src="
@@ -53,11 +47,11 @@
 
   <script defer src="/js/just-validate/just-validate.production.min.js"></script>
 
+  <link rel="icon" type="image/svg+xml" href="/img/collagenico-favicon.svg">
   {{ if .Params.meta_title }}
   <title>{{ .Params.meta_title }}</title>
   {{ end }}
   {{ if .Params.meta_description }}
   <meta name="description" content="{{ .Params.meta_description }}">
   {{ end }}
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="db0ddc87-b4ec-475d-bc0d-551dc9ce5e82" data-blockingmode="auto" type="text/javascript"></script>
 </head>

@@ -1,4 +1,4 @@
 ---
 title: "Terms Index"
-type: "terms"
---- 
+type: "policies" 
+---  
