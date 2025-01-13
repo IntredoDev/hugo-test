@@ -1,0 +1,71 @@
+{{- $countryIdentificator := .countryIdentificator }}
+{{- $buttonTitle := .buttonTitle -}}
+
+<form class="form-sale" method="POST" method="post" data-js-sale-form novalidate>
+    <input type="hidden" id="action" name="action" value="affcreate">
+    <input type="hidden" id="redirect" name="redirect" value="thank-you">
+    <input type="hidden" id="offerId" name="offerId" value="2528">
+    <input type="hidden" id="shortLead" name="shortLead" value="false">
+    <input type="hidden" id="customerPrefix" name="customerPrefix" value="">
+    <input type="hidden" id="cashOnDelivery" name="cashOnDelivery" value="true" class="js-cash-on-delivery">
+
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="name">Imię i nazwisko
+            <input type="text" id="name" name="name" placeholder="Tu wpisz swoje imię i nazwisko" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="email">Adres e-mail
+            <input type="email" id="email" name="email" placeholder="Tu wpisz swój adres e-mail" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="phone">Numer telefonu
+            <input type="tel" name="phone" id="phone" placeholder="Wpisz swój numer telefonu (np. 123 456 789)">
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="street">Ulica i numer mieszkania
+            <input type="text" id="street" name="street" placeholder="Tu wpisz swój adres" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--double">
+        <label class="form-sale__label" for="postal-code">Kod pocztowy
+            <input type="text" id="postal-code" name="postal-code" placeholder="Kod pocztowy" required>
+        </label>
+
+        <label class="form-sale__label" for="city">Miasto
+            <input type="text" id="city" name="city" placeholder="Tu wpisz swoje miasto" required>
+        </label>
+    </div>
+    
+    <div class="form-sale__row">
+        <label class="form-sale__label" for="country">Kraj
+            <select name="country" id="{{- $countryIdentificator -}}" data-js-country>Polska</select>
+        </label>
+    </div>
+    
+    <div class="form-sale__row form-sale__row--acceptance">
+        <input type="checkbox" name="acceptance" required> 
+        <label class="form-sale__label">Zapoznałem się i akceptuję <a href="{{ .Site.Params.BaseURL }}/terms/terms-and-conditions" target="_blank">Regulamin</a> oraz <a href="{{ .Site.Params.BaseURL }}/terms/privacy-policy" target="_blank">Politykę Prywatności</a></label>
+    </div>
+
+    
+
+    <div class="form-sale__row form-sale__row--submit">
+        <span class="loader"></span>
+        
+        <button class="form-sale__button button button--primary" type="submit" id="submit">
+            <span>{{ $buttonTitle }}</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+
+</form>

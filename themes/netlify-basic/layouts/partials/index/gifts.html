@@ -1,0 +1,12 @@
+{{- with .Params.section_gifts -}}
+<section class="gifts">
+    <div class="container">
+        {{ if .heading }}
+            <h2 class="gifts__heading">{{ .heading }}</h2>
+        {{ end }}
+
+        {{ partial "index/gifts-list.html" . }}
+    </div>
+</section>
+{{- end -}}
+

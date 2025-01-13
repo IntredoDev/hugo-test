@@ -1,0 +1,23 @@
+
+  {{ $style := .style }}
+    
+    <li class="ac {{ $style }}">
+      <h2 class="ac-header">
+        <button type="button" class="ac-trigger"><span>
+          {{- if $style -}} 
+            {{ .context.question }} 
+          {{ else }} 
+            {{ .question }} 
+          {{- end -}} 
+        </span></button>
+      </h2>
+      <div class="ac-panel">
+        <p class="ac-text">
+          {{- if $style -}} 
+            {{ .context.answer }} 
+          {{ else }} 
+            {{ .answer }} 
+          {{- end -}} 
+        </p>
+      </div>
+    </li>

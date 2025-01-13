@@ -1,22 +1,46 @@
+{{ $baseURL := .Site.Params.baseURL }}
+
 {{ with .Params.section_ingredients }}
-<section class="ingredients">
+<section class="ingredients" id="ingredients">
     <div class="container">
         <header class="ingredients__header">
             <h2 class="ingredients__heading">{{ .heading }}</h2>
-
-            <img class="ingredients__image ingredients__image--mobile" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
-        </header>
+                {{ $image := resources.Get "/img/ingredients_product_clipped.png" }}
+                {{ if $image }}
+                    {{ $imageSrc := ($image.Resize "547x524 webp q70").RelPermalink }}
+                    {{ partial "components/image.html" 
+                        (dict "context" .
+                        "image" $image
+                        "src" $imageSrc 
+                        "class" "ingredients__image ingredients__image--mobile" 
+                        "alt" "Collagenico product with decorative leafs"
+                        ) 
+                    }} 
+                {{ end }}
+           </header>
         <div class="ingredients__content">
-            <img class="ingredients__image ingredients__image--desktop" width="547" height="524" src="/img/ingredients_product_clipped.png" alt="Collagenico product with decorative leafs" loading="lazy">
+            {{ $image := resources.Get "/img/ingredients_product_clipped.png" }}
+            {{ if $image }}
+                {{ $imageSrc := ($image.Resize "547x524 webp q90").RelPermalink }}
+                {{ partial "components/image.html" 
+                    (dict "context" .
+                    "image" $image
+                    "src" $imageSrc 
+                    "class" "ingredients__image ingredients__image--desktop" 
+                    "alt" "Collagenico product with decorative leafs"
+                    ) 
+                }} 
+            {{ end }}
+
             <ul class="ingredients__list">
             {{- range .list -}}
                 {{ if .title }}
                 <li class="ingredients__list-item">
                     <div class="ingredients__list-wrap">
                         <div class="ingredients__list-thumbnail">
-                            <img src="{{ .thumbnail }}" alt="{{ .title }}">
+                            <img src="{{ .thumbnail }}" alt="{{ .title }}" height="168" width="168" type="image/webp">
                         </div>
-                        <button class="ingredients__button button button--green" data-js-target-modal data-content-img="{{ .content_img }}" data-content="{{ .content }}">
+                        <button class="ingredients__button button button--green" data-js-target-modal data-content-title="{{ .title }}"  data-content-img="{{ .content_img }}" data-content="{{ .content }}">
                             <span>{{ .title }}</span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
@@ -31,4 +55,6 @@
         </div>
     </div>
   </section>
+
+{{ partial "components/ingredients-modal.html" . }}
 {{ end }}

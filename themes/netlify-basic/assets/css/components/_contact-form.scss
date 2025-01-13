@@ -1,0 +1,281 @@
+.contact-form {
+    padding: rem(12) 0;
+    max-width: rem(640);
+    margin: 0 auto;
+}
+
+.contact-form__fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    margin-bottom: rem(24);
+}
+
+.contact-form__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    position: relative;
+}
+
+.contact-form .button--primary {
+    padding: rem(12) rem(20);
+}
+
+.contact-form__disclaimer {
+    font-weight: 400;
+    font-size: rem(10);
+    letter-spacing: $wide;
+    line-height: rem(12);
+}
+
+.contact-form .select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0;
+}
+
+.faq-select.select2-search__field {
+    border: none !important;
+}
+
+.contact-form__label {
+    position: relative;
+    font-size: rem(18);
+}
+
+.contact-form__label {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: $wide;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: inherit;
+    }
+}
+
+.contact-form__label-text {
+    position: absolute;
+    display: block;
+    font-size: rem(12);
+    line-height: rem(22);
+    letter-spacing: normal;
+    background: white;
+    padding: 0 rem(4);
+    left: 1rem;
+    top: rem(-10);
+    z-index: 1;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=number],
+textarea {
+    padding: rem(12);
+    border: 1px solid $gray-stroke;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(22);
+    letter-spacing: $wide;
+    transition: border 0.25s ease-in-out, background 0.25s ease-in-out;
+    outline: none;
+    font-family: $font-primary;
+
+    @include above(lg) {
+        letter-spacing: normal;
+    }
+}
+
+.contact-form__row--double {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+}
+
+textarea {
+    font-family: $font-primary;
+    padding: .5rem rem(12);
+    min-height: rem(142);
+}
+
+:is(input[type=text], input[type=email], input[type=tel], input[type=number], textarea)::placeholder {
+    color: $gray-label;
+}
+
+
+.select2 {
+    width: 100% !important;
+}
+.select2-container {
+    padding: rem(12);
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: rem(19);
+    letter-spacing: $wide;
+    border: 1px solid $gray-stroke;
+}
+
+
+/* Style for the .select2-selection */
+.select2-container--default .select2-selection--single {
+    height: auto; 
+    border: none;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: rem(19);
+    letter-spacing: $wide;
+    box-sizing: border-box;
+} 
+
+/* Style for placeholder and selected value */
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0;
+    padding-right: rem(12);
+}
+
+.select2-container--open {
+    border: none;
+}
+
+.select2-container--below {
+    border: 1px solid $gray-stroke;
+}
+
+.select2-dropdown {
+    transform: translateY(rem(-15));
+}
+
+span.select2-container--default span.select2-selection--single .select2-selection__arrow {
+    left: rem(18) ;
+    right: 0 ;
+}
+span.select2-container--default span.select2-selection--single span.select2-selection__arrow b {
+    margin: 0 0 0 rem(4);
+    border: none;
+    width: rem(24);
+    height: rem(24);
+    background: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10L12 16L18 10" stroke="%23868686" stroke-linecap="round"/></svg>');
+}
+
+.page-contact span.select2-container--default span.select2-selection--single .select2-selection__arrow {
+    left: unset;
+    right: rem(12);
+}
+
+.page-contact span.select2-container--default span.select2-selection--single span.select2-selection__arrow b {
+    left: unset;
+    right: 0;
+}
+
+.just-validate-error-field {
+    border-color: #BA1010;
+    background: #F9E4E4;
+
+    transition: border 0.25s ease-in-out, background 0.25s ease-in-out;
+}
+
+.contact-form__label.has-error .contact-form__label-text {
+    border-radius: 4px;
+
+    position: absolute;
+    display: block;
+    font-size: rem(12);
+    line-height: rem(22);
+    letter-spacing: normal;
+    padding: 0 rem(4);
+    left: 1rem;
+    top: rem(-10);
+    z-index: 1;
+
+    span {
+        display: block;
+        position: relative;
+        z-index: 3;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: calc(100% + 8px);
+        height: 11px;
+        left: -4px;
+        
+    }
+
+    &::before {
+        top: 0;
+        background-color: white;
+
+    }
+
+    &::after {
+        top: 50%;    
+        background-color: #F9E4E4;
+    }
+}
+
+.contact-form__label.has-error .select2-container {
+    border-color: #BA1010;
+    background: #F9E4E4;
+}
+
+.contact-form__label.has-error .select2-selection__rendered {
+    background: #F9E4E4;
+}
+
+@include above(lg) {
+    .contact-form {
+        padding-top: 0;
+        padding-bottom: rem(40);
+    }
+
+    .contact-form__fieldset {
+        gap: rem(24);
+        margin-bottom: rem(40);
+    }
+
+    .contact-form__row--double {
+        gap: rem(24);
+        flex-direction: row;
+    }
+
+    .contact-form__row--double div {
+        width: 100%;
+    }
+
+    .contact-form__button-wrap {
+        display: flex;
+    }
+
+    .contact-form .button--primary {
+        padding: rem(12) rem(24);
+        margin: 0 0 0 auto;
+    }
+
+    .contact-form__disclaimer {
+        font-size: rem(12);
+        line-height: rem(20);
+    }
+
+    .contact-form__label {
+        gap: rem(8);
+        font-size: rem(18);
+    }
+}
+
+input.is-valid,
+textarea.is-valid,
+.select2-container--below.is-valid {
+    border-color: $green-text-2;
+    transition: border 0.25s ease-in-out;
+}

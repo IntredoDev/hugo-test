@@ -1,3 +1,0 @@
----
-header_heading: "header"
----

@@ -1,0 +1,85 @@
+
+
+<footer class="footer">
+    <div class="footer__upper">
+        <div class="footer__col footer__col--first">
+            <a href="{{ .Site.BaseURL }}">
+                <img class="footer__logo" src="/img/collagenico_logo.svg" height="32" width="178" alt="Collagenico logo">
+            </a>
+            <small class="footer__copy footer__copy--desktop">{{ .Site.Params.footer.copyright }}</small>
+
+            <img src="/img/100_secure.svg" alt="100% secure logo" class="footer__vector footer__vector--secure" height="40" width="94" loading="lazy" decoding="async">
+
+        </div>
+
+        {{ with .Site.Params.footer }}
+            {{ range $index, $element := .column }}
+                <nav class="footer__col" aria-label="{{ $element.title }}">
+                    <h3 class="footer__list-title">{{ $element.title }}</h3>
+                    <ul class="footer__list" role="list"> 
+                        {{ range $itemIndex, $item := $element.list }}
+                            <li class="footer__list-item" role="listitem">
+                                {{ if eq $item.dataOpenPrivacy "true" }}
+                                  <button class="privacy-trigger" type="button" aria-label="{{ $item.linkTitle }}" title="{{ $item.linkTitle }}">{{ $item.linkTitle }}</a>
+                                {{ else }}
+                                  <a  href="{{ .Site.Params.baseURL }}/{{ $item.url | urlize }}" aria-label="{{ $item.linkTitle }}" title="{{ $item.linkTitle }}">{{ $item.linkTitle }}</a>
+                                {{ end }}
+                            </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+            {{ end }}
+         {{ end }}
+         <div class="footer__logos footer__certs footer__certs--mobile">
+            <img src="/img/fairtrade.svg" alt="Fairtrade logo" class="footer__vector" height="25" width="118" loading="lazy" decoding="async">
+            <img src="/img/trusted_seller.svg" alt="Trusted Seller logo" class="footer__vector" height="40" width="55" loading="lazy" decoding="async">
+        </div>
+    </div>
+
+    <div class="footer__lower">
+        <div class="footer__logos footer__certs footer__certs--desktop">
+            <img src="/img/fairtrade.svg" alt="Fairtrade logo" class="footer__vector" height="25" width="118" loading="lazy" decoding="async">
+            <img src="/img/trusted_seller.svg" alt="Trusted Seller logo" class="footer__vector" height="40" width="55" loading="lazy" decoding="async">
+            <img src="/img/100_secure.svg" alt="100% secure logo" class="footer__vector" height="40" width="94" loading="lazy" decoding="async">
+        </div>
+    
+        <div class="footer__logos footer__gateways">
+            <p>{{ .Site.Params.footer.payment_methods_text }}</p>
+            <div class="footer__logos-inner">
+                <img src="/img/PayPal.svg" 
+                alt="PayPal Payment Accepted"
+                title="We accept PayPal payments securely."
+                class="footer__vector" height="58" width="40"
+                loading="lazy" decoding="async">
+                <img src="/img/Mastercard.svg" 
+                alt="MasterCard Payment Accepted"
+                title="We accept payments via MasterCard."
+                class="footer__vector" height="58" width="40"
+                loading="lazy" decoding="async">
+                <img src="/img/Visa.svg" 
+                alt="Visa Payment Accepted"
+                title="We accept Visa credit and debit cards."
+                class="footer__vector" height="58" width="40"
+                loading="lazy" decoding="async">
+                <img src="/img/rpay.svg" 
+                alt="Revolut Pay Accepted"
+                title="We accept payments securely via Revolut Pay."
+                class="footer__vector" height="58" width="40"
+                loading="lazy" decoding="async">
+            </div>
+        </div>
+    
+        <div class="footer__logos footer__couriers">
+            <p>{{ .Site.Params.footer.shipping_options_text }}</p>
+            <div class="footer__logos-inner">
+                <img src="/img/gls.svg" alt="GLS logo" class="footer__vector" height="58" width="40" loading="lazy" decoding="async">
+                <img src="/img/ups.svg" alt="UPS logo" class="footer__vector" height="58" width="40" loading="lazy" decoding="async">
+                <img src="/img/fedex.svg" alt="FedEx logo" class="footer__vector" height="58" width="40" loading="lazy" decoding="async">
+                <img src="/img/dhl.svg" alt="DHL logo" class="footer__vector" height="58" width="40" loading="lazy" decoding="async">
+            </div>
+        </div>
+
+        <small class="footer__copy footer__copy--mobile">{{ .Site.Params.footer.copyright }}</small>
+
+    </div>        
+</footer>

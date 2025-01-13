@@ -1,6 +1,21 @@
-baseURL = 'https://glowing-kashata-66e40c.netlify.app/'
 languageCode = 'en-us'
 theme = "netlify-basic"
+baseURL = "https://collagenico24.net/"
+defaultContentLanguage = 'pl'
+defaultContentLanguageInSubdir = true
+canonifyURLs = true
+  
+[languages]
+  [languages.pl]
+  contentDir = 'content/pl'
+  languageCode = 'pl'
+  languageDirection = 'ltr'
+  languageName = 'Polski'
+  weight = 1
+  
+[[menu.main]]
+    name = "FAQ"
+    url = "/faq/"
 
 [params]
   logo = "img/collagenico_logo.svg"
@@ -17,3 +32,31 @@ theme = "netlify-basic"
   [[params.benefits]]
     title = "W 100% naturalne składniki"
     image = "/img/header_benefit_3.svg"
+
+   [params.footer]
+     copyright = "© 2024 Collagenico. Wszelkie prawa zastrzeżone. Zarządzane przez Commerto Ltd, zarejestrowane w Nikozji, nr rej. HE 414808 Znajduje się pod adresem: Bracken Road, D18 CV48, Dublin, Irlandia"
+     payment_methods_text = "Akceptowane metody płatności:"
+     shipping_options_text = "Szybka i bezpieczna dostawa:"
+     [[params.footer.column]]
+     title = "Collagenico"
+       list = [
+        { linkTitle = "Jak to działa?", url = "pl/#how" },
+        { linkTitle = "Składniki", url = "pl/#ingredients" },
+        { linkTitle = "Opinie", url = "pl/#opinions" },
+        { linkTitle = "Referencje naukowe", url = "pl/#references" }
+       ]
+    [[params.footer.column]]
+    title = "POMOC"
+    list = [
+      { linkTitle = "FAQ", url = "pl/faq" },
+      { linkTitle = "Kontakt", url = "pl/contact" },
+      { linkTitle = "Polityka dostaw & Zwrotów", url = "pl/policies/delivery-returns-policy" }
+    ]
+     [[params.footer.column]]
+     title = "INFORMACJE"
+      list = [
+       { linkTitle = "Polityka prywatności", url = "pl/policies/privacy-policy"},
+       { linkTitle = "Regulamin", url = "pl/policies/terms-and-conditions" },
+       { linkTitle = "Zarządzanie Zgodami", url = "pl/policies/consent-management", dataOpenPrivacy = "true"},
+       { linkTitle = "Zrzeczenie odpowiedzialności", url = "pl/policies/disclaimer"},
+      ]

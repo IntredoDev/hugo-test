@@ -1,0 +1,109 @@
+.timer {
+    padding: rem(16) rem(18);
+    background: #F3F3F3;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+
+    @include below(lg) {
+        order: 2;
+    }
+
+    @include above(lg) {
+        padding: rem(24);
+        gap: rem(24);
+        margin-bottom: rem(24);
+    }
+
+    @include above(xl) {
+        padding: rem(24) rem(51);
+    }
+}
+
+.timer__header {
+    @include below(lg) {
+        display: flex;
+        flex-direction: column;
+        gap: rem(4);
+    }   
+}
+
+.timer__heading {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(22);
+    letter-spacing: $wide;
+
+    @include above(lg) {
+        font-size: rem(20);
+        line-height: rem(32);
+    }
+}
+
+.timer__desc {
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: rem(19);
+    letter-spacing: $wide;
+
+    @include above(lg) {
+        font-weight: 400;
+        font-size: rem(18);
+        line-height: 180%;
+    }
+}
+
+.timer__time {
+    display: flex;
+    gap: rem(6);
+    justify-content: center;
+}
+
+.timer__time-item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+}
+
+.timer__time-item span {
+    display: block;
+    font-size: rem(16);
+    line-height: rem(19);
+    letter-spacing: $wider;
+
+    @include above(xl) {
+        font-size: rem(18);
+        line-height: 180%;
+        letter-spacing: $wide;
+    }
+}
+
+.timer__time-colon {
+    display: block;
+    font-weight: 600;
+    font-size: rem(56);
+    line-height: rem(68);
+}
+
+.timer__time-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $lime-green;
+    padding: rem(8) rem(14.5);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: rem(44);
+    line-height: rem(53);
+    min-width: rem(87.5);
+
+    @include above(xl) {
+        padding: rem(8) rem(17);
+        font-size: rem(64);
+        line-height: rem(77);
+        min-width: rem(118);
+    }
+}

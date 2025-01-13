@@ -1,15 +1,57 @@
 <head>
+  {{ if hugo.IsProduction }}
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WP7QK2W7');</script>
+    <!-- End Google Tag Manager -->
+
+  <script>
+      (function (i, n, t, r, e, d, o) {
+          i['IntredoAnalyticsObject'] = e;
+          i[e] = i[e] || function () {
+              (i[e].q = i[e].q || []).push(arguments)
+          };
+          d = n.createElement(t), o = n.getElementsByTagName(t)[0];
+          d.async = 1;
+          d.src = r;
+          o.parentNode.insertBefore(d, o);
+      })(window, document, 'script', '//xtro24.com/analytics.js', 'xtro');
+  
+      xtro('create', '3c94ee77490199b99b3ab27ac9a303b0', 'xtro-details');
+  </script>
+ {{ end }}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ $title := print .Site.Title " | " .Title }}
-  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
-  <title>{{ $title }}</title>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{ if hugo.IsProduction }}
+  {{ $critical := resources.Get "css/critical.css" }}
+  <link rel ="preload" href ="{{ $critical.Permalink }}" type = "text/css" as = "style" onload = "this.onload = null; this.rel = 'stylesheet' ; "/>
+  {{ end }}
 
+  {{ partial "parts/head/stylesheets.html" . }}
+  
+  {{ if .IsHome }}
+
+  <script defer src="
+    /js/splide-js/splide.min.js
+  "></script>
+  {{ end }}
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/select2/select2.min.js"></script>
+
+  <script defer src="/js/just-validate/just-validate.production.min.js"></script>
+
+  <link rel="icon" type="image/svg+xml" href="/img/collagenico-favicon.svg">
+  {{ if .Params.meta_title }}
+  <title>{{ .Params.meta_title }}</title>
+  {{ end }}
+  {{ if .Params.meta_description }}
+  <meta name="description" content="{{ .Params.meta_description }}">
+  {{ end }}
 </head>

@@ -21,9 +21,24 @@
             {{- end -}}
             </div>
             <div class="how__content-col">
+<<<<<<< HEAD
             {{- if .img -}}
                 <img class="how__content-img" src="{{ .img }}" width="680" height="456" alt="Balding Man" loading="lazy">
             {{- end -}}
+=======
+                {{ if .img }}
+                {{ $image := resources.Get .img }}
+                {{ $imageSrc := ($image.Resize "666x404 webp q60").RelPermalink }}
+                    {{ partial "components/image.html" 
+                        (dict "context" .
+                        "image" $image
+                        "src" $imageSrc 
+                        "class" "how__content-img" 
+                        "alt" "Hair protected by Collagen"
+                        ) 
+                    }} 
+                {{ end }}
+>>>>>>> 6305d8c7bff4d3710abb38e83e94e4935b66f0d3
             </div>
         </div>
     </div>

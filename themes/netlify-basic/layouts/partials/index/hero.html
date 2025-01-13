@@ -1,6 +1,17 @@
 <section class="hero">
-    <img class="hero__bg" src="/img/hero_bg.png" role="presentation">
-
+    {{ if .Params.hero_bg }}
+        {{ $image := resources.Get .Params.hero_bg }}
+        {{ if $image }}
+            {{ $imageSrc := ($image.Process "webp").RelPermalink }}
+            {{ partial "components/image.html" 
+                (dict "context" .
+                "image" $image
+                "src" $imageSrc 
+                "class" "hero__bg" 
+                "loading" "eager") 
+            }}
+        {{ end }}
+    {{ end }}
     <div class="container">
         <div class="hero__content">
             <header class="hero__header">
@@ -14,14 +25,25 @@
                     <p class="hero__para">{{ .Params.hero_description | markdownify }}</p>
                 {{ end }}
 
-                <img class="hero__img hero__img--mobile" src="{{ .Params.hero_image }}" alt="Hero Image" loading="eager" /> 
+                {{ if .Params.hero_image }}
+                {{ $image := resources.Get .Params.hero_image }}
+                {{ $imageSrc := ($image.Resize "734x582 webp q60").RelPermalink }}
+                    {{ partial "components/image.html" 
+                        (dict "context" .
+                        "image" $image
+                        "src" $imageSrc 
+                        "class" "hero__img hero__img--mobile" 
+                        "alt" "Hero Image" 
+                        "loading" "eager") 
+                    }} 
+                {{ end }}
             </header>
 
             {{ partial "index/hero_list.html" . }}
 
             {{ if .Params.hero_button_title }}
             <div class="hero__button-wrap">
-                <button class="button button--primary">
+                <button class="button button--primary" data-js-form-target>
                     <span>
                         {{ .Params.hero_button_title }}
                     </span>
@@ -34,9 +56,21 @@
             {{ end }}
         </div>
 
+    
+
         {{ if .Params.hero_image }}
+            {{ $image := resources.Get .Params.hero_image }}
+            {{ $imageSrc := ($image.Resize "734x582 webp q60").RelPermalink }}
+
             <div class="hero__img-wrap">
-                <img class="hero__img hero__img--desktop" src="{{ .Params.hero_image }}" alt="Hero Image" loading="eager" /> 
+                {{ partial "components/image.html" 
+                    (dict "context" .
+                    "image" $image
+                    "src" $imageSrc 
+                    "class" "hero__img hero__img--desktop" 
+                    "alt" "Hero Image" 
+                    "loading" "eager") 
+                }}
             </div>
         {{ end }}
     </div>

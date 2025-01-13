@@ -1,0 +1,67 @@
+<form class="contact-form" method="POST" action="contact.php">
+    <fieldset class="contact-form__fieldset">
+        <div class="contact-form__row">
+            <label class="contact-form__label" for="contact-select">Wybierz temat
+                <select id="contact-select" name="country-select" class="contact-form__select" placeholder="Wybierz temat">
+                    <option></option>
+                    <option value="1">Status zamówienia</option>
+                    <option value="2">Reklamacja i zwroty</option>
+                    <option value="3">Problemy z płatnością</option>
+                    <option value="4">Zapytanie o dostępność produktu</option>
+                    <option value="5">Pomoc techniczna</option>
+                    <option value="6">Zmiana danych zamówienia</option>
+                    <option value="7">Problemy z dostawą</option>
+                    <option value="8">Prośba o fakturę</option>
+                    <option value="9">Inne pytania</option>
+                </select>
+            </label>
+        </div>
+        <div class="contact-form__row">
+            <label class="contact-form__label" for="name">
+                Imię i nazwisko
+                <input type="text" name="name" id="name" placeholder="Tu wpisz swoje imię...">
+            </label>
+        </div>
+        <div class="contact-form__row contact-form__row--double">
+            <div class="">
+                <label class="contact-form__label" for="order-id">
+                    Numer zamówienia
+                    <input type="text" name="order-id" id="order-id" placeholder="123456">
+                </label>
+            </div>
+    
+            <div class="">
+                <label class="contact-form__label" for="email">
+                    Adres e-mail
+                    <input type="email" name="email" id="email" placeholder="Tu wpisz swój e-mail...">
+                </label>
+            </div>
+        </div>
+
+        <div class="contact-form__row">
+            <label class="contact-form__label" for="message">
+                Napisz wiadomość
+                <textarea name="message" id="message" placeholder="Napisz wiadomość..."></textarea>
+            </label>
+        </div>
+
+       
+        <div class="message-wrap"></div>
+    </fieldset>
+
+    <div class="contact-form__wrap">
+        <span class="loader"></span>
+        <button type="submit" class="contact-form__submit button button--primary">
+            <span>{{ .button_title }}</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L21 12" stroke="white" stroke-linecap="round"/>
+                <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+    
+        <p class="contact-form__disclaimer">
+            {{ .disclaimer }}
+        </p>
+    </div>
+</form>
+
